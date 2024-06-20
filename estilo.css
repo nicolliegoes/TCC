@@ -75,10 +75,40 @@ header{
 
 .container {
     max-width: 35%;
-    height: 600px;
+    height: 733px;
     margin: 0 auto;
     padding: 20px 10px;
     background-color: #b1ecda;
     margin-right: 0px;
-    
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.overlay h2 {
+  
+    text-align: left;
+    margin-left: 15%;
+    margin-right: 24%;
+    line-height: 1.8;
+    font-size: 4em;
+    color: #3E7996;
+    font-weight: bold;
+}
+
+.img_topo{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 40%;
 }
