@@ -7,7 +7,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: left;
-    padding: 1rem;
+    margin-top: 1%;
   }
 
   .logo {
@@ -17,9 +17,8 @@ body{
   
   .nav-links {
     list-style: none;
-    padding: 0;
+    padding: 0px;
     display: flex;
-    gap: 1rem;
   }
   
   .nav-links li a {
@@ -32,6 +31,7 @@ body{
     font-size: 2rem;
     color: #3E7996;
     cursor: pointer;
+    float: left;
   }
   
   @media (max-width: 768px) {
@@ -39,33 +39,41 @@ body{
       display: none;
       flex-direction: column;
       width: 100%;
-      text-align: center;
+      text-align: left;
       background-color: #3E7996;
       position: absolute;
-      top: 60px; /* altura da navbar */
-      left: 0;
+      top: 40px; /* altura da navbar */
     }
   
     .nav-links li {
-      margin: 1rem 0;
+      margin: 0.6rem 0;
     }
-  
+
     .menu-icon {
       display: block;
     }
   
     .nav-links.active {
-      display: flex;
+     display: flex;
     }
   }
 
 ul{
-    margin-left: 5%;
+    display: inline-flex;
+    margin-left: 14.8%;
     overflow: hidden;
     list-style-type: none;
     position: fixed;
     width: 100%;
-    margin-top: 1.2%;
+    margin-top: 2.2%;
+}
+
+@media (max-width: 768px){
+  ul{
+    flex-direction: column;
+    margin-left: 2.8%;
+    margin-top: 2.2%;
+  }
 }
 
 a{
@@ -76,10 +84,9 @@ a{
 }
 
 li{
-    display: inline;
     overflow: hidden;
     margin-right: 4%;
-    padding: 10 px;
+    padding: 12 px;
 }
 
 /*
@@ -98,9 +105,11 @@ h1{
 */
 
 header{
-    float: left;
+  float: left;
+  position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-
 
 /* Estilos para dispositivos menores */
 @media screen and (max-width: 768px) { 
@@ -130,14 +139,14 @@ header{
 
     .menu-icon {
         display: block;
-        margin-top: 60%;
-        margin-left: 60%;
+        margin-top: 40%;
+        margin-left: 25%;
     }
 }
 
 .container {
     max-width: 35%;
-    height: 733px;
+    height: 747px;
     margin: 0 auto;
     padding: 20px 10px;
     background-color: #ADDFD0;
@@ -153,23 +162,36 @@ header{
 }
 
 .overlay h2 {
-    text-align: left;
-    margin-left: 15%;
+    text-align:left;
+    margin-left: 26%;
     margin-right: 24%;
     line-height: 1.8;
-    font-size: clamp(1.2rem, 2vw + 1.2rem, 6rem);
+    font-size: clamp(1.2rem, 2vw + 1.2rem, 10rem);
     color: #3E7996;
-    margin-bottom: 30%;
+    margin-bottom: 22%;
+}
+
+@media screen and (max-width: 768px){
+  .overlay h2{
+    margin-top: -45%;
+    margin-left: 20%;
+  }
 }
 
   img{
     padding: 15px;
-    width: 42%;
+    width: 34%;
     position: absolute;
-    top: 35%;
+    top: 38%;
     left: 32%;
     transform: translate(-50%, -50%);
-    margin-left: 40%;
+    margin-left: 37%;
+  }
+
+  @media screen and (max-width: 768px){
+    img{
+      width: 45%;
+    }
   }
 
 .input-container {
@@ -183,14 +205,10 @@ input{
     padding: 9px 40px 5px 15px;
     border: 2.3px solid #3E7996;
     border-radius: 50px;
-    width: 70%;
-    margin-left: 8%;
+    margin-left: 4%;
     font-size: 1.2em;
-}
-
-svg{
-    width: 20px;
-    color: #3E7996;
+    margin-top: 0.50%;
+    position: fixed;
 }
 
 .container-1{
@@ -204,4 +222,30 @@ h3{
     text-align: center;
     font-size: 3em;
     color: #FFFFFF;
+}
+
+.logo{
+  position: fixed;
+  margin-left: -25%;
+  margin-top: -14.8%;
+  width: 4.3%;
+}
+
+@media screen and (max-width: 768px){
+  .logo{
+    width: 0%;
+  }
+}
+
+h4{
+  font-size: 0em;
+}
+
+@media screen and (max-width: 768px){
+  h4{
+    font-size: 1em;
+    margin-left: 129%;
+    margin-top: 48%;
+    color: #3E7996;
+  }
 }
