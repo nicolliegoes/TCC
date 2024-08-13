@@ -249,3 +249,42 @@ h4{
     color: #3E7996;
   }
 }
+
+/*Login e cadastro*/
+.logincont{
+    max-width: 45%;
+    height: 747px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    background-color: #2D2E47;
+    margin-right: 0px;
+    position: relative;
+}
+
+h1{
+  font-size: 50px;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 19px;
+}
+
+h2{
+  font-size: 25px;
+  color: #F0FFF0;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.label{
+  font-size: 25px;
+  color: #F0FFF0;
+  margin-top: 15%;
+  margin-left: 5%;
+}
+
+.input{
+  color: #F0FFF0;
+  margin-top: 50px;
+  margin-right: 70%;
+}
