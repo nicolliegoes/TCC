@@ -5,23 +5,303 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IncluWork</title>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="estilo.css">
 </head>
+
+    <style>
+        
+ /* Estilos Gerais */
+body {
+    background-color: #F3FFF3;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.logo {
+    color: #3E7996;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li a {
+    color: #3E7996;
+    text-decoration: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #3E7996;
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    margin-left: 14.8%;
+    overflow: hidden;
+    list-style-type: none;
+    position: fixed;
+    width: 100%;
+    margin-top: 2.2%;
+}
+
+a {
+    font-family: "Tilt Neon", sans-serif;
+    font-size: clamp(0.5rem, 2vw + 0.3rem, 1.3rem);
+    color: #3E7996;
+    text-decoration: none;
+}
+
+li {
+    overflow: hidden;
+    margin-right: 4%;
+    padding: 12px;
+}
+
+header {
+    float: left;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 35%;
+    height: 747px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    background-color: #ADDFD0;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay h2 {
+    text-align: left;
+    margin-left: 26%;
+    margin-right: 24%;
+    line-height: 1.8;
+    font-size: clamp(1.2rem, 2vw + 1.2rem, 10rem);
+    color: #3E7996;
+    margin-bottom: 22%;
+}
+
+img {
+    padding: 15px;
+    width: 34%;
+    position: absolute;
+    top: 38%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    margin-left: 37%;
+}
+
+.container-1 {
+    max-width: 2024px;
+    height: 300px;
+    padding: 20px 10px;
+    background-color: #73B5B7;
+}
+
+h3 {
+    text-align: center;
+    font-size: 3em;
+    color: #FFFFFF;
+}
+
+.logo {
+    position: fixed;
+    margin-left: -25%;
+    margin-top: -14.8%;
+    width: 4.3%;
+}
+
+h4 {
+    font-size: 0em;
+}
+
+.logincont {
+    max-width: 45%;
+    height: 747px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    background-color: #2D2E47;
+    position: relative;
+}
+
+h1 {
+    font-size: 50px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 25px;
+}
+
+h2 {
+    font-size: 25px;
+    color: #F0FFF0;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.label {
+    font-size: 25px;
+    color: #F0FFF0;
+    margin-top: 10%; /* Ajuste a margem para separar o texto do topo */
+    margin-left: 5%;
+    display: block; /* Garante que a label ocupe toda a largura do container */
+}
+
+input {
+    background-color: transparent;
+    padding: 10px; /* Aumente o padding para melhorar a aparência */
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    font-size: 1.2em;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 5px; /* Adiciona margem superior para separar do texto */
+    width: calc(80% - 20px); /* Ajusta a largura para se ajustar ao container */
+    margin-left: 5%;
+}
+
+.submit-button {
+    background-color: #00BAB4; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border-radius: 50px; /* Bordas arredondadas */
+    font-size: 1.2em; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+    margin-top: 15px; /* Margem superior para separar do input */
+    width: 60%; /* Largura total do botão */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-left: 20%;
+}
+
+.submit-button:hover {
+    background-color: #2D2D2D; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+/* Responsividade Consolidada */
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 10px;
+        height: auto;
+    }
+
+    .overlay h2 {
+        margin-top: -45%;
+        margin-left: 20%;
+    }
+
+    img {
+        width: 45%;
+    }
+
+    .logo {
+        width: 0%;
+    }
+
+    ul {
+        flex-direction: column;
+        margin-left: 2.8%;
+        margin-top: 2.2%;
+        position: relative; /* Remove a posição fixa em telas menores */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        background-color: #3E7996;
+        position: absolute;
+        top: 40px; /* Altura da navbar */
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .logincont {
+        max-width: 90%;
+        padding: 10px;
+        height: auto;
+    }
+
+    .label {
+        font-size: 20px;
+        margin-top: 10px; /* Ajustado para melhor alinhamento */
+        margin-left: 2%;
+    }
+
+    input {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-top: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .submit-button {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+}
+                        
+
+
+
+    </style>
+
 <body>
     <div class="logincont">
         <div class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <h1>Entre no seu perfil</h1>
                 <h2>Bem-vindo(a) de volta!</h2>
-                <form class="label">
-                    <label  for="login-email" >E-mail ou usuário</label>
-                    <input class="input" type="email" id="login-email" name="login-email">
-    
+                <form>
+                    <label class="label" for="login-email" >E-mail ou usuário</label>
+                    <input type="email" id="login-email" name="login-email">
+                    <label class="label" for="login-senha">Senha</label>
+                    <input type="password" id="login-senha" name="login-senha">  
+                    <button type="submit" class="submit-button">Entrar</button>  
                 </form>    
             </div>
         </div>
     </div>
-
 
     <script src="script.js"></script>
 </body>
