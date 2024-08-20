@@ -118,11 +118,7 @@ img {
     background-color: #73B5B7;
 }
 
-h3 {
-    text-align: center;
-    font-size: 3em;
-    color: #FFFFFF;
-}
+
 
 .logo {
     position: fixed;
@@ -146,25 +142,31 @@ h4 {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 70px;
     color: #FFFFFF;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 45px;
 }
 
 h2 {
-    font-size: 25px;
+    font-size: 35px;
     color: #F0FFF0;
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 20px;
+}
+
+h3{
+    font-size: 20px;
+    color: #fff;
+    margin-top: 45px;
+    text-align: center;
 }
 
 .label {
     font-size: 25px;
-    color: #F0FFF0;
-    margin-top: 10%; /* Ajuste a margem para separar o texto do topo */
-    margin-left: 5%;
+    color: #F0FFF0; 
+    margin-top: 50px;
+    margin-left: 12%;
     display: block; /* Garante que a label ocupe toda a largura do container */
 }
 
@@ -179,7 +181,7 @@ input {
     transition: background-color 0.3s, color 0.3s;
     margin-top: 5px; /* Adiciona margem superior para separar do texto */
     width: calc(80% - 20px); /* Ajusta a largura para se ajustar ao container */
-    margin-left: 5%;
+    margin-left: 10%;
 }
 
 .submit-button {
@@ -191,16 +193,21 @@ input {
     font-size: 1.2em; /* Tamanho da fonte */
     cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
     transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
-    margin-top: 15px; /* Margem superior para separar do input */
-    width: 60%; /* Largura total do botão */
+    margin-top: 10%; /* Margem superior para separar do input */
+    width: 40%; /* Largura total do botão */
     text-align: center; /* Alinha o texto ao centro */
-    margin-left: 20%;
+    margin-left: 30%;
 }
 
 .submit-button:hover {
-    background-color: #2D2D2D; /* Cor de fundo ao passar o mouse */
+    background-color: #3E7996; /* Cor de fundo ao passar o mouse */
     transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
 }
+
+
+.espaca{
+        margin-top: 80px;
+    }
 
 /* Responsividade Consolidada */
 @media screen and (max-width: 768px) {
@@ -217,11 +224,20 @@ input {
 
     img {
         width: 45%;
+        top: 50%; /* Ajuste para centralizar a imagem */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: relative; /* Remove posição absoluta */
+        margin: 0 auto;
     }
 
     .logo {
-        width: 0%;
+        width: 20%;
+        margin-left: 0;
+        margin-top: 0;
+        position: relative;
     }
+
 
     ul {
         flex-direction: column;
@@ -240,20 +256,11 @@ input {
         top: 40px; /* Altura da navbar */
     }
 
-    .menu-icon {
-        display: block;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-
-
-    .label {
-        font-size: 20px;
-        margin-top: 10px; /* Ajustado para melhor alinhamento */
-        margin-left: 2%;
+    .logincont {
+        max-width: 90%;
+        margin: 0 auto;
+        height: auto;
+        padding: 20px 10px;
     }
 
     input {
@@ -269,12 +276,28 @@ input {
     h2 {
         font-size: 1.5em;
         margin-top: 5px;
-        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 1em;
+        margin-top: 20px;
     }
 
     .submit-button {
         font-size: 1em;
-        padding: 8px 15px;
+        padding: 10px 10px;
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .espaca {
+        margin-top: 20px;
+    }
+
+    .container-1 {
+        max-width: 90%;
+        padding: 20px;
+        height: auto;
     }
 }
                         
@@ -288,13 +311,17 @@ input {
             <div>
                 <h1>Entre no seu perfil</h1>
                 <h2>Bem-vindo(a) de volta!</h2>
-                <form>
-                    <label class="label" for="login-email" >E-mail ou usuário</label>
-                    <input type="email" id="login-email" name="login-email">
-                    <label class="label" for="login-senha">Senha</label>
-                    <input type="password" id="login-senha" name="login-senha">  
-                    <button type="submit" class="submit-button">Entrar</button>  
-                </form>    
+                <div class="espaca">
+                    <form>
+                        <label class="label" for="login-email" >E-mail ou usuário</label>
+                        <input type="email" id="login-email" name="login-email">
+                        <label class="label" for="login-senha">Senha</label>
+                        <input type="password" id="login-senha" name="login-senha">  
+                        <button type="submit" class="submit-button">Entrar</button>  
+                    </form>   
+                </div>
+                <h3>Ainda não tenho cadastro</h3> 
+                <h3>Ou entre com:</h3>
             </div>
         </div>
     </div>
