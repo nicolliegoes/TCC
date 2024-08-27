@@ -173,6 +173,99 @@
 
         }
 
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: calc(84% - 20px);
+            margin: 0 auto;
+            margin-left: 10%;
+        }
+
+        .label-opcoes {
+            margin-top: 45px;
+            margin-left: 12%;
+            display: block; 
+            background-color: transparent;
+            padding: 10px; 
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            font-size: 1.2em;
+            outline: none;
+            transition: all 0.3s ease;
+            margin-top: 5px; 
+            width: calc(84% - 20px); 
+            margin-left: 10%;
+            cursor: pointer;
+        }
+
+        .custom-select select {
+            display: none; /* Oculta o select nativo */
+        }
+
+        .custom-select .select-selected {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            padding: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 45px;
+        }
+
+        .custom-select .select-selected:after {
+            content: "▼";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8em;
+            margin-top: 25px;
+        }
+
+        .custom-select .select-items {
+            position: absolute;
+            background-color: #fff;
+            border: 2px solid #3E7996;
+            border-radius: 10px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+            display: none;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .custom-select .select-items div {
+            padding: 10px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .custom-select .select-items div:hover {
+            background-color:#4BA0A3;
+            color: #fff;
+        }
+
+        .custom-select .select-items div:last-child {
+            border-bottom: none;
+        }
+
+        .custom-select .select-items div.selected {
+            background-color: #3E7996;
+            color: #fff;
+        }
+
+        .custom-select.open .select-items {
+            display: block;
+        }
+
+
+
+
     </style>
 
 <body>
@@ -185,14 +278,22 @@
             <div class="wavy-shape"></div>
         </div>
         <div class="container">
-            <h1>Entre no seu perfil</h1>
-            <h2>Bem-vindo(a) de volta!</h2>
+            <h1>Cadastre-se</h1>
                 <div class="espaca">
                     <form>
-                        <label class="label" for="login-email" >E-mail ou usuário</label>
-                        <input type="email" id="login-email" name="login-email">
-                        <label class="label" for="login-senha">Senha</label>
-                        <input type="password" id="login-senha" name="login-senha">  
+                        <label class="label" for="cadastro-nome">Nome completo</label>
+                        <input type="text" id="name" name="name">
+                        <label class="label" for="cadastro-idade">Data de nascimento</label>
+                        <input type="date" id="date" name="date">
+
+                        <div class="custom-select">
+                            <div class="select-selected">Não possuo</div>
+                            <div class="select-items">
+                                <div data-value="none" class="selected">Não possuo</div>
+                                <div data-value="fisico">Deficiente Físico</div>
+                                <div data-value="visual">Deficiente Visual</div>
+                            </div>
+                        </div>
                         <button type="submit" class="submit-button">Entrar</button>  
                     </form>   
                 </div>
@@ -201,7 +302,22 @@
         </div>
     </div>
 
+    <script>
+        document.querySelector('.select-selected').addEventListener('click', function() {
+            this.parentElement.classList.toggle('open');
+        });
 
-    <script src="script.js"></script>
+        document.querySelectorAll('.select-items div').forEach(function(item) {
+            item.addEventListener('click', function() {
+                const value = this.getAttribute('data-value');
+                const selected = this.parentElement.previousElementSibling;
+                selected.textContent = this.textContent;
+                selected.classList.add('selected');
+                this.parentElement.querySelectorAll('div').forEach(el => el.classList.remove('selected'));
+                this.classList.add('selected');
+                this.parentElement.classList.remove('open');
+            });
+        });
+    </script>
 </body>
 </html>
