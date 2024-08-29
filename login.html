@@ -98,17 +98,17 @@
     img{
         position: fixed;
         display: block;
-        margin-left: 11%;
-        margin-top: 110px;
+        margin-left: 15%;
+        margin-top: 185px;
         z-index: 1000;
-        background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo do container */
-        padding: 2px;
-        border-radius: 50px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para um efeito mais suave */
+        background-color: #f3fff3; /* Cor de fundo do container */
+        border-radius: 40px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra para um efeito mais suave */
         justify-content: center;
         align-items: center;
         max-width: 100%;
         height: auto;
+        padding: 35px;
     }
 
     /*FRAME*/
@@ -148,15 +148,15 @@
 
         .wavy-shape:nth-child(3) {
             top: -130px;
-            right: -150px;
+            left: 750px;
             animation-duration: 30s;
             border: 3px solid #F3FFF3;
             border-radius: 40% 50% 35% 90% / 40% 55% 35% 70%;
         }
 
         .wavy-shape:nth-child(4) {
-            top: 60px;
-            right: 160px;
+            top: 80px;
+            left: 500px;
             animation-duration: 30s;
             border: 3px solid #2D2E47;
             border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%;
@@ -164,31 +164,31 @@
 
         .wavy-shape:nth-child(5) {
             top: 250px;
-            left: -35px;
+            left: -55px;
             animation-duration: 30s;
             border: 3px solid #3E7996;
             border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
         }
 
         .wavy-shape:nth-child(6) {
-            top: 380px;
-            left: 270px;
+            top: 390px;
+            left: 230px;
             animation-duration: 30s;
             border: 3px solid #3B5A6A;
             border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%; 
         }
 
         .wavy-shape:nth-child(7) {
-            top: 200px;
-            right: -190px;
+            top: 190px;
+            left: 840px;
             animation-duration: 30s;
             border: 3px solid #00BAB4;
             border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
         }
 
         .wavy-shape:nth-child(8) {
-            top: 400px;
-            right: 80px;
+            top: 410px;
+            left: 600px;
             animation-duration: 30s;
             border: 3px solid #73B5B7;
             border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
@@ -212,7 +212,7 @@
 
         .wavy-shape:nth-child(11) {
             bottom: -220px;
-            right: 120px;
+            left: 570px;
             animation-duration: 30s;
             border: 3px solid #2D2E47;
             border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
@@ -220,7 +220,7 @@
 
         .wavy-shape:nth-child(12) {
             bottom: -60px;
-            right: -220px;
+            left: 880px;
             animation-duration: 30s;
             border: 3px solid #3E7996;
             border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
@@ -238,13 +238,131 @@
 
         }
 
+        /*RESPONSIVO*/
+        @media (max-width: 1115px) {
+            h1{
+                font-size: 50px;
+            }
 
+            h2{
+                font-size: 33px;
+            }
+
+
+        }
+
+        @media (max-width: 930px) {
+            h1{
+                font-size: 45px;
+            }
+
+            h2{
+                font-size: 25px;
+            }
+
+            .label{
+                font-size: 20px;
+            }
+            
+            input{
+                width: calc(80% - 20px); 
+                padding: 7px;
+            }
+
+        }
+
+        @media (max-width: 840px) {
+            h1{
+                font-size: 35px;
+            }
+
+            h2{
+                font-size: 20px;
+            }
+
+            .submit-button{
+                font-size: 17px;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+            h1{
+                font-size: 30px;
+            }
+
+            h2{
+                font-size: 15px;
+            }
+
+            .submit-button{
+                font-size: 17px;
+                margin-top: 35px;
+                align-items: center;
+            }
+
+            h3{
+                font-size: 15px;
+                margin-top: 30px;
+            }
+
+            input{
+                width: calc(80% - 20px); 
+                padding: 5px;
+            }
+
+        }
+
+        @media (max-width: 560px) {
+            h1{
+                font-size: 25px;
+            }
+
+
+            .submit-button{
+                font-size: 17px;
+                margin-top: 35px;
+                align-items: center;
+            }
+
+            h3{
+                font-size: 15px;
+                margin-top: 30px;
+            }
+
+            input{
+                width: calc(80% - 20px); 
+                padding: 5px;
+            }
+
+        }
+
+        /* Dispositivos pequenos (smartphones) */
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px;
+            }
+
+            .navbar a {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            .footer {
+                font-size: 12px;
+                padding: 5px;
+            }
+        }
 
     </style>
 
 <body>
     <div class="">
-        <img src="img/logo2.png" alt="Italian Trulli">
+        <img src="img/logo2.png" alt="logo">
         <div class="bloco"></div>
         <div class="frame-container">
             <div class="wavy-shape"></div>
