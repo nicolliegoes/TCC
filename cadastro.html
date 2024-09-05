@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IncluWork</title>
+    <title>Cadastro-IncluWork</title>
     <link rel="stylesheet" href="reset.css">
 </head>
 
@@ -28,10 +28,10 @@
     }
 
     h1{
-    font-size: 60px;
-    color: #FFFFFF;
-    text-align: center;
-    margin-top: 35px;
+        font-size: 50px;
+        color: #FFFFFF;
+        text-align: center;
+        margin-top: 15px;
     }
 
 
@@ -52,7 +52,7 @@
     .label {
         font-size: 25px;
         color: #F0FFF0; 
-        margin-top: 45px;
+        margin-top: 40px;
         margin-left: 12%;
         display: block; 
     }
@@ -92,15 +92,23 @@
     }
 
     .espaca{
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
     img{
         position: fixed;
         display: block;
-        margin-left: 11%;
-        margin-top: 110px;
-
+        margin-left: 15%;
+        margin-top: 185px;
+        z-index: 1000;
+        background-color: #f3fff3; /* Cor de fundo do container */
+        border-radius: 40px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra para um efeito mais suave */
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        height: auto;
+        padding: 35px;
     }
 
     /*FRAME*/
@@ -124,53 +132,230 @@
 
         .wavy-shape:nth-child(1) {
             top: -90px;
-            left: -80px;
-            animation-duration: 20s;
+            left: -110px;
+            animation-duration: 30s;
             border: 3px solid #F3FFF3;
-            border-radius: 30% 45% 30% 65% / 30% 45% ;
+            border-radius:  35% 90% 40% 50% / 35% 70% 40% 55% ;
         }
 
         .wavy-shape:nth-child(2) {
             top: -30px;
-            left: 210px;
-            animation-duration: 20s;
+            left: 200px;
+            animation-duration: 30s;
             border: 3px solid #4BA0A3;
-            border-radius: 30% 65% 30% 45% / 30% 45%;
+            border-radius: 50% 35% 90% 40% / 55% 35% 70% 40%  ;
         }
 
         .wavy-shape:nth-child(3) {
-            top: -160px;
-            right: -70px;
-            animation-duration: 20s;
+            top: -130px;
+            left: 750px;
+            animation-duration: 30s;
             border: 3px solid #F3FFF3;
-            border-radius: 65% 30% 45% 30%/ 45% 30%;
+            border-radius: 40% 50% 35% 90% / 40% 55% 35% 70%;
         }
 
         .wavy-shape:nth-child(4) {
-            top: 70px;
-            right: 130px;
-            animation-duration: 20s;
+            top: 80px;
+            left: 500px;
+            animation-duration: 30s;
             border: 3px solid #2D2E47;
-            border-radius: 30% 45% 30% 65% / 30% 45% ;
+            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%;
         }
 
         .wavy-shape:nth-child(5) {
-            top: 220px;
-            left: -3px;
-            animation-duration: 20s;
+            top: 250px;
+            left: -55px;
+            animation-duration: 30s;
             border: 3px solid #3E7996;
-            border-radius: 80% 100% 60% 40% / 60% 40% 80% 100%; 
+            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
+        }
+
+        .wavy-shape:nth-child(6) {
+            top: 390px;
+            left: 230px;
+            animation-duration: 30s;
+            border: 3px solid #3B5A6A;
+            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%; 
+        }
+
+        .wavy-shape:nth-child(7) {
+            top: 190px;
+            left: 840px;
+            animation-duration: 30s;
+            border: 3px solid #00BAB4;
+            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
+        }
+
+        .wavy-shape:nth-child(8) {
+            top: 410px;
+            left: 600px;
+            animation-duration: 30s;
+            border: 3px solid #73B5B7;
+            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
+        }
+
+        .wavy-shape:nth-child(9) {
+            bottom: -100px;
+            left: -100px;
+            animation-duration: 30s;
+            border: 3px solid #00BAB4;
+            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
+        }
+
+        .wavy-shape:nth-child(10) {
+            bottom: -190px;
+            left: 240px;
+            animation-duration: 30s;
+            border: 3px solid #F3FFF3;
+            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
+        }
+
+        .wavy-shape:nth-child(11) {
+            bottom: -220px;
+            left: 570px;
+            animation-duration: 30s;
+            border: 3px solid #2D2E47;
+            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
+        }
+
+        .wavy-shape:nth-child(12) {
+            bottom: -60px;
+            left: 880px;
+            animation-duration: 30s;
+            border: 3px solid #3E7996;
+            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
         }
 
         @keyframes rotate {
             0% {
                 transform: rotate(0deg);
-                border-radius: 40% 80% 20% 70% / 30% 60% 50% 40%;
+                border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ;
             }
             100% {
                 transform: rotate(360deg);
+                border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ;
             }
 
+        }
+
+        /*RESPONSIVO*/
+        @media (max-width: 1115px) {
+            h1{
+                font-size: 50px;
+            }
+
+            h2{
+                font-size: 33px;
+            }
+
+
+        }
+
+        @media (max-width: 930px) {
+            h1{
+                font-size: 45px;
+            }
+
+            h2{
+                font-size: 25px;
+            }
+
+            .label{
+                font-size: 20px;
+            }
+            
+            input{
+                width: calc(80% - 20px); 
+                padding: 7px;
+            }
+
+        }
+
+        @media (max-width: 840px) {
+            h1{
+                font-size: 35px;
+            }
+
+            h2{
+                font-size: 20px;
+            }
+
+            .submit-button{
+                font-size: 17px;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+            h1{
+                font-size: 30px;
+            }
+
+            h2{
+                font-size: 15px;
+            }
+
+            .submit-button{
+                font-size: 17px;
+                margin-top: 35px;
+                align-items: center;
+            }
+
+            h3{
+                font-size: 15px;
+                margin-top: 30px;
+            }
+
+            input{
+                width: calc(80% - 20px); 
+                padding: 5px;
+            }
+
+        }
+
+        @media (max-width: 560px) {
+            h1{
+                font-size: 25px;
+            }
+
+
+            .submit-button{
+                font-size: 17px;
+                margin-top: 35px;
+                align-items: center;
+            }
+
+            h3{
+                font-size: 15px;
+                margin-top: 30px;
+            }
+
+            input{
+                width: calc(80% - 20px); 
+                padding: 5px;
+            }
+
+        }
+
+        /* Dispositivos pequenos (smartphones) */
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px;
+            }
+
+            .navbar a {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            .footer {
+                font-size: 12px;
+                padding: 5px;
+            }
         }
 
         .custom-select {
@@ -263,14 +448,28 @@
             display: block;
         }
 
-
+        p{
+            font-size: 25px;
+            color: #F0FFF0; 
+            margin-left: 12%;
+            display: block; 
+        }
 
 
     </style>
 
 <body>
     <div class="">
+        <img src="img/logo2.png" alt="logo">
+        <div class="bloco"></div>
         <div class="frame-container">
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
             <div class="wavy-shape"></div>
             <div class="wavy-shape"></div>
             <div class="wavy-shape"></div>
@@ -285,7 +484,6 @@
                         <input type="text" id="name" name="name">
                         <label class="label" for="cadastro-idade">Data de nascimento</label>
                         <input type="date" id="date" name="date">
-
                         <div class="custom-select">
                             <div class="select-selected">Não possuo</div>
                             <div class="select-items">
