@@ -455,6 +455,22 @@
             display: block; 
         }
 
+        .select{
+            padding: 10px;
+            margin-top: 5px;
+            display: block; 
+            background-color: transparent;
+            color: black;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            font-size: 1.2em;
+            outline: none;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 5px; 
+            width: calc(84% - 20px); 
+            margin-left: 10%;
+        }
+
 
     </style>
 
@@ -484,14 +500,13 @@
                         <input type="text" id="name" name="name">
                         <label class="label" for="cadastro-idade">Data de nascimento</label>
                         <input type="date" id="date" name="date">
-                        <div class="custom-select">
-                            <div class="select-selected">Não possuo</div>
-                            <div class="select-items">
-                                <div data-value="none" class="selected">Não possuo</div>
-                                <div data-value="fisico">Deficiente Físico</div>
-                                <div data-value="visual">Deficiente Visual</div>
-                            </div>
-                        </div>
+                        <label class="label" for="deficiencia">Possui alguma deficiência?</label>
+                        
+                        <select class="select" id="deficiencia" name="deficiencia">
+                            <option value="nao">Não</option>
+                            <option value="sim">Sim</option>
+                        </select>
+
                         <button type="submit" class="submit-button">Entrar</button>  
                     </form>   
                 </div>
