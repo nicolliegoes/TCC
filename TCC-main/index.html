@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <header>
         <nav>
+            <a class="logo" href="/">IncluWork</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
             <ul class="nav-list">
                 <li><a href="">Home</a></li>
                 <li><a href="">Cursos</a></li>                
@@ -20,10 +25,10 @@
                 <li><a href="">Login</a></li>
             </ul>
 
-            <div class="menu-icon" onclick="toggleMenu()">
+            <!--<div class="menu-icon" onclick="toggleMenu()">
                 &#9776;
-            </div>
-        </nav>
+            </div>!-->
+        </nav> 
 
         <h4>IncluWork</h4>
     </header>
@@ -38,21 +43,19 @@
         </div>
     </div>
 
-    <section id="home">
-        <div class="img_topo">
-                <img class="img_topo" src="img/Rectangle 6.png" alt="">
-        </div>
-
-        <div class="overlay">
-            <h2>Empoderando talentos diversos para o sucesso profissional.</h2>
-        </div>
-    </section>
+    <div class="img_topo">
+       <img class="img_topo" src="img/Rectangle 6.png" alt="">
+    </div>
+   
+    <div class="overlay">
+        <h2>Empoderando talentos diversos para o sucesso profissional.</h2>
+    </div>
 
     <div class="container-1">
         <h3>Conheça nossos cursos</h3>
         <div class="button-row">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque dicta maxime debitis ad, quo aspernatur sed voluptatem dolor dignissimos nemo doloribus vitae error, rerum quas incidunt cupiditate consequatur quis quidem!</p>
-            <button>Ver mais</button>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat repellendus laudantium dicta dignissimos modi enim minima aut voluptate nostrum eos distinctio corrupti culpa, reprehenderit molestias unde error dolores vitae a!</p>
+            <button><a href="https://inspiraja.org.br/play/curso/68642849">Curso</a></button>
         </div>
     </div>
 
@@ -60,7 +63,7 @@
         <h3>Encontre uma vaga na área desejada</h3>
         <div class="button-row-1">
             <button>
-                <i class="fas fa-home"></i>Home
+                <i class="fas fa-home"></i> Home
             </button>
             <button>
                 <i class="fas fa-user"></i> Profile
@@ -84,7 +87,6 @@
                 <i class="fas fa-cog"></i> Settings
             </button>
         </div>
-        
         <div class="saiba">
             <button>Ver todas as vagas</button>
         </div>
@@ -93,7 +95,9 @@
     <div class="container-3">
         <h3>Tire algumas dúvidas...</h3>
         <div class="img_2">
-                <img class="img_2" src="img/Rectangle 9.png">
+            <figure>
+                <img src="img/Rectangle 9.png">
+            </figure>
         </div>
 
         <div class="accordion">
@@ -118,7 +122,7 @@
             </div>
         </div>
     </div>
-    
+   
     <div class="container-4">
         <h3>Feedback</h3>
         <div class="carousel">
