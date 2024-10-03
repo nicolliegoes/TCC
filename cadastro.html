@@ -28,10 +28,10 @@
     }
 
     h1{
-        font-size: 50px;
+        font-size: 40px;
         color: #FFFFFF;
         text-align: center;
-        margin-top: 15px;
+        margin-top: 0;
     }
 
 
@@ -50,14 +50,20 @@
     }
 
     .label {
-        font-size: 25px;
+        font-size: 20px;
         color: #F0FFF0; 
-        margin-top: 40px;
+        margin-top:30px;
         margin-left: 12%;
         display: block; 
     }
 
-    input {
+    .label-deficiencia {
+            font-weight: bold; /* Texto em negrito */
+            text-transform: uppercase; /* Texto em maiúsculas */
+            letter-spacing: 1px; /* Espaçamento entre letras */
+        }
+
+    input, .select {
         background-color: transparent;
         padding: 10px; 
         color: #fff;
@@ -69,7 +75,23 @@
         margin-top: 5px; 
         width: calc(80% - 20px); 
         margin-left: 10%;
+        display: block; 
     }
+
+    .select{
+            width: calc(85% - 20px); 
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M7 10l5 5 5-5H7z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+
+        .select option {
+            background-color: #2D2E47; /* Cor de fundo das opções */
+            color: #F0FFF0; /* Cor do texto das opções */
+        }
+
+
 
     .submit-button {
         background-color: #00BAB4; /* Cor de fundo do botão */
@@ -80,7 +102,7 @@
         font-size: 1.2em; /* Tamanho da fonte */
         cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
         transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
-        margin-top: 9%; /* Margem superior para separar do input */
+        margin-top: 20px; /* Margem superior para separar do input */
         width: 40%; /* Largura total do botão */
         text-align: center; /* Alinha o texto ao centro */
         margin-left: 30%;
@@ -92,11 +114,11 @@
     }
 
     .espaca{
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
     img{
-        position: fixed;
+        position: absolute;
         display: block;
         margin-left: 15%;
         margin-top: 185px;
@@ -239,25 +261,47 @@
         }
 
         /*RESPONSIVO*/
-        @media (max-width: 1115px) {
-            h1{
-                font-size: 50px;
+        @media (max-width: 1200px) {
+            .container {
+                width: 50%;
             }
 
-            h2{
-                font-size: 33px;
-            }
-
-
-        }
-
-        @media (max-width: 930px) {
             h1{
                 font-size: 45px;
             }
 
             h2{
-                font-size: 25px;
+                font-size: 30px;
+            }
+
+            img {
+                margin-left: 8%;
+                margin-top: 18%;
+                max-width: 40%;
+            }
+
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                width: 60%;
+            }
+
+            h1{
+                font-size: 40px;
+                margin-top: 0;
+            }
+
+            h2{
+                font-size: 28px;
+                
+            }
+
+            img {
+                max-width: 20%; 
+                margin-left: 8%;
+                margin-top: 18%;
+                padding: 7px;
             }
 
             .label{
@@ -265,7 +309,6 @@
             }
             
             input{
-                width: calc(80% - 20px); 
                 padding: 7px;
             }
 
@@ -284,6 +327,10 @@
                 font-size: 17px;
             }
 
+            img {
+                max-width: 60%; /* Ajusta conforme necessário */
+            }
+
         }
 
         @media (max-width: 650px) {
@@ -298,7 +345,10 @@
             .submit-button{
                 font-size: 17px;
                 margin-top: 35px;
-                align-items: center;
+            }
+
+            img {
+                max-width: 55%; /* Ajusta conforme necessário */
             }
 
             h3{
@@ -318,6 +368,9 @@
                 font-size: 25px;
             }
 
+            img {
+                max-width: 50%; /* Ajusta conforme necessário */
+            }
 
             .submit-button{
                 font-size: 17px;
@@ -339,22 +392,39 @@
 
         /* Dispositivos pequenos (smartphones) */
         @media (max-width: 480px) {
-            .header {
-                padding: 10px;
-            }
-
-            .navbar a {
-                padding: 8px;
-                font-size: 14px;
-            }
-
             .container {
                 width: 95%;
             }
 
-            .footer {
-                font-size: 12px;
-                padding: 5px;
+            h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 14px;
+            }
+
+            h3 {
+                font-size: 14px;
+                margin-top: 20px;
+            }
+
+            .submit-button {
+                width: 100%; /* Botão ocupa toda a largura */
+                margin-left: 0; /* Remove a margem esquerda */
+            }
+
+            input {
+                width: calc(100% - 20px); /* Ajusta a largura dos inputs */
+            }
+
+            p {
+                font-size: 20px;
+                margin-left: 5%;
+            }
+
+            img {
+                max-width: 80%; /* Ajusta para telas pequenas */
             }
         }
 
@@ -384,70 +454,6 @@
             cursor: pointer;
         }
 
-        .custom-select select {
-            display: none; /* Oculta o select nativo */
-        }
-
-        .custom-select .select-selected {
-            background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-            border-radius: 50px;
-            padding: 10px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 45px;
-        }
-
-        .custom-select .select-selected:after {
-            content: "▼";
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 0.8em;
-            margin-top: 25px;
-        }
-
-        .custom-select .select-items {
-            position: absolute;
-            background-color: #fff;
-            border: 2px solid #3E7996;
-            border-radius: 10px;
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 99;
-            display: none;
-            max-height: 150px;
-            overflow-y: auto;
-        }
-
-        .custom-select .select-items div {
-            padding: 10px;
-            color: #333;
-            border-bottom: 1px solid #ddd;
-            cursor: pointer;
-        }
-
-        .custom-select .select-items div:hover {
-            background-color:#4BA0A3;
-            color: #fff;
-        }
-
-        .custom-select .select-items div:last-child {
-            border-bottom: none;
-        }
-
-        .custom-select .select-items div.selected {
-            background-color: #3E7996;
-            color: #fff;
-        }
-
-        .custom-select.open .select-items {
-            display: block;
-        }
-
         p{
             font-size: 25px;
             color: #F0FFF0; 
@@ -455,21 +461,6 @@
             display: block; 
         }
 
-        .select{
-            padding: 10px;
-            margin-top: 5px;
-            display: block; 
-            background-color: transparent;
-            color: black;
-            border: 2px solid #fff;
-            border-radius: 50px;
-            font-size: 1.2em;
-            outline: none;
-            transition: background-color 0.3s, color 0.3s;
-            margin-top: 5px; 
-            width: calc(84% - 20px); 
-            margin-left: 10%;
-        }
 
 
     </style>
@@ -503,9 +494,18 @@
                         <label class="label" for="deficiencia">Possui alguma deficiência?</label>
                         
                         <select class="select" id="deficiencia" name="deficiencia">
-                            <option value="nao">Não</option>
-                            <option value="sim">Sim</option>
+                            <option value="nao">Não possuo</option>
+                            <option value="cognitiva">Cognitiva</option>
+                            <option value="visual">Visual</option>
+                            <option value="motora">Motora</option>
+                            <option value="auditiva">Auditiva</option>
+                            <option value="fisica">Fisica</option>
                         </select>
+
+                        <label class="label" for="login-email" >E-mail ou usuário</label>
+                        <input type="email" id="login-email" name="login-email">
+                        <label class="label" for="login-senha">Senha</label>
+                        <input type="password" id="login-senha" name="login-senha">  
 
                         <button type="submit" class="submit-button">Entrar</button>  
                     </form>   
