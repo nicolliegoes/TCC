@@ -1,7 +1,7 @@
 function toggleMenu() {
-    const navList = document.querySelector('.nav-list');
-    navList.classList.toggle('active');
-  }
+    var sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
+}
 
 document.addEventListener('scroll', function() {
     const navList = document.querySelector('.nav-list');

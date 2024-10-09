@@ -12,13 +12,25 @@
 <body>
     <header>
         <nav>
-            <ul class="nav-list">
-                <li><a href="">Home</a></li>
-                <li><a href="">Cursos</a></li>                
+            <div class="sidebar" id="sidebar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Vagas</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-list">
+            <ul >
+                <li><a href="#home">Home</a></li>
+                <li><a href="#curso">Cursos</a></li>                
                 <li><a href="">Vagas</a></li>
                 <li><a href="">Sobre</a></li>                
                 <li><a href="">Login</a></li>
             </ul>
+            </div>
 
             <div class="menu-icon" onclick="toggleMenu()">
                 &#9776;
@@ -48,13 +60,15 @@
         </div>
     </section>
 
-    <div class="container-1">
-        <h3>Conheça nossos cursos</h3>
-        <div class="button-row">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque dicta maxime debitis ad, quo aspernatur sed voluptatem dolor dignissimos nemo doloribus vitae error, rerum quas incidunt cupiditate consequatur quis quidem!</p>
-            <button>Ver mais</button>
+    <section id="curso">
+        <div class="container-1">
+            <h3>Conheça nossos cursos</h3>
+            <div class="button-row">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque dicta maxime debitis ad, quo aspernatur sed voluptatem dolor dignissimos nemo doloribus vitae error, rerum quas incidunt cupiditate consequatur quis quidem!</p>
+                <button>Ver mais</button>
+            </div>
         </div>
-    </div>
+    </section>
 
     <div class="container-2">
         <h3>Encontre uma vaga na área desejada</h3>
@@ -144,6 +158,15 @@
 
     <div class="container-6">
         <h3>IncluWork</h3>
+        <div class="footer">
+            <ul >
+                <li><a href="">Home</a></li>
+                <li><a href="">Cursos</a></li>                
+                <li><a href="">Vagas</a></li>
+                <li><a href="">Sobre</a></li>                
+                <li><a href="">Login</a></li>
+            </ul>
+        </div>
     </div>
 
     <script src="script.js"></script>
