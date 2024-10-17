@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IncluWork</title>
+    <link rel="stylesheet" href="reset.css">
+</head>
+
+    <style>
+        
+ /* Estilos Gerais */
+    body {
+        position: relative;
+    }
+
+    .container{
+        background-color: #2D2E47;
+        max-width: 45%;
+        margin:0 auto;
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;  
+        color:#F3FFF3;      
+    }
+
+    h1{
+    font-size: 60px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 35px;
+    }
+
+
+    h2 {
+    font-size: 35px;
+    color: #F0FFF0;
+    text-align: center;
+    margin-top: 10px;
+    }
+
+    h3{
+        font-size: 20px;
+        color: #fff;
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .label {
+        font-size: 25px;
+        color: #F0FFF0; 
+        margin-top: 45px;
+        margin-left: 12%;
+        display: block; 
+    }
+
+    input {
+        background-color: transparent;
+        padding: 10px; 
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 50px;
+        font-size: 1.2em;
+        outline: none;
+        transition: background-color 0.3s, color 0.3s;
+        margin-top: 5px; 
+        width: calc(80% - 20px); 
+        margin-left: 10%;
+    }
+
+    .submit-button {
+        background-color: #00BAB4; /* Cor de fundo do botão */
+        color: #fff; /* Cor do texto do botão */
+        border: none; /* Remove a borda padrão do botão */
+        padding: 10px 20px; /* Espaçamento interno do botão */
+        border-radius: 50px; /* Bordas arredondadas */
+        font-size: 1.2em; /* Tamanho da fonte */
+        cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+        transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+        margin-top: 9%; /* Margem superior para separar do input */
+        width: 40%; /* Largura total do botão */
+        text-align: center; /* Alinha o texto ao centro */
+        margin-left: 30%;
+    }
+
+    .submit-button:hover {
+        background-color: #3E7996; /* Cor de fundo ao passar o mouse */
+        transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+    }
+
+    .espaca{
+            margin-top: 60px;
+        }
+
+    img{
+        position: fixed;
+        display: block;
+        margin-left: 11%;
+        margin-top: 110px;
+
+    }
+
+    /*FRAME*/
+
+    .frame-container {
+            max-width: 58%;
+            width: 80%;
+            height: 100%;
+            position: fixed;
+            background-color: rgba(6, 158, 111, 0.3); /* Cor de fundo similar à da imagem */
+            overflow: hidden;
+        }
+
+        .wavy-shape {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: transparent; /* Torna a forma transparente */
+            animation: rotate 10s infinite linear;
+        }
+
+        .wavy-shape:nth-child(1) {
+            top: -90px;
+            left: -80px;
+            animation-duration: 20s;
+            border: 3px solid #F3FFF3;
+            border-radius: 30% 45% 30% 65% / 30% 45% ;
+        }
+
+        .wavy-shape:nth-child(2) {
+            top: -30px;
+            left: 210px;
+            animation-duration: 20s;
+            border: 3px solid #4BA0A3;
+            border-radius: 30% 65% 30% 45% / 30% 45%;
+        }
+
+        .wavy-shape:nth-child(3) {
+            top: -160px;
+            right: -70px;
+            animation-duration: 20s;
+            border: 3px solid #F3FFF3;
+            border-radius: 65% 30% 45% 30%/ 45% 30%;
+        }
+
+        .wavy-shape:nth-child(4) {
+            top: 70px;
+            right: 130px;
+            animation-duration: 20s;
+            border: 3px solid #2D2E47;
+            border-radius: 30% 45% 30% 65% / 30% 45% ;
+        }
+
+        .wavy-shape:nth-child(5) {
+            top: 220px;
+            left: -3px;
+            animation-duration: 20s;
+            border: 3px solid #3E7996;
+            border-radius: 80% 100% 60% 40% / 60% 40% 80% 100%; 
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+                border-radius: 40% 80% 20% 70% / 30% 60% 50% 40%;
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: calc(84% - 20px);
+            margin: 0 auto;
+            margin-left: 10%;
+        }
+
+        .label-opcoes {
+            margin-top: 45px;
+            margin-left: 12%;
+            display: block; 
+            background-color: transparent;
+            padding: 10px; 
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            font-size: 1.2em;
+            outline: none;
+            transition: all 0.3s ease;
+            margin-top: 5px; 
+            width: calc(84% - 20px); 
+            margin-left: 10%;
+            cursor: pointer;
+        }
+
+        .custom-select select {
+            display: none; /* Oculta o select nativo */
+        }
+
+        .custom-select .select-selected {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            padding: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 45px;
+        }
+
+        .custom-select .select-selected:after {
+            content: "▼";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8em;
+            margin-top: 25px;
+        }
+
+        .custom-select .select-items {
+            position: absolute;
+            background-color: #fff;
+            border: 2px solid #3E7996;
+            border-radius: 10px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+            display: none;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .custom-select .select-items div {
+            padding: 10px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .custom-select .select-items div:hover {
+            background-color:#4BA0A3;
+            color: #fff;
+        }
+
+        .custom-select .select-items div:last-child {
+            border-bottom: none;
+        }
+
+        .custom-select .select-items div.selected {
+            background-color: #3E7996;
+            color: #fff;
+        }
+
+        .custom-select.open .select-items {
+            display: block;
+        }
+
+
+
+
+    </style>
+
+<body>
+    <div class="">
+        <div class="frame-container">
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
+        </div>
+        <div class="container">
+            <h1>Cadastre-se</h1>
+                <div class="espaca">
+                    <form>
+                        <label class="label" for="cadastro-nome">Nome completo</label>
+                        <input type="text" id="name" name="name">
+                        <label class="label" for="cadastro-idade">Data de nascimento</label>
+                        <input type="date" id="date" name="date">
+
+                        <div class="custom-select">
+                            <div class="select-selected">Não possuo</div>
+                            <div class="select-items">
+                                <div data-value="none" class="selected">Não possuo</div>
+                                <div data-value="fisico">Deficiente Físico</div>
+                                <div data-value="visual">Deficiente Visual</div>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-button">Entrar</button>  
+                    </form>   
+                </div>
+            <h3>Ainda não tenho cadastro</h3> 
+            <h3>Ou entre com:</h3>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.select-selected').addEventListener('click', function() {
+            this.parentElement.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.select-items div').forEach(function(item) {
+            item.addEventListener('click', function() {
+                const value = this.getAttribute('data-value');
+                const selected = this.parentElement.previousElementSibling;
+                selected.textContent = this.textContent;
+                selected.classList.add('selected');
+                this.parentElement.querySelectorAll('div').forEach(el => el.classList.remove('selected'));
+                this.classList.add('selected');
+                this.parentElement.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>

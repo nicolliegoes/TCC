@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Perfil</title>
+    <style>
+        body {
+            background-color: #2D2E47; /* Cor de fundo ajustada */
+            font-family: 'Arial', sans-serif;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .profile-header {
+            margin-bottom: 40px;
+        }
+
+        .profile-pic {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            border: 13px solid #fff;
+            margin-bottom: 13px;
+        }
+
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .email {
+            font-size: 20px;
+            color: #B0BEC5;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #5C6BC0;
+            padding-bottom: 5px;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-item {
+            background:rgba(173, 223, 208, 0.7);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%; /* Largura total */
+            max-width: 600px; /* Largura máxima */
+        }
+
+        .profile-item span {
+            font-weight: bold;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .edit-button, .logout-button {
+            background-color: #5C6BC0;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .edit-button:hover, .logout-button:hover {
+            background-color: #3F51B5;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <div class="profile-header">
+            <img src="img/perfil.jpg" alt="Foto do Usuário" class="profile-pic">
+            <h1>Fulano da Silva</h1>
+            <p class="email">fulanodasilva@email.com</p>
+        </div>
+        <div class="profile-details">
+            <h2>Telefone</h2>
+            <div class="profile-item">
+                +55 (11) 95500-5555
+            </div>
+            <div class="profile-item">
+                <strong>Data de nascimento:</strong> 01/01/1990
+            </div>
+            <div class="profile-item">
+                <strong>Cidade:</strong> Ribeirão Preto
+            </div>
+            <div class="profile-item">
+                <strong>Estado:</strong> SP
+            </div>
+            <div class="profile-item">
+                <strong>Possui deficiência:</strong> Sim
+            </div>
+            <div class="profile-item">
+                <strong>Experiência:</strong> 5 anos em Desenvolvimento Web
+            </div>
+            <div class="profile-item">
+                <strong>Habilidades:</strong> JavaScript, Python, React
+            </div>
+            <div class="profile-item">
+                <strong>LinkedIn:</strong> linkedin.com/in/fulanodasilva
+            </div>
+        </div>
+        <div class="actions">
+            <button class="edit-button">Editar perfil</button>
+            <button class="logout-button">Sair</button>
+        </div>
+    </div>
+</body>
+</html>\
