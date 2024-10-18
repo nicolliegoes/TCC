@@ -91,7 +91,9 @@
     /* Additional Jobs Section */
     .additional-jobs {
       background-color:#3e7993;
-      padding: 2rem;
+      padding: 3rem;
+      padding-left: 10rem;
+      padding-right: 10rem;
       text-align: center;
     }
 
@@ -104,11 +106,11 @@
     .job-listings {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .job-card {
-      background-color: #fff;
+      background-color: #ADDFD0;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       padding: 1.5rem;
@@ -137,7 +139,7 @@
       top: 100%;
       left: 0;
       right: 0;
-      background-color: #fff;
+      background-color: #ADDFD0;
       border-radius: 0 0 8px 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       margin-top: 0.5rem;
@@ -150,7 +152,7 @@
     }
 
     .toggle-btn {
-      background-color: #00a8e8;
+      background-color: #4BA0A3;
       border: none;
       border-radius: 10px;
       color: #fff;
@@ -176,6 +178,11 @@
     .job-card.expanded .arrow {
       transform: rotate(180deg);
     }
+
+    .espaca{
+            margin-top: 30px;
+        }
+
   </style>
 </head>
 <body>
@@ -206,7 +213,7 @@
           <h3>Analista de Sistemas</h3>
           <p>Global Solutions Inc.</p>
           <p>São Paulo, SP</p>
-          <div class="arrow">▼</div>
+          <div class="arrow">⬇️</div>
           <div class="job-details">
             <p>Requisitos:</p>
             <ul>
@@ -222,7 +229,7 @@
           <h3>Desenvolvedor Front-end</h3>
           <p>Escola Nova Geração</p>
           <p>São Paulo, SP</p>
-          <div class="arrow">▼</div>
+          <div class="arrow">⬇️</div>
           <div class="job-details">
             <p>Requisitos:</p>
             <ul>
@@ -238,7 +245,7 @@
           <h3>Gerente de Recursos Humanos</h3>
           <p>Global Solutions Inc.</p>
           <p>São Paulo, SP</p>
-          <div class="arrow">▼</div>
+          <div class="arrow">⬇️</div>
           <div class="job-details">
             <p>Requisitos:</p>
             <ul>
@@ -250,6 +257,44 @@
             <button class="toggle-btn">Me Candidatar</button>
           </div>
         </div>
+        
+      </div>
+      <div class="espaca"></div>
+      <div class="job-listings">
+        <div class="job-card">
+          <h3>Analista de Sistemas</h3>
+          <p>Global Solutions Inc.</p>
+          <p>São Paulo, SP</p>
+          <div class="arrow">⬇️</div>
+          <div class="job-details">
+            <p>Requisitos:</p>
+            <ul>
+              <li>Graduação em Administração</li>
+              <li>Habilidades de liderança</li>
+              <li>Conhecimento em logística e gestão de projetos</li>
+              <li>Experiência mínima de 5 anos na área</li>
+            </ul>
+            <button class="toggle-btn">Me Candidatar</button>
+          </div>
+        </div>
+        <div class="job-card">
+          <h3>Desenvolvedor Front-end</h3>
+          <p>Escola Nova Geração</p>
+          <p>São Paulo, SP</p>
+          <div class="arrow">⬇️</div>
+          <div class="job-details">
+            <p>Requisitos:</p>
+            <ul>
+              <li>Graduação em Ciência da Computação ou áreas afins</li>
+              <li>Experiência em HTML, CSS e JavaScript</li>
+              <li>Conhecimento em frameworks front-end (React, Angular, Vue.js)</li>
+              <li>Experiência mínima de 3 anos na área</li>
+            </ul>
+            <button class="toggle-btn">Me Candidatar</button>
+          </div>
+        </div>
+
+        
       </div>
     </section>
   </main>
