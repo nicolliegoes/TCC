@@ -260,18 +260,6 @@ h3{
   }
 }
 
-h4{
-  text-align: center;
-  font-size: 3em;
-  color: #2D2E47;
-}
-
-@media screen and (max-width: 860px){
-  h4{
-    font-size: 1.3em;
-  }
-}
-
 .logo{
   position: fixed;
   margin-left: -25%;
@@ -282,6 +270,19 @@ h4{
 @media screen and (max-width: 800px){
   .logo{
     width: 0%;
+  }
+}
+
+h4{
+  font-size: 0em;
+}
+
+@media screen and (max-width: 999px){
+  h4{
+    font-size: 1em;
+    margin-left:400%;
+    margin-top: 40%;
+    color: #3E7996;
   }
 }
 
@@ -574,7 +575,7 @@ p{
 .container-6{
   max-width: 1920%;
   height: 380%;
-  padding: 2% 1%;
+  padding: 5% 5%;
   background-color: #ADDFD0;
 }
 
@@ -585,35 +586,38 @@ p{
   margin-top: 2%;
 }
 
-@media screen and (max-width: 860px){
-  .footer{
-    font-size: 1rem;
-  }
-}
-
 .footer li{
   display: inline;
 }
 
 .footer ul li a{
-  color: #1F99A5;
-  margin-left: 1.5%;
-  text-decoration: none;
-}
-
-.email p{
-  margin-top: 2%;
   color: #3E7996;
-  font-size: 1.2rem;
+  margin-left: 1%;
 }
 
-@media screen and (max-width: 860px){
-  .email p{
-    font-size: 1rem;
-  }
+.search-container { /* testando o botão */
+  position: relative;
 }
 
-footer{
-  background-color: #2D2F48;
-  height: 30px;
+#search-input {
+  padding-right: 50px; /* Espaço para o botão */
+}
+
+.btn-search {
+  position: absolute;
+  right: 10px; /* Ajuste conforme necessário */
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent; /* Fundo transparente */
+  cursor: pointer;
+  border-radius: 50%; /* Botão redondo */
+  width: 40px; /* Tamanho do botão */
+  height: 40px; /* Tamanho do botão */
+  font-size: 20px; /* Tamanho do ícone */
+  color: #000; /* Cor do ícone */
+}
+
+.btn-search:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Efeito hover opcional */
 }
