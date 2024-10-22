@@ -183,6 +183,58 @@
             margin-top: 30px;
         }
 
+    .header {
+      display: flex;
+      align-items: center;
+    }
+
+    .icon-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin-right: 1rem;
+    }
+
+    .icon-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .icon-circle i {
+      font-size: 2rem;
+      color: #007bff;
+    }
+
+    .text-container {
+      flex: 1;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #666;
+      margin-bottom: 3px;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .company-info {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #666;
+    }
   </style>
 </head>
 <body>
@@ -210,10 +262,20 @@
       <h2>Vagas Disponíveis</h2>
       <div class="job-listings">
         <div class="job-card">
-          <h3>Analista de Sistemas</h3>
+          <div class="header">
+            <div class="icon-container">
+              <div class="icon-circle">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+            <div class="text-container">
+              <p class="subtitle">Administração e gestão</p>
+              <h3>Gerente de operações</h3>
+            </div>
+          </div>
           <p>Global Solutions Inc.</p>
           <p>São Paulo, SP</p>
-          <div class="arrow">⬇️</div>
+          <div class="arrow">⭣</div>
           <div class="job-details">
             <p>Requisitos:</p>
             <ul>
@@ -226,10 +288,20 @@
           </div>
         </div>
         <div class="job-card">
-          <h3>Desenvolvedor Front-end</h3>
+          <div class="header">
+            <div class="icon-container">
+              <div class="icon-circle">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+            </div>
+            <div class="text-container">
+              <p class="subtitle">Tecnologia da Informação</p>
+              <h3>Desenvolvedor Front-end</h3>
+            </div>
+          </div>
           <p>Escola Nova Geração</p>
           <p>São Paulo, SP</p>
-          <div class="arrow">⬇️</div>
+          <div class="arrow">⭣</div>
           <div class="job-details">
             <p>Requisitos:</p>
             <ul>
@@ -242,10 +314,20 @@
           </div>
         </div>
         <div class="job-card">
-          <h3>Gerente de Recursos Humanos</h3>
+          <div class="header">
+            <div class="icon-container">
+              <div class="icon-circle">
+                <i class="fas fa-users"></i>
+              </div>
+            </div>
+            <div class="text-container">
+              <p class="subtitle">Recursos Humanos</p>
+              <h3>Gerente de Recursos Humanos</h3>
+            </div>
+          </div>
           <p>Global Solutions Inc.</p>
           <p>São Paulo, SP</p>
-          <div class="arrow">⬇️</div>
+          <div class="arrow">⭣</div>
           <div class="job-details">
             <p>Requisitos:</p>
             <ul>
@@ -257,15 +339,24 @@
             <button class="toggle-btn">Me Candidatar</button>
           </div>
         </div>
-        
       </div>
       <div class="espaca"></div>
       <div class="job-listings">
         <div class="job-card">
-          <h3>Analista de Sistemas</h3>
+          <div class="header">
+            <div class="icon-container">
+              <div class="icon-circle">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+            <div class="text-container">
+              <p class="subtitle">Administração e gestão</p>
+              <h3>Analista de Sistemas</h3>
+            </div>
+          </div>
           <p>Global Solutions Inc.</p>
           <p>São Paulo, SP</p>
-          <div class="arrow">⬇️</div>
+          <div class="arrow">⭣</div>
           <div class="job-details">
             <p>Requisitos:</p>
             <ul>
@@ -278,10 +369,20 @@
           </div>
         </div>
         <div class="job-card">
-          <h3>Desenvolvedor Front-end</h3>
+          <div class="header">
+            <div class="icon-container">
+              <div class="icon-circle">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+            </div>
+            <div class="text-container">
+              <p class="subtitle">Tecnologia da Informação</p>
+              <h3>Desenvolvedor Front-end</h3>
+            </div>
+          </div>
           <p>Escola Nova Geração</p>
           <p>São Paulo, SP</p>
-          <div class="arrow">⬇️</div>
+          <div class="arrow">⭣</div>
           <div class="job-details">
             <p>Requisitos:</p>
             <ul>
@@ -290,11 +391,9 @@
               <li>Conhecimento em frameworks front-end (React, Angular, Vue.js)</li>
               <li>Experiência mínima de 3 anos na área</li>
             </ul>
-            <button class="toggle-btn">Me Candidatar</button>
+            <button class="toggle-btn">Candidatar-se</button>
           </div>
         </div>
-
-        
       </div>
     </section>
   </main>
