@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vagas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* Global Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color:#3e7993;
+      background-color: #3e7993;
     }
 
     /* Header and Main Container Styles */
@@ -57,7 +58,7 @@
     .search-box {
       position: relative;
       margin-top: 2rem;
-      width:50%;
+      width: 50%;
       margin-left: 22%;
     }
 
@@ -90,7 +91,7 @@
 
     /* Additional Jobs Section */
     .additional-jobs {
-      background-color:#3e7993;
+      background-color: #3e7993;
       padding: 3rem;
       padding-left: 10rem;
       padding-right: 10rem;
@@ -125,12 +126,14 @@
 
     .job-card h3 {
       font-size: 1.2rem;
-      margin-bottom: 10px;
+      margin-bottom: 2px; /* Reduzido para 2px */
+      display: flex;
+      align-items: center;
     }
 
     .job-card p {
-    margin-bottom: 0;
-    margin-top: 1%;
+      margin-bottom: 0;
+      margin-top: 1%;
     }
 
     .job-details {
@@ -179,9 +182,9 @@
       transform: rotate(180deg);
     }
 
-    .espaca{
-            margin-top: 30px;
-        }
+    .espaca {
+      margin-top: 30px;
+    }
 
     .header {
       display: flex;
@@ -225,11 +228,6 @@
       margin-bottom: 3px;
     }
 
-    .title {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
     .company-info {
       margin-top: 1rem;
       font-size: 1rem;
@@ -260,6 +258,8 @@
 
     <section class="additional-jobs">
       <h2>Vagas Disponíveis</h2>
+      <div class="espaca"></div>
+
       <div class="job-listings">
         <div class="job-card">
           <div class="header">
@@ -270,7 +270,7 @@
             </div>
             <div class="text-container">
               <p class="subtitle">Administração e gestão</p>
-              <h3>Gerente de operações</h3>
+              <h3>Analista de Sistemas</h3>
             </div>
           </div>
           <p>Global Solutions Inc.</p>
@@ -287,6 +287,7 @@
             <button class="toggle-btn">Me Candidatar</button>
           </div>
         </div>
+
         <div class="job-card">
           <div class="header">
             <div class="icon-container">
@@ -310,33 +311,7 @@
               <li>Conhecimento em frameworks front-end (React, Angular, Vue.js)</li>
               <li>Experiência mínima de 3 anos na área</li>
             </ul>
-            <button class="toggle-btn">Me Candidatar</button>
-          </div>
-        </div>
-        <div class="job-card">
-          <div class="header">
-            <div class="icon-container">
-              <div class="icon-circle">
-                <i class="fas fa-users"></i>
-              </div>
-            </div>
-            <div class="text-container">
-              <p class="subtitle">Recursos Humanos</p>
-              <h3>Gerente de Recursos Humanos</h3>
-            </div>
-          </div>
-          <p>Global Solutions Inc.</p>
-          <p>São Paulo, SP</p>
-          <div class="arrow">⭣</div>
-          <div class="job-details">
-            <p>Requisitos:</p>
-            <ul>
-              <li>Graduação em Administração ou Psicologia</li>
-              <li>Experiência em gestão de pessoas</li>
-              <li>Habilidades de liderança e comunicação</li>
-              <li>Experiência mínima de 7 anos na área</li>
-            </ul>
-            <button class="toggle-btn">Me Candidatar</button>
+            <button class="toggle-btn">Candidatar-se</button>
           </div>
         </div>
       </div>
@@ -368,6 +343,119 @@
             <button class="toggle-btn">Me Candidatar</button>
           </div>
         </div>
+
+        <div class="job-card">
+          <div class="header">
+            <div class="icon-container">
+              <div class="icon-circle">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+            </div>
+            <div class="text-container">
+              <p class="subtitle">Tecnologia da Informação</p>
+              <h3>Desenvolvedor Front-end</h3>
+            </div>
+          </div>
+          <p>Escola Nova Geração</p>
+          <p>São Paulo, SP</p>
+          <div class="arrow">⭣</div>
+          <div class="job-details">
+            <p>Requisitos:</p>
+            <ul>
+              <li>Graduação em Ciência da Computação ou áreas afins</li>
+              <li>Experiência em HTML, CSS e JavaScript</li>
+              <li>Conhecimento em frameworks front-end (React, Angular, Vue.js)</li>
+              <li>Experiência mínima de 3 anos na área</li>
+            </ul>
+            <button class="toggle-btn">Candidatar-se</button>
+          </div>
+        </div>
+      </div>
+      <div class="espaca"></div>
+      <div class="job-listings">
+        <div class="job-card">
+          <div class="header">
+            <div class="icon-container">
+              <div class="icon-circle">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+            <div class="text-container">
+              <p class="subtitle">Administração e gestão</p>
+              <h3>Analista de Sistemas</h3>
+            </div>
+          </div>
+          <p>Global Solutions Inc.</p>
+          <p>São Paulo, SP</p>
+          <div class="arrow">⭣</div>
+          <div class="job-details">
+            <p>Requisitos:</p>
+            <ul>
+              <li>Graduação em Administração</li>
+              <li>Habilidades de liderança</li>
+              <li>Conhecimento em logística e gestão de projetos</li>
+              <li>Experiência mínima de 5 anos na área</li>
+            </ul>
+            <button class="toggle-btn">Me Candidatar</button>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="header">
+            <div class="icon-container">
+              <div class="icon-circle">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+            </div>
+            <div class="text-container">
+              <p class="subtitle">Tecnologia da Informação</p>
+              <h3>Desenvolvedor Front-end</h3>
+            </div>
+          </div>
+          <p>Escola Nova Geração</p>
+          <p>São Paulo, SP</p>
+          <div class="arrow">⭣</div>
+          <div class="job-details">
+            <p>Requisitos:</p>
+            <ul>
+              <li>Graduação em Ciência da Computação ou áreas afins</li>
+              <li>Experiência em HTML, CSS e JavaScript</li>
+              <li>Conhecimento em frameworks front-end (React, Angular, Vue.js)</li>
+              <li>Experiência mínima de 3 anos na área</li>
+            </ul>
+            <button class="toggle-btn">Candidatar-se</button>
+          </div>
+        </div>
+      </div>
+      <div class="espaca"></div>
+      <div class="job-listings">
+        <div class="job-card">
+          <div class="header">
+            <div class="icon-container">
+              <div class="icon-circle">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+            <div class="text-container">
+              <p class="subtitle">Administração e gestão</p>
+              <h3>Analista de Sistemas</h3>
+            </div>
+          </div>
+          <p>Global Solutions Inc.</p>
+          <p>São Paulo, SP</p>
+          <div class="arrow">⭣</div>
+          <div class="job-details">
+            <p>Requisitos:</p>
+            <ul>
+              <li>Graduação em Administração</li>
+              <li>Habilidades de liderança</li>
+              <li>Conhecimento em logística e gestão de projetos</li>
+              <li>Experiência mínima de 5 anos na área</li>
+            </ul>
+            <button class="toggle-btn">Me Candidatar</button>
+          </div>
+        </div>
+
         <div class="job-card">
           <div class="header">
             <div class="icon-container">
