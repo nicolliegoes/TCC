@@ -45,13 +45,13 @@
       background-color: #73B5B7;
       padding: 2rem;
       text-align: center;
-      height: 380px;
+      height: 500px;
     }
 
     .hero h1 {
       font-size: 3rem;
-      margin-bottom: 2rem;
-      margin-top: 3.5rem;
+      margin-bottom: 4rem;
+      margin-top: 5.5rem;
       color: #fff;
     }
 
@@ -244,19 +244,116 @@
     .alinha{
       margin-left: 25px;
     }
+
+    .sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px; 
+  background-color: #F3FFF3;
+  transition: left 0.3s;
+  padding-top: 60px;
+  z-index: 999;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: #4BA0A3;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 30px;
+  padding-right: 30%;
+  padding-left: 30%;
+  margin: 0;
+  display: flex;
+  justify-content: space-around; 
+  position: fixed; 
+  top: 0;
+  width: 40%;
+  background-color: transparent; 
+  transition: background-color 0.3s ease; 
+  z-index: 1000; 
+}
+
+.nav-list ul {
+  font-size: 1.3rem;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+    
+}
+
+.nav-list ul li {
+  margin: 0 45px;
+}
+
+.nav-list ul li a {
+  color: white;
+  text-decoration: none;
+}
+.menu-icon {
+  font-size: 24px;
+  color: #F3FFF3;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: none; 
+}
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cursos.html">Cursos</a></li>
-        <li><a href="#">Vagas</a></li>
-        <li><a href="#">Sobre</a></li>
-      </ul>
+        <div class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="vagas.html">Vagas</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-list">
+        <ul >
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cursos.html">Cursos</a></li>                
+            <li><a href="vagas.html">Vagas</a></li>
+            <li><a href="">Sobre</a></li>                
+            <li><a href="login.html">Login</a></li>
+        </ul>
+        </div>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
     </nav>
-  </header>
+</header>
 
   <main>
     <section class="hero">
