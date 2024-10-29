@@ -5,336 +5,471 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro-IncluWork</title>
     <link rel="stylesheet" href="reset.css">
-    </head>
+</head>
+
     <style>
         
-        /* Estilos Gerais */
-           body {
-               position: relative;
-           }
-       
-           .container{
-               background-color: #2D2E47;
-               max-width: 45%;
-               margin:0 auto;
-               padding: 20px;
-               position: fixed;
-               top: 0;
-               right: 0;
-               width: 40%;
-               height: 100%;  
-               color:#F3FFF3;      
-           }
-       
-           h1{
-               font-size: 40px;
-               color: #FFFFFF;
-               text-align: center;
-               margin-top: 12%;
-           }
-       
-       
-           h2 {
-           font-size: 35px;
-           color: #F0FFF0;
-           text-align: center;
-           margin-top: 10px;
-           }
-       
-           h3{
-               font-size: 20px;
-               color: #fff;
-               margin-top: 25px;
-               text-align: center;
-           }
-       
-           .label {
-               font-size: 23px;
-               color: #F0FFF0; 
-               margin-top:30px;
-               margin-left: 12%;
-               display: block; 
-           }
-       
-           .label-deficiencia {
-                   font-weight: bold; /* Texto em negrito */
-                   text-transform: uppercase; /* Texto em maiúsculas */
-                   letter-spacing: 1px; /* Espaçamento entre letras */
-               }
-       
-           input, .select {
-               background-color: transparent;
-               padding: 10px; 
-               color: #fff;
-               border: 2px solid #fff;
-               border-radius: 50px;
-               font-size: 1.2em;
-               outline: none;
-               transition: background-color 0.3s, color 0.3s;
-               margin-top: 5px; 
-               width: calc(80% - 20px); 
-               margin-left: 10%;
-               display: block; 
-           }
-       
-           .select{
-                   width: calc(85% - 20px); 
-                   appearance: none;
-                   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M7 10l5 5 5-5H7z"/></svg>');
-                   background-repeat: no-repeat;
-                   background-position: right 10px center;
-               }
-       
-               .select option {
-                   background-color: #2D2E47; /* Cor de fundo das opções */
-                   color: #F0FFF0; /* Cor do texto das opções */
-               }
-       
-       
-       
-           .submit-button {
-               background-color: #00BAB4; /* Cor de fundo do botão */
-               color: #fff; /* Cor do texto do botão */
-               border: none; /* Remove a borda padrão do botão */
-               padding: 10px 20px; /* Espaçamento interno do botão */
-               border-radius: 50px; /* Bordas arredondadas */
-               font-size: 1.2em; /* Tamanho da fonte */
-               cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
-               transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
-               margin-top: 30px; /* Margem superior para separar do input */
-               width: 40%; /* Largura total do botão */
-               text-align: center; /* Alinha o texto ao centro */
-               margin-left: 30%;
-           }
-       
-           .submit-button:hover {
-               background-color: #3E7996; /* Cor de fundo ao passar o mouse */
-               transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
-           }
-       
-           .espaca{
-                   margin-top: 20px;
-               }
-       
+ /* Estilos Gerais */
+    body {
+        position: relative;
+    }
 
-       
-           /*FRAME*/
-       
-           .frame-container {
-                   max-width: 58%;
-                   width: 80%;
-                   height: 100%;
-                   position: fixed;
-                   background-color: rgba(6, 158, 111, 0.3); /* Cor de fundo similar à da imagem */
-                   overflow: hidden;
-               }
-               .wavy-shape {
-                   position: absolute;
-                   width: 250px;
-                   height: 250px;
-                   background: transparent; /* Torna a forma transparente */
-                   animation: rotate 10s infinite linear;
-               }
-               .wavy-shape:nth-child(1) {
-                   top: -90px;
-                   left: -110px;
-                   animation-duration: 30s;
-                   border: 3px solid #F3FFF3;
-                   border-radius:  35% 90% 40% 50% / 35% 70% 40% 55% ;
-               }
-               .wavy-shape:nth-child(2) {
-                   top: -30px;
-                   left: 200px;
-                   animation-duration: 30s;
-                   border: 3px solid #4BA0A3;
-                   border-radius: 50% 35% 90% 40% / 55% 35% 70% 40%  ;
-               }
-               .wavy-shape:nth-child(3) {
-                   top: -130px;
-                   left: 750px;
-                   animation-duration: 30s;
-                   border: 3px solid #F3FFF3;
-                   border-radius: 40% 50% 35% 90% / 40% 55% 35% 70%;
-               }
-               .wavy-shape:nth-child(4) {
-                   top: 80px;
-                   left: 500px;
-                   animation-duration: 30s;
-                   border: 3px solid #2D2E47;
-                   border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%;
-               }
-               .wavy-shape:nth-child(5) {
-                   top: 250px;
-                   left: -55px;
-                   animation-duration: 30s;
-                   border: 3px solid #3E7996;
-                   border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
-               }
-               .wavy-shape:nth-child(6) {
-                   top: 390px;
-                   left: 230px;
-                   animation-duration: 30s;
-                   border: 3px solid #3B5A6A;
-                   border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%; 
-               }
-               .wavy-shape:nth-child(7) {
-                   top: 190px;
-                   left: 840px;
-                   animation-duration: 30s;
-                   border: 3px solid #00BAB4;
-                   border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
-               }
-               .wavy-shape:nth-child(8) {
-                   top: 410px;
-                   left: 600px;
-                   animation-duration: 30s;
-                   border: 3px solid #73B5B7;
-                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
-               }
-               .wavy-shape:nth-child(9) {
-                   bottom: 90px;
-                   left: -30px;
-                   animation-duration: 30s;
-                   border: 3px solid #00BAB4;
-                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
-               }
-               .wavy-shape:nth-child(10) {
-                   bottom: -1px;
-                   left: 300px;
-                   animation-duration: 30s;
-                   border: 3px solid #F3FFF3;
-                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
-               }
-               .wavy-shape:nth-child(11) {
-                   bottom: -50px;
-                   left: 630px;
-                   animation-duration: 30s;
-                   border: 3px solid #2D2E47;
-                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
-               }
-               .wavy-shape:nth-child(12) {
-                   bottom: 160px;
-                   left: 900px;
-                   animation-duration: 30s;
-                   border: 3px solid #3E7996;
-                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
-               }
-               .wavy-shape:nth-child(13) {
-                   bottom: -190px;
-                   left:950px;
-                   animation-duration: 30s;
-                   border: 3px solid #00BAB4;
-                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
-               }
-       
-               @keyframes rotate {
-                   0% {
-                       transform: rotate(0deg);
-                       border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ;
-                   }
-                   100% {
-                       transform: rotate(360deg);
-                       border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ;
-                   }
-       
-               }
-       
-               .custom-select {
-                   position: relative;
-                   display: inline-block;
-                   width: calc(84% - 20px);
-                   margin: 0 auto;
-                   margin-left: 10%;
-               }
-       
-               .label-opcoes {
-                   margin-top: 45px;
-                   margin-left: 12%;
-                   display: block; 
-                   background-color: transparent;
-                   padding: 10px; 
-                   color: #fff;
-                   border: 2px solid #fff;
-                   border-radius: 50px;
-                   font-size: 1.2em;
-                   outline: none;
-                   transition: all 0.3s ease;
-                   margin-top: 5px; 
-                   width: calc(84% - 20px); 
-                   margin-left: 10%;
-                   cursor: pointer;
-               }
-       
-               p{
-                   font-size: 25px;
-                   color: #F0FFF0; 
-                   margin-left: 12%;
-                   display: block; 
-               }
+    .container{
+        background-color: #2D2E47;
+        max-width: 45%;
+        margin:0 auto;
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;  
+        color:#F3FFF3;      
+    }
 
-               .logo{
-                position: absolute;
-               display: block;
-               margin-left: 15%;
-               margin-top: 13%;
-               z-index: 1000;
-               background-color: #f3fff3; /* Cor de fundo do container */
-               border-radius: 40px;
-               box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra para um efeito mais suave */
-               justify-content: center;
-               align-items: center;
-               max-width: 100%;
-               height: auto;
-               padding: 35px;
-           }
+    h1{
+        font-size: 40px;
+        color: #FFFFFF;
+        text-align: center;
+        margin-top: 0;
+    }
 
-              /*icon*/
 
-              .login-options {
-                display: flex;
-                justify-content: center;
-                margin-top: 20px;
-                }
+    h2 {
+    font-size: 35px;
+    color: #F0FFF0;
+    text-align: center;
+    margin-top: 10px;
+    }
 
-                .login-options img {
-                display: flex;
+    h3{
+        font-size: 20px;
+        color: #fff;
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .label {
+        font-size: 20px;
+        color: #F0FFF0; 
+        margin-top:30px;
+        margin-left: 12%;
+        display: block; 
+    }
+
+    .label-deficiencia {
+            font-weight: bold; /* Texto em negrito */
+            text-transform: uppercase; /* Texto em maiúsculas */
+            letter-spacing: 1px; /* Espaçamento entre letras */
+        }
+
+    input, .select {
+        background-color: transparent;
+        padding: 10px; 
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 50px;
+        font-size: 1.2em;
+        outline: none;
+        transition: background-color 0.3s, color 0.3s;
+        margin-top: 5px; 
+        width: calc(80% - 20px); 
+        margin-left: 10%;
+        display: block; 
+    }
+
+    .select{
+            width: calc(85% - 20px); 
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M7 10l5 5 5-5H7z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+
+        .select option {
+            background-color: #2D2E47; /* Cor de fundo das opções */
+            color: #F0FFF0; /* Cor do texto das opções */
+        }
+
+
+
+    .submit-button {
+        background-color: #00BAB4; /* Cor de fundo do botão */
+        color: #fff; /* Cor do texto do botão */
+        border: none; /* Remove a borda padrão do botão */
+        padding: 10px 20px; /* Espaçamento interno do botão */
+        border-radius: 50px; /* Bordas arredondadas */
+        font-size: 1.2em; /* Tamanho da fonte */
+        cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+        transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+        margin-top: 20px; /* Margem superior para separar do input */
+        width: 40%; /* Largura total do botão */
+        text-align: center; /* Alinha o texto ao centro */
+        margin-left: 30%;
+    }
+
+    .submit-button:hover {
+        background-color: #3E7996; /* Cor de fundo ao passar o mouse */
+        transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+    }
+
+    .espaca{
+            margin-top: 20px;
+        }
+
+    img{
+        position: absolute;
+        display: block;
+        margin-left: 15%;
+        margin-top: 185px;
+        z-index: 1000;
+        background-color: #f3fff3; /* Cor de fundo do container */
+        border-radius: 40px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra para um efeito mais suave */
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        height: auto;
+        padding: 35px;
+    }
+
+    /*FRAME*/
+
+    .frame-container {
+            max-width: 58%;
+            width: 80%;
+            height: 100%;
+            position: fixed;
+            background-color: rgba(6, 158, 111, 0.3); /* Cor de fundo similar à da imagem */
+            overflow: hidden;
+        }
+
+        .wavy-shape {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: transparent; /* Torna a forma transparente */
+            animation: rotate 10s infinite linear;
+        }
+
+        .wavy-shape:nth-child(1) {
+            top: -90px;
+            left: -110px;
+            animation-duration: 30s;
+            border: 3px solid #F3FFF3;
+            border-radius:  35% 90% 40% 50% / 35% 70% 40% 55% ;
+        }
+
+        .wavy-shape:nth-child(2) {
+            top: -30px;
+            left: 200px;
+            animation-duration: 30s;
+            border: 3px solid #4BA0A3;
+            border-radius: 50% 35% 90% 40% / 55% 35% 70% 40%  ;
+        }
+
+        .wavy-shape:nth-child(3) {
+            top: -130px;
+            left: 750px;
+            animation-duration: 30s;
+            border: 3px solid #F3FFF3;
+            border-radius: 40% 50% 35% 90% / 40% 55% 35% 70%;
+        }
+
+        .wavy-shape:nth-child(4) {
+            top: 80px;
+            left: 500px;
+            animation-duration: 30s;
+            border: 3px solid #2D2E47;
+            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%;
+        }
+
+        .wavy-shape:nth-child(5) {
+            top: 250px;
+            left: -55px;
+            animation-duration: 30s;
+            border: 3px solid #3E7996;
+            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
+        }
+
+        .wavy-shape:nth-child(6) {
+            top: 390px;
+            left: 230px;
+            animation-duration: 30s;
+            border: 3px solid #3B5A6A;
+            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%; 
+        }
+
+        .wavy-shape:nth-child(7) {
+            top: 190px;
+            left: 840px;
+            animation-duration: 30s;
+            border: 3px solid #00BAB4;
+            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
+        }
+
+        .wavy-shape:nth-child(8) {
+            top: 410px;
+            left: 600px;
+            animation-duration: 30s;
+            border: 3px solid #73B5B7;
+            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
+        }
+
+        .wavy-shape:nth-child(9) {
+            bottom: -100px;
+            left: -100px;
+            animation-duration: 30s;
+            border: 3px solid #00BAB4;
+            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
+        }
+
+        .wavy-shape:nth-child(10) {
+            bottom: -190px;
+            left: 240px;
+            animation-duration: 30s;
+            border: 3px solid #F3FFF3;
+            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
+        }
+
+        .wavy-shape:nth-child(11) {
+            bottom: -220px;
+            left: 570px;
+            animation-duration: 30s;
+            border: 3px solid #2D2E47;
+            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
+        }
+
+        .wavy-shape:nth-child(12) {
+            bottom: -60px;
+            left: 880px;
+            animation-duration: 30s;
+            border: 3px solid #3E7996;
+            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+                border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ;
+            }
+            100% {
+                transform: rotate(360deg);
+                border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ;
+            }
+
+        }
+
+        /*RESPONSIVO*/
+        @media (max-width: 1200px) {
+            .container {
+                width: 50%;
+            }
+
+            h1{
+                font-size: 45px;
+            }
+
+            h2{
+                font-size: 30px;
+            }
+
+            img {
+                margin-left: 8%;
+                margin-top: 18%;
+                max-width: 40%;
+            }
+
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                width: 60%;
+            }
+
+            h1{
+                font-size: 40px;
+                margin-top: 0;
+            }
+
+            h2{
+                font-size: 28px;
+                
+            }
+
+            img {
+                max-width: 20%; 
+                margin-left: 8%;
+                margin-top: 18%;
+                padding: 7px;
+            }
+
+            .label{
+                font-size: 20px;
+            }
+            
+            input{
+                padding: 7px;
+            }
+
+        }
+
+        @media (max-width: 840px) {
+            h1{
+                font-size: 35px;
+            }
+
+            h2{
+                font-size: 20px;
+            }
+
+            .submit-button{
+                font-size: 17px;
+            }
+
+            img {
+                max-width: 60%; /* Ajusta conforme necessário */
+            }
+
+        }
+
+        @media (max-width: 650px) {
+            h1{
+                font-size: 30px;
+            }
+
+            h2{
+                font-size: 15px;
+            }
+
+            .submit-button{
+                font-size: 17px;
+                margin-top: 35px;
+            }
+
+            img {
+                max-width: 55%; /* Ajusta conforme necessário */
+            }
+
+            h3{
+                font-size: 15px;
+                margin-top: 30px;
+            }
+
+            input{
+                width: calc(80% - 20px); 
+                padding: 5px;
+            }
+
+        }
+
+        @media (max-width: 560px) {
+            h1{
+                font-size: 25px;
+            }
+
+            img {
+                max-width: 50%; /* Ajusta conforme necessário */
+            }
+
+            .submit-button{
+                font-size: 17px;
+                margin-top: 35px;
                 align-items: center;
-                gap: 8px;
-                padding: 12px 10px;
-                font-size: 16px;
-                border: none;
-                cursor: pointer;
-                transition: transform 0.2s, box-shadow 0.2s;
-                }
+            }
 
-                .login-options img:hover {
-                transform: translateY(-2px);
-                }
+            h3{
+                font-size: 15px;
+                margin-top: 30px;
+            }
 
-                .login-img{
-                    position: absolute;
-                    display: block;
-                    margin-left: 15%;
-                    margin-top: 185px;
-                    justify-content: center;
-                    align-items: center;
-                    width: 30%;
-                    height: auto;
-                    padding: 35px;
-                }
+            input{
+                width: calc(80% - 20px); 
+                padding: 5px;
+            }
 
-                .imagem{
-                    width: 35px;
-                    height: 35px;
-                }
+        }
 
-           </style>
+        /* Dispositivos pequenos (smartphones) */
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 14px;
+            }
+
+            h3 {
+                font-size: 14px;
+                margin-top: 20px;
+            }
+
+            .submit-button {
+                width: 100%; /* Botão ocupa toda a largura */
+                margin-left: 0; /* Remove a margem esquerda */
+            }
+
+            input {
+                width: calc(100% - 20px); /* Ajusta a largura dos inputs */
+            }
+
+            p {
+                font-size: 20px;
+                margin-left: 5%;
+            }
+
+            img {
+                max-width: 80%; /* Ajusta para telas pequenas */
+            }
+        }
+
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: calc(84% - 20px);
+            margin: 0 auto;
+            margin-left: 10%;
+        }
+
+        .label-opcoes {
+            margin-top: 45px;
+            margin-left: 12%;
+            display: block; 
+            background-color: transparent;
+            padding: 10px; 
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            font-size: 1.2em;
+            outline: none;
+            transition: all 0.3s ease;
+            margin-top: 5px; 
+            width: calc(84% - 20px); 
+            margin-left: 10%;
+            cursor: pointer;
+        }
+
+        p{
+            font-size: 25px;
+            color: #F0FFF0; 
+            margin-left: 12%;
+            display: block; 
+        }
+
+
+
+    </style>
+
 <body>
     <div class="">
-        <img class="logo" src="img/logo2.png" alt="logo">
+        <img src="img/logo2.png" alt="logo">
+        <div class="bloco"></div>
         <div class="frame-container">
-            <div class="wavy-shape"></div>
-            <div class="wavy-shape"></div>
             <div class="wavy-shape"></div>
             <div class="wavy-shape"></div>
             <div class="wavy-shape"></div>
@@ -350,92 +485,52 @@
         </div>
         <div class="container">
             <h1>Cadastre-se</h1>
-            <form id="cadastroForm">
-                <label class="label" for="name">Nome completo</label>
-                <input type="text" id="name" name="name" required>
-                <label class="label" for="date">Data de nascimento</label>
-                <input type="date" id="date" name="date" required>
-                <label class="label" for="deficiencia">Possui alguma deficiência?</label>
-                <select class="select" id="deficiencia" name="deficiencia">
-                    <option value="nao">Não possuo</option>
-                    <option value="cognitiva">Cognitiva</option>
-                    <option value="visual">Visual</option>
-                    <option value="motora">Motora</option>
-                    <option value="auditiva">Auditiva</option>
-                </select>
-                <label class="label" for="login-email">E-mail ou usuário</label>
-                <input type="email" id="login-email" name="login-email" required>
-                <label class="label" for="login-senha">Senha</label>
-                <input type="password" id="login-senha" name="login-senha" required>
-                <button type="submit" class="submit-button">Cadastrar</button>
-            </form>
-            <p id="message"></p>
-            <h3>Ou entre com:</h3>
-            <div class="login-options">
-                <img class="imagem" type="submit" src="img/icons8-google-logo-50.png">
-                <img class="imagem" type="submit" src="img/icons8-linkedin-50.png" >
+                <div class="espaca">
+                    <form>
+                        <label class="label" for="cadastro-nome">Nome completo</label>
+                        <input type="text" id="name" name="name">
+                        <label class="label" for="cadastro-idade">Data de nascimento</label>
+                        <input type="date" id="date" name="date">
+                        <label class="label" for="deficiencia">Possui alguma deficiência?</label>
+                        
+                        <select class="select" id="deficiencia" name="deficiencia">
+                            <option value="nao">Não possuo</option>
+                            <option value="cognitiva">Cognitiva</option>
+                            <option value="visual">Visual</option>
+                            <option value="motora">Motora</option>
+                            <option value="auditiva">Auditiva</option>
+                            <option value="fisica">Fisica</option>
+                        </select>
 
-          </div>
+                        <label class="label" for="login-email" >E-mail ou usuário</label>
+                        <input type="email" id="login-email" name="login-email">
+                        <label class="label" for="login-senha">Senha</label>
+                        <input type="password" id="login-senha" name="login-senha">  
+
+                        <button type="submit" class="submit-button">Entrar</button>  
+                    </form>   
+                </div>
+            <h3>Ainda não tenho cadastro</h3> 
+            <h3>Ou entre com:</h3>
         </div>
     </div>
 
-<script>
-     // usuário no localStorage
-    function saveUser(user) {
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        users.push(user);
-        localStorage.setItem('users', JSON.stringify(users));
-    }
+    <script>
+        document.querySelector('.select-selected').addEventListener('click', function() {
+            this.parentElement.classList.toggle('open');
+        });
 
-    // ver se o usuário já está cadastrado (pelo email ou nome de usúario)
-    function isUserAlreadyRegistered(emailOrUser) {
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        return users.some(user => user.email === emailOrUser || user.username === emailOrUser);
-    }
-
-    // ver se o usuário existe (login)
-    function checkUser(emailOrUser, password) {
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        return users.find(user => 
-            (user.username === emailOrUser || user.email === emailOrUser) && user.password === password
-        );
-    }
-
-    // formulário de cadastro
-    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // não envia o padrão do formulário
-
-        const name = document.getElementById('name').value;
-        const date = document.getElementById('date').value;
-        const deficiencia = document.getElementById('deficiencia').value;
-        const emailOrUser = document.getElementById('login-email').value;
-        const password = document.getElementById('login-senha').value;
-
-        // ver se o usuário já está registrado
-        if (isUserAlreadyRegistered(emailOrUser)) {
-            alert('Usuário já cadastrado! Redirecionando para a página de login...');
-            window.location.href = 'login.html'; // leva para a página de login
-            return; // interrompe o cadastro
-        }
-
-        // continua com o cadastro se o usuário não estiver registrado
-        const user = {
-            name,
-            date,
-            deficiencia,
-            email: emailOrUser,
-            username: emailOrUser,
-            password
-        };
-
-        saveUser(user); // salva o usuário
-        document.getElementById('message').innerText = 'Cadastro realizado com sucesso!';
-
-        // loga automaticamente após o cadastro
-        setTimeout(() => {
-            window.location.href = 'index.html'; // segundinhos
-        }, 2000);
-    });
+        document.querySelectorAll('.select-items div').forEach(function(item) {
+            item.addEventListener('click', function() {
+                const value = this.getAttribute('data-value');
+                const selected = this.parentElement.previousElementSibling;
+                selected.textContent = this.textContent;
+                selected.classList.add('selected');
+                this.parentElement.querySelectorAll('div').forEach(el => el.classList.remove('selected'));
+                this.classList.add('selected');
+                this.parentElement.classList.remove('open');
+            });
+        });
     </script>
 </body>
 </html>

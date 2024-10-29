@@ -8,38 +8,14 @@
   <style>
     /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #3e7993;
     }
 
     /* Header and Main Container Styles */
-    header {
-      background-color: #73B5B7;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
 
-    nav ul {
-      display: flex;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      margin-top: 10px;
-      margin-left: 30%;
-    }
 
-    nav li {
-      margin-left: 1rem;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-    }
 
     .hero {
       background-color: #73B5B7;
@@ -244,85 +220,198 @@
     .alinha{
       margin-left: 25px;
     }
+    nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            margin-top: 1%;
+        }
 
-    .sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: -250px; 
-  background-color: #F3FFF3;
-  transition: left 0.3s;
-  padding-top: 60px;
-  z-index: 999;
-}
+        .nav-list {
+            list-style: none;
+            padding: 30px;
+            padding-right: 30%;
+            padding-left: 30%;
+            margin: 0;
+            display: flex;
+            justify-content: space-around; 
+            position: fixed; 
+            top: 0;
+            width: 40%;
+            background-color: transparent; 
+            transition: background-color 0.3s ease; 
+            z-index: 1000; 
+        }
 
-.sidebar.active {
-  left: 0;
-}
+        @media screen and (max-width: 1440px) {
+            .nav-list {
+                padding-left: 27%;
+                padding-right: 33%;
+            }
+        }
 
-.sidebar ul {
+        @media screen and (max-width: 1280px) {
+            .nav-list {
+                padding: 25px;
+                padding-left: 22%;
+                padding-right: 40%;
+            }
+        } 
+
+    .nav-background {
+            background-color: #3B5A6A;
+        }
+
+        @media (max-width: 1044px) {
+            .nav-background {
+                background-color: transparent;
+            }
+        }  
+
+        .logo {
+            color: #3E7996;
+            font-size: 1.4rem;
+        }
+
+        .nav-list ul {
+            font-size: 1.3rem;
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-list ul li {
+            margin: 0 45px;
+        }
+
+        .nav-list ul li a {
+            color: white;
+            text-decoration: none;
+        } 
+
+        .menu-icon {
+            font-size: 24px;
+            color: #F3FFF3;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: none; 
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px; 
+            background-color: #F3FFF3;
+            transition: left 0.3s;
+            padding-top: 60px;
+            z-index: 999;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            color: #4BA0A3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1044px) {
+            .menu-icon {
+                display: block; 
+            }
+
+            .nav-list {
+                display: none; 
+            }
+        }
+
+        header {
+            float: left;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container-6{
+          max-width: 300%;
+          height: 200px;
+          padding: 2% 1%;
+          background-color: #ADDFD0;
+        }
+
+.footer{
+  font-size: 1.3rem;
   list-style: none;
-  padding: 0;
+  text-align: center;
+  margin-top: 2%;
 }
 
-.sidebar ul li {
-  margin: 20px 0;
+@media screen and (max-width: 860px){
+  .footer{
+    font-size: 0.8rem;
+  }
+}
+
+.footer li{
+  display: inline;
+}
+
+.footer ul li a{
+  color: #1F99A5;
+  margin-left: 1.5%;
+  text-decoration: none;
+}
+
+.email p{
+  margin-top: 2%;
+  color: #3E7996;
+  font-size: 1.2rem;
   text-align: center;
 }
 
-.sidebar ul li a {
-  color: #4BA0A3;
-  text-decoration: none;
-  font-size: 18px;
+@media screen and (max-width: 860px){
+  .email p{
+    font-size: 0.8rem;
+  }
 }
 
-.sidebar ul li a:hover {
-  text-decoration: underline;
+footer{
+  background-color: #2D2F48;
+  height: 30px;
 }
 
-.nav-list {
-  list-style: none;
-  padding: 30px;
-  padding-right: 30%;
-  padding-left: 30%;
-  margin: 0;
-  display: flex;
-  justify-content: space-around; 
-  position: fixed; 
-  top: 0;
-  width: 40%;
-  background-color: transparent; 
-  transition: background-color 0.3s ease; 
-  z-index: 1000; 
+h4{
+  text-align: center;
+  font-size: 3em;
+  color: #2D2E47;
 }
 
-.nav-list ul {
-  font-size: 1.3rem;
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-    
-}
-
-.nav-list ul li {
-  margin: 0 45px;
-}
-
-.nav-list ul li a {
-  color: white;
-  text-decoration: none;
-}
-.menu-icon {
-  font-size: 24px;
-  color: #F3FFF3;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-  display: none; 
+@media screen and (max-width: 860px){
+  h4{
+    font-size: 1.3em;
+  }
 }
   </style>
 </head>
@@ -334,7 +423,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="vagas.html">Vagas</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </div>
@@ -344,7 +433,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="cursos.html">Cursos</a></li>                
             <li><a href="vagas.html">Vagas</a></li>
-            <li><a href="">Sobre</a></li>                
+            <li><a href="sobre.html">Sobre</a></li>                
             <li><a href="login.html">Login</a></li>
         </ul>
         </div>
@@ -597,6 +686,22 @@
     </section>
   </main>
 
+  <div class="container-6">
+    <h4>IncluWork</h4>
+    <div class="footer">
+        <ul >
+            <li><a href="">Home</a></li>
+            <li><a href="">Cursos</a></li>                
+            <li><a href="">Vagas</a></li>
+            <li><a href="">Sobre</a></li>                
+            <li><a href="">Login</a></li>
+        </ul>
+    </div>
+    <div class="email"><p>incluwork@gmail.com <br> (11) 9523-4433</p></div>
+</div>
+
+<footer></footer>
+
   <script>
     const jobCards = document.querySelectorAll('.job-card');
 
@@ -612,5 +717,6 @@
       });
     });
   </script>
+   <script src="script.js"></script>
 </body>
 </html>
