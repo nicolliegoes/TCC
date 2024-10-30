@@ -5,384 +5,333 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login-IncluWork</title>
     <link rel="stylesheet" href="reset.css">
-</head>
-
+    </head>
     <style>
         
- /* Estilos Gerais */
-    body {
-        position: relative;
-    }
+        /* Estilos Gerais */
+           body {
+               position: relative;
+           }
+           .container{
+               background-color: #2D2E47;
+               max-width: 45%;
+               margin:0 auto;
+               padding: 20px;
+               position: fixed;
+               top: 0;
+               right: 0;
+               width: 40%;
+               height: 100%;  
+               color:#F3FFF3;      
+           }
+           h1{
+               font-size: 50px;
+               color: #FFFFFF;
+               text-align: center;
+               margin-top: 23%;
+           }
 
-    .container{
-        background-color: #2D2E47;
-        max-width: 45%;
-        margin:0 auto;
-        padding: 20px;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 40%;
-        height: 100%;  
-        color:#F3FFF3;      
-    }
+           h2 {
+           font-size: 35px;
+           color: #F0FFF0;
+           text-align: center;
+           margin-top: 8px;
+           }
 
-    h1{
-    font-size: 60px;
-    color: #FFFFFF;
-    text-align: center;
-    margin-top: 10%;
-    }
+           h3{
+               font-size: 20px;
+               color: #fff;
+               margin-top: 25px;
+               text-align: center;
+           }
+           .label {
+               font-size: 23px;
+               color: #F0FFF0; 
+               margin-top:30px;
+               margin-left: 12%;
+               display: block; 
+           }
+           .label-deficiencia {
+                   font-weight: bold; /* Texto em negrito */
+                   text-transform: uppercase; /* Texto em maiúsculas */
+                   letter-spacing: 1px; /* Espaçamento entre letras */
+               }
+           input, .select {
+               background-color: transparent;
+               padding: 10px; 
+               color: #fff;
+               border: 2px solid #fff;
+               border-radius: 50px;
+               font-size: 1.2em;
+               outline: none;
+               transition: background-color 0.3s, color 0.3s;
+               margin-top: 5px; 
+               width: calc(80% - 20px); 
+               margin-left: 10%;
+               display: block; 
+           }
+           .select{
+                   width: calc(85% - 20px); 
+                   appearance: none;
+                   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M7 10l5 5 5-5H7z"/></svg>');
+                   background-repeat: no-repeat;
+                   background-position: right 10px center;
+               }
 
+               .select option {
+                   background-color: #2D2E47; /* Cor de fundo das opções */
+                   color: #F0FFF0; /* Cor do texto das opções */
+               }
 
-    h2 {
-    font-size: 35px;
-    color: #F0FFF0;
-    text-align: center;
-    margin-top: 10px;
-    }
+           .submit-button {
+               background-color: #00BAB4; /* Cor de fundo do botão */
+               color: #fff; /* Cor do texto do botão */
+               border: none; /* Remove a borda padrão do botão */
+               padding: 10px 20px; /* Espaçamento interno do botão */
+               border-radius: 50px; /* Bordas arredondadas */
+               font-size: 1.2em; /* Tamanho da fonte */
+               cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+               transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+               margin-top: 40px; /* Margem superior para separar do input */
+               width: 40%; /* Largura total do botão */
+               text-align: center; /* Alinha o texto ao centro */
+               margin-left: 30%;
+           }
+           
+           .submit-button:hover {
+               background-color: #3E7996; /* Cor de fundo ao passar o mouse */
+               transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+           }
+           .espaca{
+                   margin-top: 20px;
+               }
+           .logo{
+                position: absolute;
+               display: block;
+               margin-left: 15%;
+               margin-top: 13%;
+               z-index: 1000;
+               background-color: #f3fff3; /* Cor de fundo do container */
+               border-radius: 40px;
+               box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra para um efeito mais suave */
+               justify-content: center;
+               align-items: center;
+               max-width: 100%;
+               height: auto;
+               padding: 35px;
+           }
+           /*FRAME*/
+           .frame-container {
+                   max-width: 58%;
+                   width: 80%;
+                   height: 100%;
+                   position: fixed;
+                   background-color: rgba(6, 158, 111, 0.3); /* Cor de fundo similar à da imagem */
+                   overflow: hidden;
+               }
+               .wavy-shape {
+                   position: absolute;
+                   width: 250px;
+                   height: 250px;
+                   background: transparent; /* Torna a forma transparente */
+                   animation: rotate 10s infinite linear;
+               }
+               .wavy-shape:nth-child(1) {
+                   top: -90px;
+                   left: -110px;
+                   animation-duration: 30s;
+                   border: 3px solid #F3FFF3;
+                   border-radius:  35% 90% 40% 50% / 35% 70% 40% 55% ;
+               }
+               .wavy-shape:nth-child(2) {
+                   top: -30px;
+                   left: 200px;
+                   animation-duration: 30s;
+                   border: 3px solid #4BA0A3;
+                   border-radius: 50% 35% 90% 40% / 55% 35% 70% 40%  ;
+               }
+               .wavy-shape:nth-child(3) {
+                   top: -130px;
+                   left: 750px;
+                   animation-duration: 30s;
+                   border: 3px solid #F3FFF3;
+                   border-radius: 40% 50% 35% 90% / 40% 55% 35% 70%;
+               }
+               .wavy-shape:nth-child(4) {
+                   top: 80px;
+                   left: 500px;
+                   animation-duration: 30s;
+                   border: 3px solid #2D2E47;
+                   border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%;
+               }
+               .wavy-shape:nth-child(5) {
+                   top: 250px;
+                   left: -55px;
+                   animation-duration: 30s;
+                   border: 3px solid #3E7996;
+                   border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
+               }
+               .wavy-shape:nth-child(6) {
+                   top: 390px;
+                   left: 230px;
+                   animation-duration: 30s;
+                   border: 3px solid #3B5A6A;
+                   border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%; 
+               }
+               .wavy-shape:nth-child(7) {
+                   top: 190px;
+                   left: 840px;
+                   animation-duration: 30s;
+                   border: 3px solid #00BAB4;
+                   border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
+               }
+               .wavy-shape:nth-child(8) {
+                   top: 410px;
+                   left: 600px;
+                   animation-duration: 30s;
+                   border: 3px solid #73B5B7;
+                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
+               }
+               .wavy-shape:nth-child(9) {
+                   bottom: 90px;
+                   left: -30px;
+                   animation-duration: 30s;
+                   border: 3px solid #00BAB4;
+                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
+               }
+               .wavy-shape:nth-child(10) {
+                   bottom: -1px;
+                   left: 300px;
+                   animation-duration: 30s;
+                   border: 3px solid #F3FFF3;
+                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
+               }
+               .wavy-shape:nth-child(11) {
+                   bottom: -50px;
+                   left: 630px;
+                   animation-duration: 30s;
+                   border: 3px solid #2D2E47;
+                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
+               }
+               .wavy-shape:nth-child(12) {
+                   bottom: 160px;
+                   left: 900px;
+                   animation-duration: 30s;
+                   border: 3px solid #3E7996;
+                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
+               }
+               .wavy-shape:nth-child(13) {
+                   bottom: -190px;
+                   left:950px;
+                   animation-duration: 30s;
+                   border: 3px solid #00BAB4;
+                   border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
+               }
 
-    h3{
-        font-size: 20px;
-        color: #fff;
-        margin-top: 25px;
-        text-align: center;
-    }
+               @keyframes rotate {
+                   0% {
+                       transform: rotate(0deg);
+                       border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ;
+                   }
+                   100% {
+                       transform: rotate(360deg);
+                       border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ;
+                   }
+       
+               }
+       
+               .custom-select {
+                   position: relative;
+                   display: inline-block;
+                   width: calc(84% - 20px);
+                   margin: 0 auto;
+                   margin-left: 10%;
+               }
+       
+               .label-opcoes {
+                   margin-top: 45px;
+                   margin-left: 12%;
+                   display: block; 
+                   background-color: transparent;
+                   padding: 10px; 
+                   color: #fff;
+                   border: 2px solid #fff;
+                   border-radius: 50px;
+                   font-size: 1.2em;
+                   outline: none;
+                   transition: all 0.3s ease;
+                   margin-top: 5px; 
+                   width: calc(84% - 20px); 
+                   margin-left: 10%;
+                   cursor: pointer;
+               }
+       
+               p{
+                   font-size: 25px;
+                   color: #F0FFF0; 
+                   margin-left: 12%;
+                   display: block; 
+               }
 
-    .label {
-        font-size: 25px;
-        color: #F0FFF0; 
-        margin-top: 45px;
-        margin-left: 12%;
-        display: block; 
-    }
+               .btnn{
+                color: #fff; /* Cor do texto do botão */
+                border: none; /* Remove a borda padrão do botão */
+                font-size: 1em; /* Tamanho da fonte */
+                cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+                transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+                margin-top: 40px; /* Margem superior para separar do input */
+                width: 40%; /* Largura total do botão */
+                text-align: center; /* Alinha o texto ao centro */            
+               }
 
-    input {
-        background-color: transparent;
-        padding: 10px; 
-        color: #fff;
-        border: 2px solid #fff;
-        border-radius: 50px;
-        font-size: 1.2em;
-        outline: none;
-        transition: background-color 0.3s, color 0.3s;
-        margin-top: 5px; 
-        width: calc(80% - 20px); 
-        margin-left: 10%;
-    }
+               /*icon*/
 
-    .submit-button {
-        background-color: #00BAB4; /* Cor de fundo do botão */
-        color: #fff; /* Cor do texto do botão */
-        border: none; /* Remove a borda padrão do botão */
-        padding: 10px 20px; /* Espaçamento interno do botão */
-        border-radius: 50px; /* Bordas arredondadas */
-        font-size: 1.2em; /* Tamanho da fonte */
-        cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
-        transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
-        margin-top: 9%; /* Margem superior para separar do input */
-        width: 40%; /* Largura total do botão */
-        text-align: center; /* Alinha o texto ao centro */
-        margin-left: 30%;
-    }
+               .login-options {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                }
 
-    .submit-button:hover {
-        background-color: #3E7996; /* Cor de fundo ao passar o mouse */
-        transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
-    }
-
-    .espaca{
-            margin-top: 60px;
-        }
-
-    img{
-        position: fixed;
-        display: block;
-        margin-left: 15%;
-        margin-top: 185px;
-        z-index: 1000;
-        background-color: #f3fff3; /* Cor de fundo do container */
-        border-radius: 40px;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra para um efeito mais suave */
-        justify-content: center;
-        align-items: center;
-        max-width: 100%;
-        height: auto;
-        padding: 35px;
-    }
-
-    /*FRAME*/
-
-    .frame-container {
-            max-width: 58%;
-            width: 80%;
-            height: 100%;
-            position: fixed;
-            background-color: rgba(6, 158, 111, 0.3); /* Cor de fundo similar à da imagem */
-            overflow: hidden;
-        }
-
-        .wavy-shape {
-            position: absolute;
-            width: 250px;
-            height: 250px;
-            background: transparent; /* Torna a forma transparente */
-            animation: rotate 10s infinite linear;
-        }
-
-        .wavy-shape:nth-child(1) {
-            top: -90px;
-            left: -110px;
-            animation-duration: 30s;
-            border: 3px solid #F3FFF3;
-            border-radius:  35% 90% 40% 50% / 35% 70% 40% 55% ;
-        }
-
-        .wavy-shape:nth-child(2) {
-            top: -30px;
-            left: 200px;
-            animation-duration: 30s;
-            border: 3px solid #4BA0A3;
-            border-radius: 50% 35% 90% 40% / 55% 35% 70% 40%  ;
-        }
-
-        .wavy-shape:nth-child(3) {
-            top: -130px;
-            left: 750px;
-            animation-duration: 30s;
-            border: 3px solid #F3FFF3;
-            border-radius: 40% 50% 35% 90% / 40% 55% 35% 70%;
-        }
-
-        .wavy-shape:nth-child(4) {
-            top: 80px;
-            left: 500px;
-            animation-duration: 30s;
-            border: 3px solid #2D2E47;
-            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%;
-        }
-
-        .wavy-shape:nth-child(5) {
-            top: 250px;
-            left: -55px;
-            animation-duration: 30s;
-            border: 3px solid #3E7996;
-            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
-        }
-
-        .wavy-shape:nth-child(6) {
-            top: 390px;
-            left: 230px;
-            animation-duration: 30s;
-            border: 3px solid #3B5A6A;
-            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50%; 
-        }
-
-        .wavy-shape:nth-child(7) {
-            top: 190px;
-            left: 840px;
-            animation-duration: 30s;
-            border: 3px solid #00BAB4;
-            border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ; 
-        }
-
-        .wavy-shape:nth-child(8) {
-            top: 410px;
-            left: 600px;
-            animation-duration: 30s;
-            border: 3px solid #73B5B7;
-            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
-        }
-
-        .wavy-shape:nth-child(9) {
-            bottom: -100px;
-            left: -100px;
-            animation-duration: 30s;
-            border: 3px solid #00BAB4;
-            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
-        }
-
-        .wavy-shape:nth-child(10) {
-            bottom: -190px;
-            left: 240px;
-            animation-duration: 30s;
-            border: 3px solid #F3FFF3;
-            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55%; 
-        }
-
-        .wavy-shape:nth-child(11) {
-            bottom: -220px;
-            left: 570px;
-            animation-duration: 30s;
-            border: 3px solid #2D2E47;
-            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
-        }
-
-        .wavy-shape:nth-child(12) {
-            bottom: -60px;
-            left: 880px;
-            animation-duration: 30s;
-            border: 3px solid #3E7996;
-            border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ; 
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-                border-radius: 35% 90% 40% 50% / 35% 70% 40% 55% ;
-            }
-            100% {
-                transform: rotate(360deg);
-                border-radius: 35% 70% 40% 55% / 35% 90% 40% 50% ;
-            }
-
-        }
-
-        /*RESPONSIVO*/
-        @media (max-width: 1115px) {
-            h1{
-                font-size: 50px;
-                margin-top: 25%;
-            }
-
-            h2{
-                font-size: 33px;
-                margin-top: 5%;
-            }
-
-            img{
-                margin-left: 8%;
-                margin-top: 20%;
-            }
-
-
-        }
-
-        @media (max-width: 930px) {
-            h1{
-                font-size: 45px;
-                margin-top: 25%;
-            }
-
-            h2{
-                font-size: 25px;
-                margin-top: 5%;
-            }
-
-            .label{
-                font-size: 20px;
-            }
-            
-            input{
-                width: calc(80% - 20px); 
-                padding: 7px;
-            }
-
-            img{
-                margin-left: 5%;
-                margin-top: 20%;
-                border-radius: 40px;
-                max-width: 35%;
-                height: auto;
-                padding: 35px;
-            }
-
-        }
-
-        @media (max-width: 840px) {
-            h1{
-                font-size: 35px;
-            }
-
-            h2{
-                font-size: 20px;
-            }
-
-            .submit-button{
-                font-size: 17px;
-            }
-
-        }
-
-        @media (max-width: 650px) {
-            h1{
-                font-size: 30px;
-            }
-
-            h2{
-                font-size: 15px;
-            }
-
-            .submit-button{
-                font-size: 17px;
-                margin-top: 35px;
+                .login-options img {
+                display: flex;
                 align-items: center;
-            }
+                gap: 8px;
+                padding: 12px 10px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+                transition: transform 0.2s, box-shadow 0.2s;
+                }
 
-            h3{
-                font-size: 15px;
-                margin-top: 30px;
-            }
+                .login-options img:hover {
+                transform: translateY(-2px);
+                }
 
-            input{
-                width: calc(80% - 20px); 
-                padding: 5px;
-            }
+                .login-img{
+                    position: absolute;
+                    display: block;
+                    margin-left: 15%;
+                    margin-top: 185px;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30%;
+                    height: auto;
+                    padding: 35px;
+                }
 
-        }
+                .imagem{
+                    width: 35px;
+                    height: 35px;
+                }
+                
 
-        @media (max-width: 560px) {
-            h1{
-                font-size: 25px;
-            }
-
-
-            .submit-button{
-                font-size: 17px;
-                margin-top: 35px;
-                align-items: center;
-            }
-
-            h3{
-                font-size: 15px;
-                margin-top: 30px;
-            }
-
-            input{
-                width: calc(80% - 20px); 
-                padding: 5px;
-            }
-
-        }
-
-        /* Dispositivos pequenos (smartphones) */
-        @media (max-width: 480px) {
-            .header {
-                padding: 10px;
-            }
-
-            .navbar a {
-                padding: 8px;
-                font-size: 14px;
-            }
-
-            .container {
-                width: 95%;
-            }
-
-            .footer {
-                font-size: 12px;
-                padding: 5px;
-            }
-        }
-
-    </style>
-
+           </style>
 <body>
     <div class="">
-        <img src="img/logo2.png" alt="logo">
-        <div class="bloco"></div>
+        <img class="logo" src="img/logo2.png" alt="logo">
         <div class="frame-container">
+            <div class="wavy-shape"></div>
+            <div class="wavy-shape"></div>
             <div class="wavy-shape"></div>
             <div class="wavy-shape"></div>
             <div class="wavy-shape"></div>
@@ -399,21 +348,96 @@
         <div class="container">
             <h1>Entre no seu perfil</h1>
             <h2>Bem-vindo(a) de volta!</h2>
-                <div class="espaca">
-                    <form>
-                        <label class="label" for="login-email" >E-mail ou usuário</label>
-                        <input type="email" id="login-email" name="login-email">
-                        <label class="label" for="login-senha">Senha</label>
-                        <input type="password" id="login-senha" name="login-senha">  
-                        <button type="submit" class="submit-button">Entrar</button>  
-                    </form>   
-                </div>
-            <h3>Ainda não tenho cadastro</h3> 
+            <div class="espaca">
+                <form id="login-form">
+                    <label class="label" for="login-email">E-mail ou usuário</label>
+                    <input type="text" id="login-email" name="login-email" required>
+                    <label class="label" for="login-senha">Senha</label>
+                    <input type="password" id="login-senha" name="login-senha" required>
+                    <button type="submit" class="submit-button">Entrar</button>
+                </form>
+                <div id="message" style="color: red; text-align: center;"></div>
+                <h3><a class="btnn" id="register-button"  type="submit" style="text-decoration: none; color: inherit;">Ainda não tenho cadastro</a></h3>
+            </div>
             <h3>Ou entre com:</h3>
+            <div class="login-options">
+                  <img class="imagem" type="submit" src="img/icons8-google-logo-50.png">
+                  <img class="imagem" type="submit" src="img/icons8-linkedin-50.png" >
+
+            </div>
         </div>
     </div>
 
+    <script>
+        // salva um usuário no localStorage
+        function saveUser(username, password) {
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push({ username, password });
+            localStorage.setItem('users', JSON.stringify(users));
+        }
 
-    <script src="script.js"></script>
+        // verifica se um usuário existe
+        function checkUser(username, password) {
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            return users.find(user => user.username === username && user.password === password);
+        }
+
+        // envia o formulário de login
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // não envia o padrão do formulário
+
+            const emailOrUser = document.getElementById('login-email').value;
+            const password = document.getElementById('login-senha').value;
+
+
+            // login bem-sucedido
+            const userFound = checkUser(emailOrUser, password);
+            const message = document.getElementById('message');
+            if (userFound) {
+                message.style.color = 'green';
+                message.innerText = 'Login bem-sucedido! Redirecionando...';
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            } else {
+                message.innerText = 'E-mail/Usuário ou senha inválidos.';
+            }
+        });
+
+        // clique no botão de cadastro
+        document.getElementById('register-button').addEventListener('click', function() {
+            window.location.href = 'cadastro.html'; // Direciona para cadastro.html
+        });
+    </script>
+
+<script>
+    // verifica o login
+    function checkLogin(emailOrUser, password) {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        return users.find(user => 
+            (user.username === emailOrUser || user.email === emailOrUser) && user.password === password
+        );
+    }
+
+    // envia o formulário de login
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const emailOrUser = document.getElementById('login-email').value;
+        const password = document.getElementById('login-senha').value;
+
+        const userFound = checkLogin(emailOrUser, password);
+
+        if (userFound) {
+            document.getElementById('message').innerText = 'Login realizado com sucesso!';
+            setTimeout(() => {
+                window.location.href = 'index.html'; // Redireciona para a página principal após o login
+            }, 2000);
+        } else {
+            document.getElementById('message').innerText = 'Usuário ou senha incorretos.';
+        }
+    });
+</script>
+
 </body>
 </html>

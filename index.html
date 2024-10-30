@@ -12,24 +12,27 @@
 <body>
     <header>
         <nav>
+            <div class="img_logo">
+                <img class="img_logo" src="img/logo2.png" alt="">
+            </div>
             <div class="sidebar" id="sidebar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>                
                     <li><a href="vagas.html">Vagas</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#duvidas">Sobre</a></li>                
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </div>
 
             <div class="nav-list">
-            <ul >
-                <li><a href="#home">Home</a></li>
-                <li><a href="#curso">Cursos</a></li>                
-                <li><a href="vagas.html">Vagas</a></li>
-                <li><a href="sobre.html">Sobre</a></li>                
-                <li><a href="login.html">Login</a></li>
-            </ul>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>                
+                    <li><a href="vagas.html">Vagas</a></li>
+                    <li><a href="#duvidas">Sobre</a></li>                
+                    <li><a href="login.html">Login</a></li>
+                </ul>
             </div>
 
             <div class="menu-icon" onclick="toggleMenu()">
@@ -37,24 +40,58 @@
             </div>
         </nav>
 
-        <h4>IncluWork</h4>
     </header>
 
     <div class="container">
         <div class="navbar bg-body-tertiary">
             <div class="container-fluid">
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="O que você procura?" aria-label="Search">
-              </form>
+                <form class="d-flex" role="search" onsubmit="event.preventDefault(); handleSearch();">
+                    <div class="search-container">
+                        <input id="search-input" class="form-control" type="search" placeholder="O que você procura?" aria-label="Search">
+                        <button id="search-btn" class="btn-search" type="submit"></button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+    
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // lida com a pesquisa
+            function handleSearch() {
+                const query = document.getElementById('search-input').value.toLowerCase();
+                console.log('Consulta:', query); // Para depuração
+
+                // conteúdo da pesquisa
+                if (query.includes('home')) {
+                    window.location.href = '#home';
+                } else if (query.includes('curso')) {
+                    window.location.href = '#curso';
+                } else if (query.includes('vaga') || query.includes('vagas')) {
+                    window.location.href = '#vagas';
+                } else if (query.includes('feedback')) {
+                    window.location.href = '#feedback';
+                } else if (query.includes('duvidas') || query.includes('dúvidas')) {
+                    window.location.href = '#duvidas';
+                } else {
+                    alert('Nenhum resultado encontrado.');
+                }
+            }
+
+            // botão de pesquisa
+            document.getElementById('search-btn').addEventListener('click', function(event) {
+                event.preventDefault(); // não envia o formulário
+                handleSearch(); // chama a função de pesquisa
+            });
+        });
+    </script>
 
     <section id="home">
         <div class="img_topo">
-                <img class="img_topo" src="img/Rectangle 6.png" alt="">
+            <img class="img_topo" src="img/Rectangle 6.png" alt="">
         </div>
-
         <div class="overlay">
             <h2>Empoderando talentos diversos para o sucesso profissional.</h2>
         </div>
@@ -70,104 +107,117 @@
         </div>
     </section>
 
-    <div class="container-2">
-        <h3>Encontre uma vaga na área desejada</h3>
-        <div class="button-row-1">
-            <button>
-                <i class="fas fa-home"></i>Home
-            </button>
-            <button>
-                <i class="fas fa-user"></i> Profile
-            </button>
-            <button>
-                <i class="fas fa-user"></i> Profile
-            </button>
-            <button>
-                <i class="fas fa-cog"></i> Settings
-            </button>
-            <button>
-                <i class="fas fa-cog"></i> Settings
-            </button>
-            <button>
-                <i class="fas fa-cog"></i> Settings
-            </button>
-            <button>
-                <i class="fas fa-cog"></i> Settings
-            </button>
-            <button>
-                <i class="fas fa-cog"></i> Settings
-            </button>
+    <section id="vagas">
+        <div class="container-2">
+            <h3>Encontre uma vaga na área desejada</h3>
+            <div class="button-row-1">
+                <button>
+                    <i class="fas fa-home"></i>Home
+                </button>
+                <button>
+                    <i class="fas fa-user"></i> Profile
+                </button>
+                <button>
+                    <i class="fas fa-user"></i> Profile
+                </button>
+                <button>
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+                <button>
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+                <button>
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+                <button>
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+                <button>
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+            <div class="saiba">
+                <button>Ver todas as vagas</button>
+            </div>
         </div>
+    </section>
         
-        <div class="saiba">
-            <button>Ver todas as vagas</button>
-        </div>
-    </div>
-
-    <div class="container-3">
-        <h3>Tire algumas dúvidas...</h3>
-        <div class="img_2">
+    <section id="duvidas">
+        <div class="container-3">
+            <h3>Tire algumas dúvidas...</h3>
+            <div class="img_2">
                 <img class="img_2" src="img/Rectangle 9.png">
+            </div>
+            <div class="accordion">
+                <button class="accordion-button">Seção 1</button>
+                <div class="accordion-content">
+                    <p>Conteúdo da seção 1.</p>
+                </div>
+                
+                <button class="accordion-button">Seção 2</button>
+                <div class="accordion-content">
+                    <p>Conteúdo da seção 2.</p>
+                </div>
+                
+                <button class="accordion-button">Seção 3</button>
+                <div class="accordion-content">
+                    <p>Conteúdo da seção 3.</p>
+                </div>
+                
+                <button class="accordion-button">Seção 4</button>
+                <div class="accordion-content">
+                    <p>Conteúdo da seção 4.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="accordion">
-            <button class="accordion-button">Seção 1</button>
-            <div class="accordion-content">
-                <p>Conteúdo da seção 1.</p>
-            </div>
-            
-            <button class="accordion-button">Seção 2</button>
-            <div class="accordion-content">
-                <p>Conteúdo da seção 2.</p>
-            </div>
-            
-            <button class="accordion-button">Seção 3</button>
-            <div class="accordion-content">
-                <p>Conteúdo da seção 3.</p>
-            </div>
-            
-            <button class="accordion-button">Seção 4</button>
-            <div class="accordion-content">
-                <p>Conteúdo da seção 4.</p>
-            </div>
-        </div>
-    </div>
+    </section>
     
-    <div class="container-4">
-        <h3>Feedback</h3>
-        <div class="carousel">
-            <div class="carousel-images">
-                <img src="https://via.placeholder.com/600x300?text=Imagem+1" alt="Imagem 1">
-                <img src="https://via.placeholder.com/600x300?text=Imagem+2" alt="Imagem 2">
-                <img src="https://via.placeholder.com/600x300?text=Imagem+3" alt="Imagem 3">
-            </div>
-            <button class="prev" onclick="moveSlide(1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(-1)">&#10095;</button>
-            <div class="dots">
+    <section id="feedback">
+        <div class="container-4">
+            <h1>Feedback</h1>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="https://via.placeholder.com/1200x900?text=Imagem+1" alt="Imagem 1">
+                    <img src="https://via.placeholder.com/1200x900?text=Imagem+2" alt="Imagem 2">
+                    <img src="https://via.placeholder.com/1200x900?text=Imagem+3" alt="Imagem 3">
+                </div>
+                <button class="prev" onclick="moveSlide(1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(-1)">&#10095;</button>
+                <div class="dots">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container-5">
-        <p>"A verdadeira medida do sucesso de uma sociedade não é se ela pode empilhar riquezas, mas se ela pode garantir que todos os seus membros, especialmente os mais vulneráveis, tenham a oportunidade de viver uma vida plena e digna."
-            <br>
-            <br>
-            -Amartya Sen
-        </p>
-    </div>
-
-    <div class="container-6">
-        <h3>IncluWork</h3>
-        <div class="footer">
-            <ul >
-                <li><a href="">Home</a></li>
-                <li><a href="">Cursos</a></li>                
-                <li><a href="">Vagas</a></li>
-                <li><a href="">Sobre</a></li>                
-                <li><a href="">Login</a></li>
-            </ul>
+    <section id="citação">
+        <div class="container-5">
+            <p>"A verdadeira medida do sucesso de uma sociedade não é se ela pode empilhar riquezas, mas se ela pode garantir que todos os seus membros, especialmente os mais vulneráveis, tenham a oportunidade de viver uma vida plena e digna."
+                <br>
+                <br>
+                -Amartya Sen
+            </p>
         </div>
-    </div>
+    </section>
+
+    <section id="tudo">
+        <div class="container-6">
+            <h1>IncluWork</h1>
+            <div class="footer">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>                
+                    <li><a href="">Vagas</a></li>
+                    <li><a href="">Sobre</a></li>                
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="email"><p>incluwork@gmail.com <br> (11) 9523-4433</p></div>
+        </div>
+
+        <footer>
+        
+        </footer>
+    </section>
 
     <script src="script.js"></script>
 </body>
