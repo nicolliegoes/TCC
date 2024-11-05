@@ -274,6 +274,7 @@ input{
     height: 280%;
     background-color: #73B5B7;
     padding: 5% 5%;
+    align-items: center;
 }
 
 h3{
@@ -324,9 +325,10 @@ h1{
 }
 
 .button-row button {
-  flex: 0 1 calc(40% - 93px); 
+
   margin-top: 1%;
   padding: 15px;
+  width: 150%;
   font-size: 16px;
   cursor: pointer;
   border: none;
@@ -356,8 +358,8 @@ h1{
   gap: 22px;               
   margin: 4%;            
   flex-wrap: wrap; 
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 23%;
+  margin-right: 23%;
 }
 
 .button-row-1 button { 
@@ -404,7 +406,6 @@ h1{
 }
 
 .saiba button{
-  display: flex;
   font-size: 16px;
   color: white;
   padding: 15px;
@@ -442,9 +443,15 @@ h1{
   }
 }
 
-@media screen and (max-width: 810px){
+@media screen and (max-width: 860px){
   .container-3{
-    height: 400px;
+    height: 380px;
+  }
+}
+
+@media screen and (max-width: 599px){
+  .container-3{
+    height: 415px;
   }
 }
 
@@ -455,18 +462,18 @@ h1{
   width: 53%;
 }
 
-@media screen and (max-width: 999px){
+@media screen and (max-width: 1100px){
   .img_2{
     width: 0;
   }
 }
 
 .accordion {
-  width: 45%;
+  width: 55%;
   float: right;
   margin-top: 9%;
   position: absolute;
-  margin-left: 50%;
+  margin-left: 48%;
 }
 
 @media screen and (max-width: 1366px){
@@ -475,9 +482,9 @@ h1{
   }
 }
 
-@media screen and (max-width: 999px){
+@media screen and (max-width: 1100px){
   .accordion{
-    margin-left: 30%;
+    margin-left: 19%;
   }
 }
 
@@ -490,24 +497,31 @@ h1{
   border: none;
   text-align: left;
   outline: none;
-  font-size: 16px;
+  font-size: 18px;
   transition: background-color 0.3s ease;
   border-radius: 5px;
   margin-bottom: 10px;
 }
 
-@media screen and (max-width: 999px){
+@media screen and (max-width: 860px){
   .accordion-button{
-    width: 80%;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .accordion-button{
+    width: 110%;
   }
 }
 
 .accordion-button:hover {
-  background-color: #ddd;
+  background-color: #3E7996;
 }
 
 .accordion-content {
-  width: 57.4%;
+  width: 57.7%;
+  margin-bottom: 2%;
   padding: 0 10px;
   max-height: 0;
   overflow: hidden;
@@ -517,8 +531,22 @@ h1{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+@media screen and (max-width: 1100px){
+  .accordion-content{
+    width: 105%;
+  }
+}
+
 .accordion-content p {
-  margin: 10px 0;
+  margin: 8px 0;
+  font-size: 1.3rem;
+  color: #2D2F48;
+}
+
+@media screen and (max-width: 860px){
+  .accordion-content p{
+    font-size: 0.8rem;
+  }
 }
 
 .container-4{
