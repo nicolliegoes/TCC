@@ -195,7 +195,6 @@
         h1 {
             font-size: 70px;
             color: white;
-            margin-top: 17%;
             text-align: center;
         }
 
@@ -240,6 +239,112 @@
             max-width: 50px; /* Tamanho máximo */
             height: auto;
             margin-left: 0;
+        }
+
+        .timeline-container {
+            width: 100%;
+            background-color: #2D2E47;
+            margin: 0 auto;
+            padding-top: 40px; 
+
+        }
+
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #7dd1d1;
+            top: 10%;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-circle {
+            width: 100px;
+            height: 100px;
+            background-color: #7dd1d1;
+            border-radius: 50%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-item:first-child .timeline-circle {
+            background-color: #fff;
+            border: 4px solid #7dd1d1;
+        }
+
+        .timeline-item:nth-child(2) .timeline-circle {
+            background-color: #a8e6d5;
+        }
+
+        .timeline-item:nth-child(3) .timeline-circle {
+            background-color: #7dd1d1;
+        }
+
+        .timeline-item:nth-child(4) .timeline-circle {
+            background-color: #5fb4b4;
+        }
+
+        .timeline-item:nth-child(5) .timeline-circle {
+            background-color: #4d9999;
+        }
+
+        .timeline-content {
+            position: absolute;
+            left: calc(50% + 80px);
+            width: 300px;
+        }
+
+        .timeline-date {
+            color: #7dd1d1;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-text {
+            color: #7dd1d1;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .timeline-item:first-child .timeline-content {
+            left: 0;
+            text-align: right;
+            width: calc(50% - 80px);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-content {
+                left: calc(50% + 60px);
+                width: calc(50% - 60px);
+            }
+
+            .timeline-circle {
+                width: 80px;
+                height: 80px;
+            }
+
+            .timeline-item:first-child .timeline-content {
+                width: calc(50% - 60px);
+            }
+        }
+
+        .um{
+            padding-bottom: 30px;
         }
 
     </style>
@@ -300,5 +405,51 @@
             <div class="illustration"></div>
         </div>
     </div>
+
+    <div class="timeline-container">
+    
+        <h1 class="um">Nossa linhagem</h1>
+    
+        <div class="timeline">
+            <div class="timeline-line"></div>
+            <div class="timeline-item">
+                <div class="timeline-circle"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Fevereiro 2024</div>
+                    <p class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Março 2024</div>
+                    <p class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Março 2024</div>
+                    <p class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Março 2024</div>
+                    <p class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Março 2024</div>
+                    <p class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>
