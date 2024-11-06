@@ -298,20 +298,25 @@ label{
   color: #F3FFF3;
 }
 
- .language-container {
-  text-align: center;
+.language-container {
       align-items: center;
       padding: 10px;
       cursor: pointer;
+      margin-bottom: 10%;
+      text-align: center;
     }
 
     .language-options {
-      position: absolute;
+      position: relative;
       background-color: #eaffea;
       border-radius: 5px;
-      padding: 20px;
+      padding: 10px;
+      margin-left: 65%;
+      margin-right: 20%;
       z-index: 1;
       display: none;
+      margin-top: -15%;
+    
     }
 
     .language-options a {
@@ -334,27 +339,83 @@ label{
     span{
       color: #F3FFF3;
       font-size: 1.5rem;
+      margin-left: -25%;
     }
 
 .barra {
-  align-items: center; 
-  text-align: center;
   width: 60%; 
   height: 1px; 
   background-color: transparent; 
   margin: 20px 0;
+  margin-left: 20%;
 }
 
 .linha {
-  align-items: center;
-  text-align: center;
   height: 1px; 
   background-color: #eaffea; 
   width: 60%; 
-  margin-left: 55%;
   top: 50%; 
   left: 0;
+}
+
+.container-6{
+  height: 200px;
+  padding: 2% 1%;
+  background-color: #ADDFD0;
+}
+
+.footer{
+  font-size: 1.3rem;
+  list-style: none;
   text-align: center;
+  margin-top: 2%;
+}
+
+@media screen and (max-width: 860px){
+  .footer{
+    font-size: 0.8rem;
+  }
+}
+
+.footer li{
+  display: inline;
+}
+
+.footer ul li a{
+  color: #1F99A5;
+  margin-left: 1.5%;
+  text-decoration: none;
+}
+
+.email p{
+  margin-top: 2%;
+  color: #3E7996;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 860px){
+  .email p{
+    font-size: 0.8rem;
+  }
+}
+
+footer{
+  background-color: #2D2F48;
+  height: 30px;
+}
+
+h6{
+  text-align: center;
+  font-size: 3em;
+  color: #2D2E47;
+  margin-top: 1%;
+}
+
+@media screen and (max-width: 860px){
+  h6{
+    font-size: 1.3em;
+  }
 }
 </style>
 <body>
@@ -450,8 +511,8 @@ label{
                 </div>
             </div>
         </form>
+        <h3>Idiomas</h3>
          <div class="language-container">
-          <h3>Idiomas</h3>
           <br>
           <br>
           <br>
@@ -478,7 +539,33 @@ label{
       <!-- Adicione mais opções de idioma conforme necessário -->
     </div>
   </div>
+    <form>
+        <h3>Objetivos Profissionais</h3>
+        <div class="form-row-1">
+            <div class="form-group-1">
+                <input type="link" id="instagram" placeholder="Quais são seus objetivos?" name="instagram" required>
+            </div>
+        </div>
+    </form>
+    <div>
     </div>
+    <div class="container-6">
+      <h6>IncluWork</h6>
+      <div class="footer">
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="cursos.html">Cursos</a></li>                
+              <li><a href="">Vagas</a></li>
+              <li><a href="">Sobre</a></li>                
+              <li><a href="login.html">Login</a></li>
+          </ul>
+      </div>
+      <div class="email"><p>incluwork@gmail.com <br> (11) 9523-4433</p></div>
+  </div>
+
+  <footer>
+  
+  </footer>
     <script>
     const languageContainer = document.querySelector('.language-container');
     const languageOptions = document.querySelector('.language-options');

@@ -208,7 +208,26 @@
         
         </footer>
     </section>
-
+    
+    <script>
+        const buttons = document.querySelectorAll('.accordion-button');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+    
+            // Fecha todos os outros conteúdos
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content) {
+                    item.style.display = 'none';
+                }
+            });
+    
+            // Alterna a exibição do conteúdo atual
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
