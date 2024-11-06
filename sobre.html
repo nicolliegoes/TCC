@@ -148,10 +148,10 @@
         }
         .puzzle:nth-child(1) { top: -4px; left: -4px; }
         .puzzle:nth-child(2) { top: 80px; left: 350px; }
-        .puzzle:nth-child(3) { top: 20px; left: 700px; }
-        .puzzle:nth-child(4) { top: 180px; left: 1045px; }
-        .puzzle:nth-child(5) { top: -35px; left: 1260px; }
-        .puzzle:nth-child(6) { top: 150px; left: 1050px; }
+        .puzzle:nth-child(3) { top: 10px; left: 700px; }
+        .puzzle:nth-child(4) { top: 75px; left: 1040px; }
+        .puzzle:nth-child(5) { top:310px; left: 750px; }
+        .puzzle:nth-child(6) { top: 465px; left: 1050px; }
         .puzzle:nth-child(7) { top: 150px; left: 1050px; }
         .puzzle:nth-child(8) { top: 150px; left: 1050px; }
         .puzzle:nth-child(9) { top: 150px; left: 1050px; }
@@ -160,6 +160,7 @@
         .puzzle:nth-child(12) { top: 150px; left: 1050px; }
         .puzzle:nth-child(13) { top: 150px; left: 1050px; }
         .puzzle:nth-child(14) { top: 150px; left: 1050px; }
+
         .content {
             position: relative;
             z-index: 1;
@@ -179,7 +180,7 @@
         .intro-section {
             margin-top: 20%;
             background-color: #3E7A96; /* Updated background color */
-            padding: 100px;
+            padding: 30px;
             color: white;
             width: 100%; /* Full width */
             height: 100%;
@@ -188,23 +189,127 @@
             align-items: flex-start; /* Added for image positioning */
         }
         .intro-section h2 {
-            font-size: 70px;
+            font-size: 60px;
             margin-bottom: 20px;
+            margin-top: 50px;
+            margin-left: 5%;
         }
         .intro-section p {
-            font-size: 25px;
+            font-size: 20px;
             line-height: 1.3;
             margin-bottom: 20px;
             max-width: 600px;
+            margin-left: 5%;
         }
         .intro-text { /* Added for image positioning */
             flex: 1; /* Added for image positioning */
         }
         .illustration {
-            width: 60%; /* Ocupa o espaço disponível no container */
-            max-width: 50px; /* Tamanho máximo */
+            width: 45%; /* Ocupa o espaço disponível no container */
+            max-width: 1000px; /* Tamanho máximo */
             height: auto;
-            margin-left: 0;
+            margin-top: 5%;
+            margin-right: 10px;
+        }
+
+        /*LINHAGEM*/
+        .outer-container {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #3d5a80, #293241);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        .our {
+            color: white;
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0;
+            margin-bottom: 60px;
+            font-weight: normal;
+        }
+        .timeline {
+            position: relative;
+            padding: 0;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background-color: #98c1d9;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .timeline-circle {
+            position: absolute;
+            left: 50%;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .circle-1 { background-color: #e0fbfc; }
+        .circle-2 { background-color: #98c1d9; }
+        .circle-3 { background-color: #3d5a80; }
+        .circle-4 { background-color: #293241; border: 2px solid #98c1d9; }
+        .circle-5 { background-color: #ee6c4d; }
+        .timeline-content {
+            width: 45%;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 55%;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+            text-align: left;
+        }
+        .timeline-date {
+            color: #98c1d9;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .timeline-text {
+            color: #98c1d9;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        @media (max-width: 767px) {
+            .timeline::before {
+                left: 40px;
+            }
+            .timeline-circle {
+                left: 40px;
+                transform: translateX(-50%);
+            }
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                margin-right: 0 !important;
+                text-align: left !important;
+            }
         }
     </style>
 </head>
@@ -216,6 +321,7 @@
             <div class="puzzle"><img class="tamop" src="img/quebra2.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tam" src="img/quebra4.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tamop" src="img/quebra3.png" alt="Peça de um quebra-cabeça"></div>
+            <div class="puzzle"><img class="tam" src="img/quebra1.png" alt="Peça de um quebra-cabeça"></div>
         </div>
     <header>
             <div class="sidebar" id="sidebar">
@@ -250,15 +356,64 @@
             <div class="intro-text">
                 <h2>Introdução</h2>
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
-                    Ipsum has been the industry's standard dummy text ever since the 1500s, when 
-                    an unknown printer took a galley of type and scrambled it to make a type 
-                    specimen book. It has survived not only five centuries, but also the leap into 
-                    electronic typesetting.
+                    A busca por emprego é um desafio global, devido à economia, 
+                    globalização e principalmente pela falta de preparo. De acordo 
+                    com a organização das nações unidas (ONU, 2023), foi registrado 
+                    5,1% de desempregados no mundo. No Brasil a taxa é de 7,6%, tendo 
+                    uma parcela significativa composta por jovens de 18 a 24 anos. 
+                    Em contrapartida, as pessoas mais afetadas são deficientes com 
+                    algum problema cognitivo, motor, auditivo ou visual. 
+                    Dentre a taxa de deficientes existentes no Brasil, apenas 26,6% deles são empregados.
                 </p>
             </div>
-            <div class="illustration"></div>
+            <img src="img/defi.png" alt="Foto de Perfil" class="illustration">
         </div>
     </div>
+    <div class="outer-container">
+        <div class="container">
+            <h1 class="our" >Nossa linhagem</h1>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-circle circle-1"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Fevereiro 2024</div>
+                        <div class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle circle-2"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Março 2024</div>
+                        <div class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle circle-3"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Março 2024</div>
+                        <div class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle circle-4"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Março 2024</div>
+                        <div class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle circle-5"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-content">
+                        <div class="timeline-date">Março 2024</div>
+                        <div class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>
