@@ -157,7 +157,7 @@ h1{
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 2.3rem;
     text-align: left;
     color: #2D2F48;
     margin-bottom: 2.5%;
@@ -186,14 +186,17 @@ input[type="tel"] {
     border-radius: 30px;
     box-sizing: border-box;
     color: #F3FFF3;
+    font-size: 1.1rem;
 }
 
 ::-webkit-input-placeholder{
   color: #F3FFF3;
+  font-size: 1.1rem;
 }
 
 .form-group-1 ::-webkit-input-placeholder{
   color: #2D2F48;
+  font-size: 1.1rem;
 }
 
 input[type="text"]:focus,
@@ -211,7 +214,7 @@ input[type="tel"]:focus {
 
 .container-1{
     background-color: #3E7996;
-    height: 650px;
+    height: 2000px;
     margin-top: 8%;
     padding-top: 50px;
 }
@@ -225,6 +228,7 @@ input[type="insta"] {
     border-radius: 30px;
     box-sizing: border-box;
     color: #2D2F48;
+    font-size: 1.1rem;
 }
 
 input[type="link"]:focus,
@@ -234,7 +238,7 @@ input[type="insta"]:focus {
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 2.3rem;
     text-align: left;
     color: white;
     margin-left: 10%;
@@ -260,6 +264,7 @@ h3 {
 .radio-list {
             list-style-type: none;
             padding: 0;
+            margin-bottom: 10%;
         }
         .radio-list li {
             margin: 10px 0;
@@ -291,6 +296,65 @@ h3 {
         }
 label{
   color: #F3FFF3;
+}
+
+ .language-container {
+  text-align: center;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .language-options {
+      position: absolute;
+      background-color: #eaffea;
+      border-radius: 5px;
+      padding: 20px;
+      z-index: 1;
+      display: none;
+    }
+
+    .language-options a {
+      font-size: 1.3rem;
+      display: block;
+      padding: 12px 0;
+      color: #2D2F48;
+      text-decoration: none;
+    }
+
+    .language-options a:hover {
+      color: #3E7996;
+    }
+
+    .selected-language {
+      color: #f3fff3;
+      font-size: 1.5rem;
+    }
+
+    span{
+      color: #F3FFF3;
+      font-size: 1.5rem;
+    }
+
+.barra {
+  align-items: center; 
+  text-align: center;
+  width: 60%; 
+  height: 1px; 
+  background-color: transparent; 
+  margin: 20px 0;
+}
+
+.linha {
+  align-items: center;
+  text-align: center;
+  height: 1px; 
+  background-color: #eaffea; 
+  width: 60%; 
+  margin-left: 55%;
+  top: 50%; 
+  left: 0;
+  text-align: center;
 }
 </style>
 <body>
@@ -370,12 +434,71 @@ label{
           <h3>Nível de escolaridade</h3>
         <ul class="radio-list">
             <li><input type="radio" id="opcao1" name="opcao"> <label for="opcao1">Ensino fundamental 1 completo</label></li>
-            <li><input type="radio" id="opcao2" name="opcao"> <label for="opcao2">Ensino fundamental 2 completo</label></li>
+            <li><input type="radio" id="opcao2" name="opcao"> <label for="opcao2">Ensino fundamental 1 incompleto</label></li>
+            <li><input type="radio" id="opcao1" name="opcao"> <label for="opcao1">Ensino fundamental 2 completo</label></li>
+            <li><input type="radio" id="opcao2" name="opcao"> <label for="opcao2">Ensino fundamental 2 incompleto</label></li>
             <li><input type="radio" id="opcao3" name="opcao"> <label for="opcao3">Ensino médio completo/cursando</label></li>
-            <li><input type="radio" id="opcao4" name="opcao"> <label for="opcao4">Faculdade completa/cursando</label></li>
+            <li><input type="radio" id="opcao3" name="opcao"> <label for="opcao3">Ensino médio incompleto</label></li>
+            <li><input type="radio" id="opcao4" name="opcao"> <label for="opcao4">Faculdade completo/cursando</label></li>
         </ul>
         </div>
+         <form>
+            <h3>Experiência</h3>
+            <div class="form-row-1">
+                <div class="form-group-1">
+                    <input type="link" id="instagram" placeholder="Qual a sua experiência profissional?" name="instagram" required>
+                </div>
+            </div>
+        </form>
+         <div class="language-container">
+          <h3>Idiomas</h3>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+    <span class="selected-language">Português</span> 
+    <br>
+    <br>
+    <div class="barra">
+      <div class="linha"></div>
     </div>
+    <br>
+    <br>
+    <span>+ adicionar idioma</span>
+    <div class="language-options">
+      <a href="#" onclick="selectLanguage('Inglês')">Inglês</a>
+      <a href="#" onclick="selectLanguage('Espanhol')">Espanhol</a>
+      <a href="#" onclick="selectLanguage('Francês')">Francês</a>
+      <a href="#" onclick="selectLanguage('Italiano')">Italiano</a>
+      <a href="#" onclick="selectLanguage('Alemão')">Alemão</a>
+      <a href="#" onclick="selectLanguage('Coreano')">Coreano</a>
+      <a href="#" onclick="selectLanguage('Japonês')">Japonês</a>
+      <a href="#" onclick="selectLanguage('Mandarim')">Mandarim</a>
+      <!-- Adicione mais opções de idioma conforme necessário -->
+    </div>
+  </div>
+    </div>
+    <script>
+    const languageContainer = document.querySelector('.language-container');
+    const languageOptions = document.querySelector('.language-options');
+    const selectedLanguage = document.querySelector('.selected-language');
+
+    languageContainer.addEventListener('click', () => {
+      languageOptions.style.display = languageOptions.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!languageContainer.contains(event.target)) {
+        languageOptions.style.display = 'none';
+      }
+    });
+
+    function selectLanguage(language) {
+      selectedLanguage.textContent = `Português, ${language}`;
+      languageOptions.style.display = 'none';
+    }
+  </script>
     <script src="script.js"></script>
 </body>
 </html>
