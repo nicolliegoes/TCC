@@ -167,8 +167,8 @@ header{
 
 .user{
   font-size: 2em;
-  margin-left: 90%;
-  margin-top: 1%;
+  margin-left: 95%;
+  margin-top: 1.5%;
   position: fixed;
   z-index: 1000;
 }
