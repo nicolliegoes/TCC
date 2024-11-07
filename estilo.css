@@ -165,6 +165,14 @@ header{
     z-index: 1000;
 }
 
+.user{
+  font-size: 2em;
+  margin-left: 90%;
+  margin-top: 1%;
+  position: fixed;
+  z-index: 1000;
+}
+
 .container {
     max-width: 35%;
     height: 1024px;
