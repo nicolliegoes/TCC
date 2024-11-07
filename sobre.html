@@ -30,7 +30,7 @@
             justify-content: space-around; 
             position: fixed; 
             top: 0;
-            width: 40%;
+            width: 100%;
             background-color: transparent; 
             transition: background-color 0.3s ease; 
             z-index: 1000; 
@@ -49,7 +49,7 @@
             }
         } 
         .nav-background {
-                background-color: #2D2F48;
+                background-color: #A7D7CA;
             }
         @media (max-width: 1044px) {
             .nav-background {
@@ -147,19 +147,13 @@
             position: absolute;
         }
         .puzzle:nth-child(1) { top: -4px; left: -4px; }
-        .puzzle:nth-child(2) { top: 80px; left: 350px; }
-        .puzzle:nth-child(3) { top: 10px; left: 700px; }
-        .puzzle:nth-child(4) { top: 75px; left: 1040px; }
-        .puzzle:nth-child(5) { top:310px; left: 750px; }
-        .puzzle:nth-child(6) { top: 465px; left: 1050px; }
-        .puzzle:nth-child(7) { top: 150px; left: 1050px; }
-        .puzzle:nth-child(8) { top: 150px; left: 1050px; }
-        .puzzle:nth-child(9) { top: 150px; left: 1050px; }
-        .puzzle:nth-child(10) { top: 150px; left: 1050px; }
-        .puzzle:nth-child(11) { top: 150px; left: 1050px; }
-        .puzzle:nth-child(12) { top: 150px; left: 1050px; }
-        .puzzle:nth-child(13) { top: 150px; left: 1050px; }
-        .puzzle:nth-child(14) { top: 150px; left: 1050px; }
+        .puzzle:nth-child(2) { top: 170px; left: 400px; }
+        .puzzle:nth-child(3) { top: 30px; left: 850px; }
+        .puzzle:nth-child(4) { top: 150px; left: 1230px; }
+        .puzzle:nth-child(5) { top: 450px; left: 950px; }
+        .puzzle:nth-child(6) { top: 680px; left: 500px; }
+        .puzzle:nth-child(7) { top: 450px; left: 70px; }
+        .puzzle:nth-child(8) { top: 700px; left: 600px; }
 
         .content {
             position: relative;
@@ -180,7 +174,7 @@
         .intro-section {
             margin-top: 20%;
             background-color: #3E7A96; /* Updated background color */
-            padding: 30px;
+            padding: 70px;
             color: white;
             width: 100%; /* Full width */
             height: 100%;
@@ -189,27 +183,27 @@
             align-items: flex-start; /* Added for image positioning */
         }
         .intro-section h2 {
-            font-size: 60px;
+            font-size: 70px;
             margin-bottom: 20px;
             margin-top: 50px;
-            margin-left: 5%;
+            margin-left: 15%;
         }
         .intro-section p {
             font-size: 20px;
-            line-height: 1.3;
+            line-height: 1.4;
             margin-bottom: 20px;
             max-width: 600px;
-            margin-left: 5%;
+            margin-left: 15%;
         }
         .intro-text { /* Added for image positioning */
             flex: 1; /* Added for image positioning */
         }
         .illustration {
-            width: 45%; /* Ocupa o espaço disponível no container */
-            max-width: 1000px; /* Tamanho máximo */
+            width: 40%; /* Ocupa o espaço disponível no container */
+            max-width: 900px; /* Tamanho máximo */
             height: auto;
-            margin-top: 5%;
-            margin-right: 10px;
+            margin-top: 50px;
+            margin-right: 140px;
         }
 
         /*LINHAGEM*/
@@ -225,16 +219,16 @@
         }
         .container {
             width: 100%;
-            max-width: 900px;
+            max-width: 1100px;
             padding: 40px;
             box-sizing: border-box;
         }
         .our {
             color: white;
             text-align: center;
-            font-size: 60px;
+            font-size: 70px;
             margin-top: 0;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
             font-weight: normal;
         }
         .timeline {
@@ -248,8 +242,9 @@
             left: 50%;
             top: 0;
             bottom: 0;
-            width: 6px;
-            background-color: #98c1d9;
+            width: 10px;
+            height: 1200px;
+            background: linear-gradient(to bottom, #F3FFF3, #3E7996);
             transform: translateX(-50%);
         }
         .timeline-item {
@@ -262,55 +257,106 @@
         .timeline-circle {
             position: absolute;
             left: 50%;
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             transform: translateX(-50%);
             z-index: 1;
         }
-        .circle-1 { background-color: #e0fbfc; }
-        .circle-2 { background-color: #98c1d9; }
-        .circle-3 { background-color: #3d5a80; }
-        .circle-4 { background-color: #293241; border: 2px solid #98c1d9; }
-        .circle-5 { background-color: #ee6c4d; }
+        .circle-1 { background-color: #F3FFF3; }
+        .circle-2 { background-color: #A7D7CA; }
+        .circle-3 { background-color: #73B5B7; }
+        .circle-4 { background-color: #4BA0A3; }
+        .circle-5 { background-color: #3E7996; }
+
         .timeline-content {
             width: 45%;
             padding: 20px;
             border-radius: 8px;
         }
         .timeline-item:nth-child(odd) .timeline-content {
-            margin-right: 55%;
+            margin-right: 60%;
             text-align: right;
         }
         .timeline-item:nth-child(even) .timeline-content {
-            margin-left: 55%;
+            margin-left: 60%;
             text-align: left;
         }
         .timeline-date {
-            color: #98c1d9;
-            font-size: 24px;
+            color: #F3FFF3;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-date1 {
+            color: #A7D7CA;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+        .timeline-date2 {
+            color: #73B5B7;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+        .timeline-date3 {
+            color: #4BA0A3;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+        .timeline-date4 {
+            color: #3E7996;
+            font-size: 35px;
             margin-bottom: 10px;
         }
         .timeline-text {
-            color: #98c1d9;
-            font-size: 14px;
+            color: #F3FFF3;
+            font-size: 17px;
             line-height: 1.4;
         }
-        @media (max-width: 767px) {
-            .timeline::before {
-                left: 40px;
-            }
-            .timeline-circle {
-                left: 40px;
-                transform: translateX(-50%);
-            }
-            .timeline-content {
-                width: calc(100% - 80px);
-                margin-left: 80px !important;
-                margin-right: 0 !important;
-                text-align: left !important;
-            }
+        .timeline-text1 {
+            color: #A7D7CA;
+            font-size: 17px;
+            line-height: 1.4;
         }
+        .timeline-text2 {
+            color: #73B5B7;
+            font-size: 17px;
+            line-height: 1.4;
+        }
+        .timeline-text3 {
+            color: #4BA0A3;
+            font-size: 17px;
+            line-height: 1.4;
+        }
+        .timeline-text4 {
+            color: #3E7996;
+            font-size: 17px;
+            line-height: 1.4;
+        }
+
+        .cont{
+            background-color: #ADDFD0;
+            max-width: 100%;
+            height: 500px;
+            padding: 5% 5%;
+        }
+        .mission{
+            color: #3E7996;
+            text-align: center;
+            font-size: 70px;
+            margin-top: 0;
+            font-weight: normal;  
+        }
+
+        .missiop{
+            color: #3E7996;
+            text-align: center;
+            font-size: 30px;
+            font-weight: normal;  
+            padding: 0 120px 0 120px;
+            margin-top: 50px;
+        }
+  
     </style>
 </head>
 <body>
@@ -319,9 +365,11 @@
             <div class="puzzle"><img class="tam" src="img/quebra4.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tam" src="img/quebra1.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tamop" src="img/quebra2.png" alt="Peça de um quebra-cabeça"></div>
+            <div class="puzzle"><img class="tamop" src="img/quebra3.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tam" src="img/quebra4.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tamop" src="img/quebra3.png" alt="Peça de um quebra-cabeça"></div>
-            <div class="puzzle"><img class="tam" src="img/quebra1.png" alt="Peça de um quebra-cabeça"></div>
+            <div class="puzzle"><img class="tamop" src="img/quebra2.png" alt="Peça de um quebra-cabeça"></div>
+
         </div>
     <header>
             <div class="sidebar" id="sidebar">
@@ -383,37 +431,39 @@
                 <div class="timeline-item">
                     <div class="timeline-circle circle-2"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Março 2024</div>
-                        <div class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div class="timeline-date1">Março 2024</div>
+                        <div class="timeline-text1">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-circle circle-3"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Março 2024</div>
-                        <div class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div class="timeline-date2">Março 2024</div>
+                        <div class="timeline-text2">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-circle circle-4"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Março 2024</div>
-                        <div class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div class="timeline-date3">Março 2024</div>
+                        <div class="timeline-text3">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-circle circle-5"></div>
                     <div class="timeline-content">
-                        <div class="timeline-content">
-                        <div class="timeline-date">Março 2024</div>
-                        <div class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                    </div>
+                        <div class="timeline-date4">Março 2024</div>
+                        <div class="timeline-text4">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="cont">
+        <h1 class="mission">Nossa missão</h1>
+        <p class="missiop">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, </p>
+    </div>
 
-
+<script src="script.js"></script>
 </body>
 </html>
