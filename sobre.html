@@ -147,26 +147,26 @@
             position: absolute;
         }
         .puzzle:nth-child(1) { top: -4px; left: -4px; }
-        .puzzle:nth-child(2) { top: 170px; left: 400px; }
-        .puzzle:nth-child(3) { top: 30px; left: 850px; }
-        .puzzle:nth-child(4) { top: 150px; left: 1230px; }
+        .puzzle:nth-child(2) { top: 170px; left: 450px; }
+        .puzzle:nth-child(3) { top: 30px; left: 880px; }
+        .puzzle:nth-child(4) { top: 150px; left: 1300px; }
         .puzzle:nth-child(5) { top: 450px; left: 950px; }
         .puzzle:nth-child(6) { top: 680px; left: 500px; }
         .puzzle:nth-child(7) { top: 450px; left: 70px; }
-        .puzzle:nth-child(8) { top: 700px; left: 600px; }
+        .puzzle:nth-child(8) { top: 700px; left: 1300px; }
 
         .content {
             position: relative;
             z-index: 1;
         }
         h1 {
-            font-size: 70px;
+            font-size: 80px;
             color: white;
-            margin-top: 17%;
+            margin-top: 15%;
             text-align: center;
         }
         .incluwork {
-            font-size: 130px;
+            font-size: 150px;
             color: #2D4F4F;
             display: block;
             text-align: center;
@@ -183,17 +183,17 @@
             align-items: flex-start; /* Added for image positioning */
         }
         .intro-section h2 {
-            font-size: 70px;
+            font-size: 75px;
             margin-bottom: 20px;
             margin-top: 50px;
-            margin-left: 15%;
+            margin-left: 13%;
         }
         .intro-section p {
-            font-size: 20px;
+            font-size: 22px;
             line-height: 1.4;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             max-width: 600px;
-            margin-left: 15%;
+            margin-left: 13%;
         }
         .intro-text { /* Added for image positioning */
             flex: 1; /* Added for image positioning */
@@ -202,8 +202,8 @@
             width: 40%; /* Ocupa o espaço disponível no container */
             max-width: 900px; /* Tamanho máximo */
             height: auto;
-            margin-top: 50px;
-            margin-right: 140px;
+            margin-top: 70px;
+            margin-right: 90px;
         }
 
         /*LINHAGEM*/
@@ -243,7 +243,7 @@
             top: 0;
             bottom: 0;
             width: 10px;
-            height: 1200px;
+            height: 1250px;
             background: linear-gradient(to bottom, #F3FFF3, #3E7996);
             transform: translateX(-50%);
         }
@@ -310,27 +310,27 @@
         }
         .timeline-text {
             color: #F3FFF3;
-            font-size: 17px;
+            font-size: 18px;
             line-height: 1.4;
         }
         .timeline-text1 {
             color: #A7D7CA;
-            font-size: 17px;
+            font-size: 18px;
             line-height: 1.4;
         }
         .timeline-text2 {
             color: #73B5B7;
-            font-size: 17px;
+            font-size: 18px;
             line-height: 1.4;
         }
         .timeline-text3 {
             color: #4BA0A3;
-            font-size: 17px;
+            font-size: 18px;
             line-height: 1.4;
         }
         .timeline-text4 {
             color: #3E7996;
-            font-size: 17px;
+            font-size: 18px;
             line-height: 1.4;
         }
 
@@ -356,6 +356,140 @@
             padding: 0 120px 0 120px;
             margin-top: 50px;
         }
+
+        /*MEMBROS*/
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --background-color: #ecf0f1;
+            --card-background: #ffffff;
+            --text-color: #34495e;
+        }
+
+        .cont-equipe{
+            background-color: #3E7996;
+            margin-top: 0;
+        }
+
+        .titulo {
+            text-align: center;
+            color: #ADDFD0;
+            font-size: 2.7em;
+            font-weight: 600;
+            position: relative;
+            margin-bottom: 3%;
+            padding-top: 3%;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .member {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            width: 250px;
+            position: relative;
+        }
+
+        .member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+        }
+
+        .member:hover::before {
+            transform: scaleX(1);
+        }
+
+        .member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .member:hover img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .member-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color:#2D2E47;
+        }
+
+        .member-role {
+            font-size: 1em;
+            color: #3E7A96 ;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .member-bio {
+            font-size: 0.8em;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-link {
+            color: var(--secondary-color);
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 1400px) {
+            .team {
+                justify-content: space-around;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .member {
+                width: calc(50% - 15px);
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .member {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
   
     </style>
 </head>
@@ -369,6 +503,7 @@
             <div class="puzzle"><img class="tam" src="img/quebra4.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tamop" src="img/quebra3.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tamop" src="img/quebra2.png" alt="Peça de um quebra-cabeça"></div>
+            <div class="puzzle"><img class="tam" src="img/quebra1.png" alt="Peça de um quebra-cabeça"></div>
 
         </div>
     <header>
@@ -461,7 +596,48 @@
     </div>
     <div class="cont">
         <h1 class="mission">Nossa missão</h1>
-        <p class="missiop">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, </p>
+        <p class="missiop">Terá como propósito fornecer uma plataforma abrangente que ofereça acesso avgas de emprego e cursos educacionais. Por meio da análise contínua das necessidades dos usuários e das demandas do mercado, o objetivo é criar e manter uma interface interativa e funcional que atende ás  expectativas dos usuários, facilitando uma inserção no mercado de trabalho e contribuindo para o desenvolvimento profissional e a redução do desemprego. </p>
+    </div>
+
+    <div class="cont-equipe">
+        <h3 class="titulo">Nossa Equipe de Desenvolvedores</h3>
+        <div class="team">
+            <div class="member">
+                <img src="" alt="José">
+                <div class="member-info">
+                    <div class="member-name">José Henrique</div>
+                    <div class="member-role">Prototipagem</div>
+                </div>
+            </div>
+            <div class="member">
+                <img src="https://via.placeholder.com/250x250.png?text=Maria+Santos" alt="Marcela">
+                <div class="member-info">
+                    <div class="member-name">Marcela Mendonça</div>
+                    <div class="member-role">Desenvolvedora Backend e ABNT</div>
+                </div>
+            </div>
+            <div class="member">
+                <img src="img/nicole.jpeg" alt="Nicole">
+                <div class="member-info">
+                    <div class="member-name">Nicole Caroline</div>
+                    <div class="member-role">Desenvolvedora Front-End e Prototipagem</div>
+                </div>
+            </div>
+            <div class="member">
+                <img src="img/nicollie.jpeg" alt="Nicollie">
+                <div class="member-info">
+                    <div class="member-name">Nicollie Machtura</div>
+                    <div class="member-role">Desenvolvedora Front-End e Prototipagem</div>
+                </div>
+            </div>
+            <div class="member">
+                <img src="img/sara.jpeg" alt="Pedro Mendes">
+                <div class="member-info">
+                    <div class="member-name">Sara Beatriz</div>
+                    <div class="member-role">Densenvolvedora da ABNT</div>
+                </div>
+            </div>
+        </div>
     </div>
 
 <script src="script.js"></script>
