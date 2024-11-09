@@ -20,13 +20,14 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
+            text-align: center;
         }
         .profile-header img {
             border-radius: 50%;
-            width: 190px;
-            height: 190px;
+            width: 150px;
+            height: 150px;
             margin-bottom: 10px;
-            border: 10px solid #fff; /* Borda na imagem de perfil */
+            border: 10px solid #fff;
         }
         h1 {
             font-size: 1.7em;
@@ -36,10 +37,12 @@
         .email {
             font-size: 1.2em;
             color: #BDC3C7;
+            word-break: break-all;
         }
         .info {
             margin: 10px 0;
-            width: 40%;
+            width: 100%;
+            max-width: 600px;
         }
         .info label {
             display: block;
@@ -52,25 +55,37 @@
             background: rgba(173, 223, 208, 1);
             color: #2C3E50;
             border-radius: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            font-size: 16px;
+            height: 40px;
+            line-height: 20px;
+        }
+        .info span[contenteditable="true"] {
+            outline: none;
         }
         .dual-info {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            width: 40%; /* Para ocupar toda a largura disponível */
+            width: 100%;
+            max-width: 600px;
         }
         .dual-info div {
-            width: 47%; /* Ajustando a largura dos containers */
+            width: 100%;
+            margin-bottom: 10px;
         }
         .dual-info label {
-            font-size: 1.1em; /* Tamanho maior para as labels */
+            font-size: 1.1em;
         }
-
         .button {
             margin-top: 20px;
             display: flex;
-            justify-content: space-between;
-            width: 30%;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
         }
         .button a {
             padding: 10px 15px;
@@ -79,59 +94,185 @@
             text-decoration: none;
             border-radius: 10px;
             transition: background-color 0.3s;
-            flex: 1; /* Para dividir igualmente */
-            margin: 0 5px; /* Espaço entre os botões */
+            margin: 5px;
+            text-align: center;
+            flex: 1 1 30%;
         }
         .button a:hover {
             background-color: #16A085;
         }
-
+        .error {
+            color: #E74C3C;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .dropdown {
+            background: #3E7996;
+            border-radius: 5px;
+            display: none;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        .dropdown div {
+            padding: 10px;
+            cursor: pointer;
+            color: #ECF0F1;
+        }
+        .dropdown div:hover {
+            background-color: #3E7996;
+        }
+        .dropdown::-webkit-scrollbar {
+            width: 10px;
+        }
+        .dropdown::-webkit-scrollbar-track {
+            background: #2D2E47;
+        }
+        .dropdown::-webkit-scrollbar-thumb {
+            background: white;
+            border-radius: 5px;
+        }
+        .dropdown::-webkit-scrollbar-thumb:hover {
+            background: #16A085;
+        }
+        @media (min-width: 768px) {
+            .dual-info div {
+                width: 48%;
+            }
+            .button {
+                justify-content: space-between;
+            }
+            .button a {
+                flex: 0 1 auto;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="profile-header">
         <img src="img/perfil.jpg" alt="Foto de Perfil">
-        <h1>Fulano da Silva</h1>
-        <span class="email">fulanodasilva@gmail.com</span>
+        <h1 id="name-header">Fulano da Silva</h1>
+        <span class="email" id="email-header">fulanodasilva@gmail.com</span>
     </div>
     <div class="info">
         <label>Nome completo:</label>
-        <span>Fulano da Silva</span>
+        <span id="full-name">Fulano da Silva</span>
     </div>
     <div class="info dual-info">
         <div>
             <label>Telefone:</label>
-            <span>+55 (11) 96559-5599</span>
+            <span id="phone">+55 (11) 96559-5599</span>
         </div>
         <div>
             <label>Data de nascimento:</label>
-            <span>01/01/2000</span>
+            <span id="birth-date">01/01/2000</span>
         </div>
     </div>
     <div class="info dual-info">
         <div>
             <label>Cidade:</label>
-            <span>Ribeirão Preto</span>
+            <span id="city">Ribeirão Preto</span>
         </div>
         <div>
             <label>Estado:</label>
-            <span>SP</span>
+            <span id="state">SP</span>
         </div>
     </div>
     <div class="info dual-info">
         <div>
             <label>Possui alguma deficiência?</label>
-            <span>Cognitiva</span>
+            <span id="disability">Cognitiva</span>
         </div>
         <div>
             <label>Estado:</label>
-            <span>SP</span>
+            <span id="state2">SP</span>
         </div>
     </div>
     <div class="button">
-        <a href="#">Editar perfil</a>
+        <a href="#" id="edit-profile">Editar perfil</a>
         <a href="#">Log out</a>
         <a href="curriculo.html">Fazer currículo</a>
     </div>
+
+    <script>
+        document.getElementById('edit-profile').addEventListener('click', function(e) {
+            e.preventDefault();
+            const fields = ['full-name', 'phone', 'birth-date', 'city', 'state', 'disability', 'state2'];
+            const isEditing = this.textContent === 'Editar perfil';
+
+            if (isEditing) {
+                fields.forEach(field => {
+                    const element = document.getElementById(field);
+                    if (field === 'disability') {
+                        const options = ['Nenhuma', 'Física', 'Visual', 'Auditiva', 'Cognitiva'];
+                        const dropdown = document.createElement('div');
+                        dropdown.className = 'dropdown';
+                        options.forEach(option => {
+                            const optionElement = document.createElement('div');
+                            optionElement.textContent = option;
+                            optionElement.onclick = function() {
+                                element.textContent = option;
+                                dropdown.style.display = 'none';
+                            };
+                            dropdown.appendChild(optionElement);
+                        });
+                        element.parentNode.appendChild(dropdown);
+                        element.onclick = function(event) {
+                            event.stopPropagation();
+                            dropdown.style.display = 'block';
+                        };
+                        document.addEventListener('click', function() {
+                            dropdown.style.display = 'none';
+                        });
+                    } else {
+                        element.contentEditable = true;
+                        element.focus();
+                    }
+                });
+
+                // Adiciona um event listener para atualizar o name-header em tempo real
+                document.getElementById('full-name').addEventListener('input', function() {
+                    document.getElementById('name-header').textContent = this.textContent;
+                });
+
+                this.textContent = 'Salvar';
+            } else {
+                let hasError = false;
+                fields.forEach(field => {
+                    const element = document.getElementById(field);
+                    const newValue = element.textContent.trim();
+                    if (newValue === '') {
+                        hasError = true;
+                        if (!element.parentNode.querySelector('.error')) {
+                            const errorMsg = document.createElement('div');
+                            errorMsg.className = 'error';
+                            errorMsg.textContent = 'Este campo não pode ficar vazio.';
+                            element.parentNode.appendChild(errorMsg);
+                        }
+                    } else {
+                        const errorMsg = element.parentNode.querySelector('.error');
+                        if (errorMsg) {
+                            errorMsg.remove();
+                        }
+                    }
+                    if (field !== 'disability') {
+                        element.contentEditable = false;
+                    }
+                });
+
+                if (!hasError) {
+                    document.getElementById('name-header').textContent = document.getElementById('full-name').textContent;
+                    this.textContent = 'Editar perfil';
+                    const dropdowns = document.querySelectorAll('.dropdown');
+                    dropdowns.forEach(dropdown => dropdown.remove());
+
+                    // Remove o event listener do full-name
+                    document.getElementById('full-name').removeEventListener('input', null);
+                } else {
+                    alert('Por favor, preencha todos os campos antes de salvar.');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
