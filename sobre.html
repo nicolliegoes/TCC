@@ -129,12 +129,7 @@
             top: 0;
             z-index: 1000;
         }
-        .puzzle-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
+
         .tam{
             width: 210px;
             height: 250px;
@@ -142,6 +137,13 @@
         .tamop{
             width: 250px;
             height: 210px;
+        }
+
+        .puzzle-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
         .puzzle {
             position: absolute;
@@ -192,7 +194,7 @@
             font-size: 22px;
             line-height: 1.4;
             margin-bottom: 10px;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: 13%;
         }
         .intro-text { /* Added for image positioning */
@@ -362,9 +364,11 @@
             text-align: center;
             font-size: 30px;
             font-weight: normal;  
-            padding: 0 120px 0 120px;
+            padding: 0 200px 0 200px;
             margin-top: 2px;
             margin-bottom: 3%;
+            max-width: 1500px;
+            margin-left: 7%;
         }
 
         /*MEMBROS*/
@@ -388,7 +392,7 @@
             font-size: 2.7em;
             font-weight: 600;
             position: relative;
-            margin-bottom: 2%;
+            margin-bottom: 1%;
             padding-top: 3%;
         }
 
@@ -396,16 +400,16 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
+            padding-bottom: 3%;
         }
 
         .member {
             background-color: var(--card-background);
-            border-radius: 15px;
+            border-radius: 25px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            transition: all 0.3s ease;
-            width: 220px;
+            width: 200px;
             position: relative;
         }
 
@@ -431,7 +435,7 @@
 
         .member img {
             width: 100%;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
         }
 
@@ -481,10 +485,90 @@
             color: var(--primary-color);
         }
 
-        @media (max-width: 1400px) {
+
+
+        /*MEDIA*/
+        @media (max-width: 1900px) {
+            .puzzle:nth-child(1) { top: -4px; left: -4px; }
+            .puzzle:nth-child(2) { top: 170px; left: 400px; }
+            .puzzle:nth-child(3) { top: 30px; left: 800px; }
+            .puzzle:nth-child(4) { top: 150px; left: 1250px; }
+            .puzzle:nth-child(5) { top: 450px; left: 950px; }
+            .puzzle:nth-child(6) { top: 680px; left: 500px; }
+            .puzzle:nth-child(7) { top: 450px; left: 50px; }
+            .puzzle:nth-child(8) { top: 700px; left: 1300px; }
+            .puzzle:nth-child(9) { top: 10px; left: 1650px; }
+            .puzzle:nth-child(10) { top: 470px; left: 1550px; }
+
+            .illustration {
+            width: 40%; /* Ocupa o espaço disponível no container */
+            max-width: 1000px; /* Tamanho máximo */
+            height: auto;
+            margin-top: 70px;
+            margin-right: 80px;
+            }
+
+            .intro-section h2 {
+            font-size: 90px;
+        }
+        .intro-section p {
+            font-size: 27px;
+            line-height: 1.5;
+            max-width: 830px;
+
+        }
+
+        .nav-list{
+            height: 90px;
+        }
+        .nav-list ul {
+            font-size: 1.6rem;
+        }
+
+        .mission{
+            font-size: 90px;
+        }
+
+        .missiop{
+            font-size: 35px;
+            padding: 0 120px 0 120px;
+            margin-top: 30px;
+        }
+
+        .cont{
+            background-color: #ADDFD0;
+            max-width: 100%;
+            height: 550px;
+            padding: 5% 5%;
+        }
+    }
+
+    @media (max-width: 1800px) {
+            .puzzle:nth-child(1) { top: -4px; left: -4px; }
+            .puzzle:nth-child(2) { top: 170px; left: 400px; }
+            .puzzle:nth-child(3) { top: 30px; left: 800px; }
+            .puzzle:nth-child(4) { top: 150px; left: 1250px; }
+            .puzzle:nth-child(5) { top: 450px; left: 950px; }
+            .puzzle:nth-child(6) { top: 680px; left: 500px; }
+            .puzzle:nth-child(7) { top: 450px; left: 50px; }
+            .puzzle:nth-child(8) { top: 700px; left: 1300px; }
+            .puzzle:nth-child(9) { top: 10px; left: 1650px; }
+            .puzzle:nth-child(10) { top: 470px; left: 1550px; }
+    }
+
+        @media (max-width: 1600px) {
             .team {
                 justify-content: space-around;
             }
+
+            .puzzle:nth-child(1) { top: -4px; left: -4px; }
+            .puzzle:nth-child(2) { top: 170px; left: 450px; }
+            .puzzle:nth-child(3) { top: 30px; left: 880px; }
+            .puzzle:nth-child(4) { top: 150px; left: 1250px; }
+            .puzzle:nth-child(5) { top: 450px; left: 950px; }
+            .puzzle:nth-child(6) { top: 680px; left: 500px; }
+            .puzzle:nth-child(7) { top: 450px; left: 70px; }
+            .puzzle:nth-child(8) { top: 700px; left: 1300px; }
         }
 
         @media (max-width: 768px) {
@@ -514,6 +598,9 @@
             <div class="puzzle"><img class="tamop" src="img/quebra3.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tamop" src="img/quebra2.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tam" src="img/quebra1.png" alt="Peça de um quebra-cabeça"></div>
+
+            <div class="puzzle"><img class="tam" src="img/quebra4.png" alt="Peça de um quebra-cabeça"></div>
+            <div class="puzzle"><img class="tamop" src="img/quebra2.png" alt="Peça de um quebra-cabeça"></div>
 
         </div>
     <header>
@@ -611,10 +698,10 @@
 
     <div class="cont-equipe">
         <h3 class="titulo">Nossa Equipe de Desenvolvedores</h3>
-        <p class="somos">Somos alunos do 3° ano do ensino medio da etec MCM Ribeirao pire <p>
+        <p class="somos">Somos alunos do 3° ano do Ensino Médio com Habilitação Profissional de Técnico em Informática para Internet da Etec Maria Cristina Medeiros<p>
         <div class="team">
             <div class="member">
-                <img src="" alt="José">
+                <img src="img/jose.jpeg" alt="José">
                 <div class="member-info">
                     <div class="member-name">José Henrique</div>
                     <div class="member-role">Prototipagem</div>
