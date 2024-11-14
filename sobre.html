@@ -123,6 +123,7 @@
                 display: none; 
             }
         }
+
         header {
             float: left;
             position: sticky;
@@ -140,22 +141,27 @@
         }
 
         .puzzle-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                overflow: hidden; /* Para evitar que elementos saiam da tela */
         }
         .puzzle {
             position: absolute;
+            width: 10%;
         }
-        .puzzle:nth-child(1) { top: -4px; left: -4px; }
-        .puzzle:nth-child(2) { top: 170px; left: 450px; }
-        .puzzle:nth-child(3) { top: 30px; left: 880px; }
-        .puzzle:nth-child(4) { top: 150px; left: 1300px; }
-        .puzzle:nth-child(5) { top: 450px; left: 950px; }
-        .puzzle:nth-child(6) { top: 680px; left: 500px; }
-        .puzzle:nth-child(7) { top: 450px; left: 70px; }
-        .puzzle:nth-child(8) { top: 700px; left: 1300px; }
+        .puzzle:nth-child(1) { top: 0; left: 0; }
+        .puzzle:nth-child(2) { top: 15%; left: 27%; }
+        .puzzle:nth-child(3) { top: 2%; left: 55%; }
+        .puzzle:nth-child(4) { top: 15%; left: 80%; }
+        .puzzle:nth-child(5) { top: 45%; left: 65%; }
+        .puzzle:nth-child(6) { top: 75%; left: 35%; }
+        .puzzle:nth-child(7) { top: 60%; left: 4%; }
+        .puzzle:nth-child(8) { top: 80%; left: 85%; }
+
 
         .content {
             position: relative;
@@ -174,7 +180,7 @@
             text-align: center;
         }
         .intro-section {
-            margin-top: 20%;
+            margin-top: 15%;
             background-color: #3E7A96; /* Updated background color */
             padding: 70px;
             color: white;
@@ -336,40 +342,6 @@
             line-height: 1.4;
         }
 
-        .cont{
-            background-color: #ADDFD0;
-            max-width: 100%;
-            height: 500px;
-            padding: 5% 5%;
-        }
-        .mission{
-            color: #3E7996;
-            text-align: center;
-            font-size: 70px;
-            margin-top: 0;
-            font-weight: normal;  
-        }
-
-        .missiop{
-            color: #3E7996;
-            text-align: center;
-            font-size: 30px;
-            font-weight: normal;  
-            padding: 0 120px 0 120px;
-            margin-top: 50px;
-        }
-
-        .somos{
-            color: #ADDFD0;
-            text-align: center;
-            font-size: 30px;
-            font-weight: normal;  
-            padding: 0 200px 0 200px;
-            margin-top: 2px;
-            margin-bottom: 3%;
-            max-width: 1500px;
-            margin-left: 7%;
-        }
 
         /*MEMBROS*/
         :root {
@@ -384,23 +356,35 @@
         .cont-equipe{
             background-color: #3E7996;
             margin-top: 0;
+            padding: 70px 0 100px;
         }
 
         .titulo {
             text-align: center;
             color: #ADDFD0;
-            font-size: 2.7em;
+            font-size: 3em;
             font-weight: 600;
             position: relative;
             margin-bottom: 1%;
-            padding-top: 3%;
+        }
+
+        .somos{
+            color: #ADDFD0;
+            text-align: center;
+            font-size: 25px;
+            font-weight: normal;  
+            padding: 0 200px 0 200px;
+            margin-top: 1%;
+            margin-bottom: 4%;
+            max-width: 1500px;
+            margin-left: 7%;
         }
 
         .team {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             padding-bottom: 3%;
         }
 
@@ -414,7 +398,6 @@
         }
 
         .member:hover {
-            transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
@@ -485,106 +468,231 @@
             color: var(--primary-color);
         }
 
-
-
-        /*MEDIA*/
-        @media (max-width: 1900px) {
-            .puzzle:nth-child(1) { top: -4px; left: -4px; }
-            .puzzle:nth-child(2) { top: 170px; left: 400px; }
-            .puzzle:nth-child(3) { top: 30px; left: 800px; }
-            .puzzle:nth-child(4) { top: 150px; left: 1250px; }
-            .puzzle:nth-child(5) { top: 450px; left: 950px; }
-            .puzzle:nth-child(6) { top: 680px; left: 500px; }
-            .puzzle:nth-child(7) { top: 450px; left: 50px; }
-            .puzzle:nth-child(8) { top: 700px; left: 1300px; }
-            .puzzle:nth-child(9) { top: 10px; left: 1650px; }
-            .puzzle:nth-child(10) { top: 470px; left: 1550px; }
-
-            .illustration {
-            width: 40%; /* Ocupa o espaço disponível no container */
-            max-width: 1000px; /* Tamanho máximo */
-            height: auto;
-            margin-top: 70px;
-            margin-right: 80px;
-            }
-
-            .intro-section h2 {
-            font-size: 90px;
+        /*FRAME DO CONTAINER NOSSA MISSAO*/
+        .cont{
+            background-color: #ADDFD0;
+            padding: 5% 5%;
+            position: relative;
+            overflow: hidden;
         }
-        .intro-section p {
-            font-size: 27px;
-            line-height: 1.5;
-            max-width: 830px;
-
-        }
-
-        .nav-list{
-            height: 90px;
-        }
-        .nav-list ul {
-            font-size: 1.6rem;
-        }
-
         .mission{
-            font-size: 90px;
+            color: #3E7996;
+            position: relative;
+            font-size: 5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 2%;
         }
 
         .missiop{
-            font-size: 35px;
-            padding: 0 120px 0 120px;
-            margin-top: 30px;
+            color: #3E7996;
+            position: relative;
+            text-align: center;
+            max-width: 80%;
+            margin: 0 auto;
+            line-height: 1.3;
+            font-size: 1.8rem;
+            margin-bottom: 3%;
         }
+        .frame-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .wavy-shape {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+        }
+        .wavy-shape img {
+            width: 120%;
+            height: 120%;
+        }
+        .wavy-shape:nth-child(1) { top: -5%; left: -8%; }
+        .wavy-shape:nth-child(2) { top: 60%; left: -6%; }
+        .wavy-shape:nth-child(3) { top: -28%; left: 12%; }
+        .wavy-shape:nth-child(4) { top: 75%; left: 12%;  }
+        .wavy-shape:nth-child(5) { top: -10%; left: 89%; transform: rotate(130deg);}
+        .wavy-shape:nth-child(6) { top: 55%; left: 90%; transform: rotate(70deg); }
+        .wavy-shape:nth-child(7) { top: 90%; left: 70%; transform: rotate(200deg); }
+        .wavy-shape:nth-child(8) { top: -35%; left: 67%; transform: rotate(70deg); }
 
-        .cont{
-            background-color: #ADDFD0;
-            max-width: 100%;
-            height: 550px;
+        /*TECNOLOGIAS UTILIZADAS*/
+        .cont-tec{
+            background-color: #73B5B7;
             padding: 5% 5%;
+            position: relative;
+            overflow: hidden;
         }
-    }
+        .tec{   
+            color: #F3FFF3;
+            position: relative;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    @media (max-width: 1800px) {
-            .puzzle:nth-child(1) { top: -4px; left: -4px; }
-            .puzzle:nth-child(2) { top: 170px; left: 400px; }
-            .puzzle:nth-child(3) { top: 30px; left: 800px; }
-            .puzzle:nth-child(4) { top: 150px; left: 1250px; }
-            .puzzle:nth-child(5) { top: 450px; left: 950px; }
-            .puzzle:nth-child(6) { top: 680px; left: 500px; }
-            .puzzle:nth-child(7) { top: 450px; left: 50px; }
-            .puzzle:nth-child(8) { top: 700px; left: 1300px; }
-            .puzzle:nth-child(9) { top: 10px; left: 1650px; }
-            .puzzle:nth-child(10) { top: 470px; left: 1550px; }
-    }
+        .imgtec{
+            display: flex;
+            align-items: flex-start;
+            gap: 7%;
+            align-items: center;
+            margin-left: 20%;
+        }
 
-        @media (max-width: 1600px) {
-            .team {
-                justify-content: space-around;
+        /*PARCERIAS*/
+        .cont-par{
+            background-color: #2D2E47;
+            padding: 5% 5%;
+            position: relative;
+            overflow: hidden;  
+        }
+
+        .imgpar{
+            display: flex;
+            align-items: flex-start;
+            gap: 7%;
+            align-items: center;
+            margin-left: 28%;
+            border-radius:20px;
+        }
+
+        .parlogo{
+            border-radius: 50%;
+        }
+
+        /*FOOTER*/
+        .container-6{
+        max-width: 1920%;
+        height: 380%;
+        padding: 2% 1%;
+        background-color: #ADDFD0;
+        }
+            
+        .footer{
+        font-size: 1.3rem;
+        list-style: none;
+        text-align: center;
+        margin-top: 2%;
+        }
+
+        @media screen and (max-width: 860px){
+        .footer{
+            font-size: 0.8rem;
+        }
+        }
+
+        .footer li{
+        display: inline;
+        }
+
+        .footer ul li a{
+        color: #1F99A5;
+        margin-left: 1.5%;
+        text-decoration: none;
+        }
+
+        .email p{
+        margin-top: 2%;
+        color: #3E7996;
+        font-size: 1.2rem;
+        text-align: center;
+        }
+
+        @media screen and (max-width: 860px){
+        .email p{
+            font-size: 0.8rem;
+        }
+        }
+
+        footer{
+        background-color: #2D2F48;
+        height: 30px;
+        }
+
+        .fot{
+        text-align: center;
+        font-size: 3em;
+        color: #2D2E47;
+        }
+
+        .frame-contpar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .wavy-par {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+        }
+        .wavy-par img {
+            width: 130%;
+            height: 130%;
+            opacity: 0.3;
+        }
+        .wavy-par:nth-child(1) { top: -6%; left: -9%; }
+        .wavy-par:nth-child(2) { top: 50%; left: -6%; }
+        .wavy-par:nth-child(3) { top: 8%; left: 12%; transform: rotate(190deg); }
+        .wavy-par:nth-child(4) { top: 75%; left: 18%; transform: rotate(180deg); }
+        .wavy-par:nth-child(5) { top: -10%; left: 89%; transform: rotate(130deg);}
+        .wavy-par:nth-child(6) { top: 55%; left: 90%; transform: rotate(70deg); }
+        .wavy-par:nth-child(7) { top: 33%; left: 30%; transform: rotate(380deg); }
+        .wavy-par:nth-child(8) { top: -23%; left: 29%; transform: rotate(70deg); }
+
+        /*MEDIA
+
+        /* Large Desktop */
+        @media (max-width: 1600px){
+
+        }
+
+        @media (min-width: 1201px) {
+        }
+
+            /* Desktop */
+        @media (min-width: 1025px) and (max-width: 1200px) {
+            body {
+                font-size: 17px; /* Ajuste de fonte para desktops */
             }
-
-            .puzzle:nth-child(1) { top: -4px; left: -4px; }
-            .puzzle:nth-child(2) { top: 170px; left: 450px; }
-            .puzzle:nth-child(3) { top: 30px; left: 880px; }
-            .puzzle:nth-child(4) { top: 150px; left: 1250px; }
-            .puzzle:nth-child(5) { top: 450px; left: 950px; }
-            .puzzle:nth-child(6) { top: 680px; left: 500px; }
-            .puzzle:nth-child(7) { top: 450px; left: 70px; }
-            .puzzle:nth-child(8) { top: 700px; left: 1300px; }
         }
 
-        @media (max-width: 768px) {
-            .member {
-                width: calc(50% - 15px);
-                max-width: 250px;
+            /* Small Desktop */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            body {
+                font-size: 16px; /* Tamanho padrão para pequenos desktops */
+            }
+            .container {
+                padding: 30px; /* Ajuste o padding */
             }
         }
 
+            /* Tablet */
+        @media (min-width: 481px) and (max-width: 768px) {
+            body {
+                font-size: 15px; /* Ajuste de fonte para tablets */
+            }
+            .container {
+                padding: 20px; /* Ajuste o padding */
+            }
+        }
+
+            /* Mobile */
         @media (max-width: 480px) {
-            .member {
-                width: 100%;
-                max-width: 300px;
+            body {
+                font-size: 14px; /* Ajuste de fonte para dispositivos móveis */
+            }
+            .container {
+                padding: 10px; /* Reduza o padding */
             }
         }
-  
+ 
     </style>
 </head>
 <body>
@@ -598,10 +706,6 @@
             <div class="puzzle"><img class="tamop" src="img/quebra3.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tamop" src="img/quebra2.png" alt="Peça de um quebra-cabeça"></div>
             <div class="puzzle"><img class="tam" src="img/quebra1.png" alt="Peça de um quebra-cabeça"></div>
-
-            <div class="puzzle"><img class="tam" src="img/quebra4.png" alt="Peça de um quebra-cabeça"></div>
-            <div class="puzzle"><img class="tamop" src="img/quebra2.png" alt="Peça de um quebra-cabeça"></div>
-
         </div>
     <header>
             <div class="sidebar" id="sidebar">
@@ -692,6 +796,17 @@
         </div>
     </div>
     <div class="cont">
+        <div class="frame-container">
+            <div class="wavy-shape"><img src="img/2-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-shape"><img src="img/3-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-shape"><img src="img/1-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-shape"><img src="img/6-removebg-preview.png" alt="wavy-shape"></div>
+
+            <div class="wavy-shape"><img src="img/3-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-shape"><img src="img/6-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-shape"><img src="img/1-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-shape"><img src="img/2-removebg-preview.png" alt="wavy-shape"></div>
+        </div>
         <h1 class="mission">Nossa missão</h1>
         <p class="missiop">Terá como propósito fornecer uma plataforma abrangente que ofereça acesso avgas de emprego e cursos educacionais. Por meio da análise contínua das necessidades dos usuários e das demandas do mercado, o objetivo é criar e manter uma interface interativa e funcional que atende ás  expectativas dos usuários, facilitando uma inserção no mercado de trabalho e contribuindo para o desenvolvimento profissional e a redução do desemprego. </p>
     </div>
@@ -708,7 +823,7 @@
                 </div>
             </div>
             <div class="member">
-                <img src="https://via.placeholder.com/250x250.png?text=Maria+Santos" alt="Marcela">
+                <img src="img/marcela.jpeg" alt="Marcela">
                 <div class="member-info">
                     <div class="member-name">Marcela Mendonça</div>
                     <div class="member-role">Desenvolvedora Backend e ABNT</div>
@@ -737,6 +852,57 @@
             </div>
         </div>
     </div>
+    <div class="cont-tec">
+        <p class="tec">Tecnologias utilizadas</p>
+        <div class="imgtec">
+            <img src="img/download-removebg-preview.png" alt="Visual Code">
+            <img src="img/html.png" alt="Visual Code">
+        </div>
+    </div>
+    <div class="cont-par">
+        <div class="frame-contpar">
+            <div class="wavy-par"><img src="img/2-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-par"><img src="img/3-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-par"><img src="img/4-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-par"><img src="img/6-removebg-preview.png" alt="wavy-shape"></div>
+
+            <div class="wavy-par"><img src="img/3-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-par"><img src="img/6-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-par"><img src="img/4-removebg-preview.png" alt="wavy-shape"></div>
+            <div class="wavy-par"><img src="img/2-removebg-preview.png" alt="wavy-shape"></div>
+        </div>
+        <p class="tec">Parcerias</p>
+        <br>
+        <div class="imgpar">
+            <img src="img/ja.png" width="250px">
+            <img class="parlogo" src="img/arte da comunicacao.jpeg" width="250px">
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="container-6">
+        <p class="fot">IncluWork</p>
+        <div class="footer">
+            <ul >
+                <li><a href="">Home</a></li>
+                <li><a href="">Cursos</a></li>                
+                <li><a href="">Vagas</a></li>
+                <li><a href="">Sobre</a></li>                
+                <li><a href="">Login</a></li>
+            </ul>
+        </div>
+        <div class="email"><p>incluwork@gmail.com <br> (11) 9523-4433</p></div>
+    </div>
+
+    <footer></footer>
+
 
 <script src="script.js"></script>
 </body>

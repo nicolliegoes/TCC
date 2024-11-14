@@ -21,6 +21,7 @@
       padding: 2rem;
       text-align: center;
       height: 690px;
+
     }
 
     .hero h1 {
@@ -457,6 +458,24 @@ h5{
           margin-top: 1%;
           margin-left: 40%;
         }
+        /*Frame*/
+        .frame-container {
+            max-width: 58%;
+            width: 80%;
+            height: 100%;
+            position: fixed;
+            overflow: hidden;
+        }
+        .wavy-shape {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: transparent; /* Torna a forma transparente */
+            animation: rotate 10s infinite linear;
+        }
+
+        .wavy-shape:nth-child(1){ top: 0; left: 0;  }
+        .wavy-shape:nth-child(2){ top: 0; left: 0;  }
   </style>
 </head>
 <body>
@@ -490,6 +509,10 @@ h5{
 
   <main>
     <section class="hero">
+      <div class="frame-container">
+        <div class="wavy-shape"></div>
+        <div class="wavy-shape"></div>
+    </div>
       <h1>+10 VAGAS <br> DISPONIVEIS</h1>
       <div class="search-box">
         <span class="search-icon"></span>
