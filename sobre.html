@@ -228,8 +228,8 @@
         }
         .container {
             width: 100%;
-            max-width: 1100px;
-            padding: 40px;
+            max-width: 1500px;
+            padding: 45px 40px 40px;
             box-sizing: border-box;
         }
         .our {
@@ -252,7 +252,7 @@
             top: 0;
             bottom: 0;
             width: 10px;
-            height: 1250px;
+            height: 90%;
             background: linear-gradient(to bottom, #F3FFF3, #3E7996);
             transform: translateX(-50%);
         }
@@ -274,70 +274,85 @@
         }
         .circle-1 { background-color: #F3FFF3; }
         .circle-2 { background-color: #A7D7CA; }
-        .circle-3 { background-color: #73B5B7; }
-        .circle-4 { background-color: #4BA0A3; }
-        .circle-5 { background-color: #3E7996; }
+        .circle-3 { background-color: #8FD4D1; }
+        .circle-4 { background-color: #73B5B7; }
+        .circle-5 { background-color: #4BA0A3; }
+        .circle-6 { background-color: #3E7996; }
 
         .timeline-content {
             width: 45%;
-            padding: 20px;
+            padding: 0 5px 20px;
             border-radius: 8px;
         }
         .timeline-item:nth-child(odd) .timeline-content {
             margin-right: 60%;
-            text-align: right;
+            text-align: center;
         }
         .timeline-item:nth-child(even) .timeline-content {
             margin-left: 60%;
-            text-align: left;
+            text-align: center;
         }
-        .timeline-date {
+        .timeline-date { /*CIRCULO 1*/
             color: #F3FFF3;
-            font-size: 35px;
+            font-size: 33px;
             margin-bottom: 10px;
         }
 
-        .timeline-date1 {
+        .timeline-date1 { /*CIRCULO 2*/
             color: #A7D7CA;
+            font-size: 33px;
+            margin-bottom: 10px;
+        }
+        .timeline-date2 { /*CIRCULO 3*/
+            color: #8FD4D1;
             font-size: 35px;
             margin-bottom: 10px;
         }
-        .timeline-date2 {
+        .timeline-date3 { /*CIRCULO 4*/
             color: #73B5B7;
             font-size: 35px;
             margin-bottom: 10px;
         }
-        .timeline-date3 {
+        .timeline-date4 { /*CIRCULO 5*/
             color: #4BA0A3;
             font-size: 35px;
             margin-bottom: 10px;
         }
-        .timeline-date4 {
+        .timeline-date5 { /*CIRCULO 6*/
             color: #3E7996;
             font-size: 35px;
             margin-bottom: 10px;
         }
-        .timeline-text {
+
+
+        .timeline-text { /*CIRCULO 1*/
             color: #F3FFF3;
             font-size: 18px;
             line-height: 1.4;
         }
-        .timeline-text1 {
+        .timeline-text1 { /*CIRCULO 2*/
             color: #A7D7CA;
             font-size: 18px;
             line-height: 1.4;
         }
-        .timeline-text2 {
+        .timeline-text2 { /*CIRCULO 3*/
+            color: #8FD4D1;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+        .timeline-text3 { /*CIRCULO 4*/
             color: #73B5B7;
             font-size: 18px;
             line-height: 1.4;
+            margin-bottom: 20px;
         }
-        .timeline-text3 {
+        .timeline-text4 { /*CIRCULO 5*/
             color: #4BA0A3;
             font-size: 18px;
             line-height: 1.4;
+            margin-bottom: 47px;
         }
-        .timeline-text4 {
+        .timeline-text5 { /*CIRCULO 6*/
             color: #3E7996;
             font-size: 18px;
             line-height: 1.4;
@@ -654,6 +669,8 @@
         .wavy-par:nth-child(12) { top: -12%; left: 90%; }
         .wavy-par:nth-child(13) { top: 70%; left: 90%; }
 
+
+
         /*MEDIA*/
         @media (max-width: 1400px) {
             .intro-section{
@@ -692,6 +709,23 @@
                 margin-top: 8%;
                 margin-right: 3%;
                 width: 45%;
+            }
+
+            .our {
+                font-size: 60px;
+            }
+
+            .timeline-date, .timeline-date1, .timeline-date2, .timeline-date3, .timeline-date4, .timeline-date5{
+                font-size: 30px;
+            }
+
+            .timeline-text, .timeline-text1, .timeline-text2, .timeline-text3, .timeline-text4, .timeline-text5{
+                font-size: 16.5px;
+            }
+
+            .timeline-circle{
+                width: 135px;
+                height: 135px;
             }
 
             .wavy-shape img {
@@ -974,36 +1008,57 @@
                 <div class="timeline-item">
                     <div class="timeline-circle circle-1"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Fevereiro 2024</div>
-                        <div class="timeline-text">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div class="timeline-date">Fevereiro e Março de 2024</div>
+                        <div class="timeline-text">Nos reunimos para discutir possíveis temas e explorar ideias sobre o 
+                            que poderíamos desenvolver. No entanto, nenhuma proposta parecia satisfatória até que uma das 
+                            integrantes do grupo sugeriu a criação de uma plataforma web voltada para a oferta de vagas de
+                            emprego específicas para pessoas com deficiência. </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-circle circle-2"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date1">Março 2024</div>
-                        <div class="timeline-text1">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div class="timeline-date1">Maio de 2024</div>
+                        <div class="timeline-text1">Aprofundamos os detalhes do nosso tema e como abordá-lo. 
+                            Definimos as principais funções do site, além de procurar uma paleta de cores e iniciar o protótipo do site. 
+                            Também fizemos uma pesquisa detalhada sobre o desemprego e seu impacto negativo nas pessoas com deficiência, 
+                            além de organizar as funções do grupo. </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-circle circle-3"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date2">Março 2024</div>
-                        <div class="timeline-text2">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div class="timeline-date2">Junho de 2024</div>
+                        <div class="timeline-text2">Buscamos instituições para realizar entrevistas com especialistas sobre os desafios 
+                            do mercado de trabalho para pessoas com deficiência. Durante esse período, decidimos a plataforma que utilizaríamos 
+                            para desenvolver nosso site e escolhemos o nome "IncluWork", que reflete nossa missão de inclusão no ambiente de trabalho.
+                            Demos início a programação do site.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-circle circle-4"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date3">Março 2024</div>
-                        <div class="timeline-text3">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div class="timeline-date3">Agosto e Setembro de 2024</div>
+                        <div class="timeline-text3">Dedicamo-nos à programação integral do site e à escolha da logo. 
+                            Decidimos quais deficiências iriamos focar e organizamos as páginas necessárias, distribuindo as 
+                            responsabilidades de programação entre os membros do grupo.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-circle circle-5"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date4">Março 2024</div>
-                        <div class="timeline-text4">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div class="timeline-date4">Outubro de 2024</div>
+                        <div class="timeline-text4">Continuamos a programação de forma intensa do site, concentrando-nos em finalizar as questões 
+                            pendentes e garantir que todas as funcionalidades estivessem implementadas.</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-circle circle-6"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date5">Novembro de 2024</div>
+                        <div class="timeline-text5">Escolhemos o slide e o conteúdo da apresentação, organizamos as falas e 
+                            cuidamos dos últimos detalhes do site. Realizamos uma pré-apresentação do TCC, fazendo os ajustes 
+                            necessários antes da apresentação final.</div>
                     </div>
                 </div>
             </div>

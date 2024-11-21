@@ -7,439 +7,445 @@
     <link rel="icon" href="img/icontest.png" type="image/x-icon">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body{
+          background-color: #3E7996;
+          position: relative;
+        }
+          
+        nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: left;
+          margin-top: 1%;
+        }
+        
+        .nav-list {
+          list-style: none;
+          padding: 30px;
+          padding-right: 30%;
+          padding-left: 30%;
+          margin: 0;
+          display: flex;
+          justify-content: space-around; 
+          position: fixed; 
+          top: 0;
+          width: 40%;
+          background-color: transparent; 
+          transition: background-color 0.3s ease; 
+          z-index: 1000; 
+        }
+        
+        @media screen and (max-width: 1440px){
+          .nav-list{
+            padding-left: 27%;
+            padding-right: 33%;
+          }
+        }
+        
+        @media screen and (max-width: 1280px){
+          .nav-list{
+            padding: 25px;
+            padding-left: 22%;
+            padding-right: 40%;
+          }
+        }
+          
+        .nav-background {
+          background-color: #4BA0A3;
+        }
+          
+        @media (max-width: 1044px){
+          .nav-background{
+            background-color: transparent;
+          }
+        }
+          
+        .logo {
+          color: #3E7996;
+          font-size: 1.4rem;
+        }
+        
+        .nav-list ul {
+          font-size: 1.3rem;
+          display: flex;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+            
+        }
+        
+        .nav-list ul li {
+          margin: 0 45px;
+        }
+        
+        .nav-list ul li a {
+          color: white;
+          text-decoration: none;
+        }
+          
+        .menu-icon {
+          font-size: 24px;
+          color: #F3FFF3;
+          cursor: pointer;
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          z-index: 1000;
+          display: none; 
+        }
+        
+        .sidebar {
+          height: 100%;
+          width: 250px;
+          position: fixed;
+          top: 0;
+          left: -250px; 
+          background-color: #F3FFF3;
+          transition: left 0.3s;
+          padding-top: 60px;
+          z-index: 999;
+        }
+        
+        .sidebar.active {
+          left: 0;
+        }
+        
+        .sidebar ul {
+          list-style: none;
+          padding: 0;
+        }
+        
+        .sidebar ul li {
+          margin: 20px 0;
+          text-align: center;
+        }
+        
+        .sidebar ul li a {
+          color: #4BA0A3;
+          text-decoration: none;
+          font-size: 18px;
+        }
+        
+        .sidebar ul li a:hover {
+          text-decoration: underline;
+        }
+        
+        @media (max-width: 1044px) {
+          .menu-icon {
+            display: block; 
+            z-index: 1000;
+          }
+        
+          .nav-list {
+            display: none; 
+          }
+        }
+        
+        header{
+          float: left;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+        }
+        
+        h4{
+          text-align: center;
+          font-size: 3em;
+          color: #2D2E47;
+        }
+        
+        @media screen and (max-width: 860px){
+          h4{
+            font-size: 1.3em;
+          }
+        }
+        
+        .container-6{
+          max-width: 1920%;
+          height: 380%;
+          padding: 2% 1%;
+          background-color: #ADDFD0;
+        }
+        
+        .footer{
+          font-size: 1.3rem;
+          list-style: none;
+          text-align: center;
+          margin-top: 2%;
+        }
+        
+        @media screen and (max-width: 860px){
+          .footer{
+            font-size: 0.8rem;
+          }
+        }
+        
+        .footer li{
+          display: inline;
+        }
+        
+        .footer ul li a{
+          color: #1F99A5;
+          margin-left: 1.5%;
+          text-decoration: none;
+        }
+        
+        .email p{
+          margin-top: 2%;
+          color: #3E7996;
+          font-size: 1.2rem;
+        }
+        
+        @media screen and (max-width: 860px){
+          .email p{
+            font-size: 0.8rem;
+          }
+        }
+        
+        footer{
+          background-color: #2D2F48;
+          height: 30px;
+        }
+        
+        h1{
+          text-align:center;
+          margin-left: 15%;
+          margin-right: 15%;
+          line-height: 1.8;
+          font-size: clamp(1.3rem, 3vw + 1.3rem, 10rem);
+          color: #F0FFF0;
+          margin-top: 15%;
+          margin-bottom: 5%;
+        }
+        
+        input{
+          width: 55%;
+          background-color: #2D2F48;
+          padding: 0.6% 2% 0.6% 2%;
+          border-radius: 50px;
+          margin-left: 22%;
+          font-size: 1.8em;
+          margin-top: 0%;
+          border: none;
+          box-sizing: border-box;
+          margin-bottom: 15%;
+        }
+        
+        .form-control{
+          color: white;
+        }
+        
+        ::placeholder{
+          color: white;
+          font-size: 1.3rem;
+        }
+        
+        .container-1{
+          max-width: 1024%;
+          height: 280%;
+          background-color: #ADDFD0;
+          padding: 3% 3%;
+        }
+        
+        .button-row {
+          display: flex;          
+          flex-wrap: wrap;         
+          justify-content: center; 
+          gap: 30px; 
+          margin-left: 15%;
+          margin-right: 15%;
+          margin-top: 3%;              
+        }
+        
+        .button-row button {
+          flex: 0 1 calc(430px - 50px); 
+          margin-top: 1%;
+          padding: 15px;
+          font-size: 16px;
+          cursor: pointer;
+          border: none;
+          background-color: #F5F5F5;
+          color: #73B5B7;
+          border-radius: 30px;
+          transition: background-color 0.3s ease;
+        }
+        
+        h2{
+          text-align: center;
+          font-size: 3rem;
+          color: #3E7996;
+        }
+        
+        @media screen and (max-width: 999px){
+          h2{
+            font-size: 2rem;
+          }
+        }
+        
+        @media screen and (max-width: 599px){
+          h2{
+            font-size: 1.4rem;
+          }
+        }
+        
+        p{
+          text-align: center;
+        }
+        
+        .container-2{
+          max-width: 1024%;
+          height: 280%;
+          background-color: #73B5B7;
+          padding: 5% 5%;
+          text-align: center;
+        }
+        
+        .container-3{
+          max-width: 1024%;
+          height: 280%;
+          background-color: #4BA0A3;
+          padding: 5% 5%;
+          text-align: center;
+        }
+        
+        .container-4{
+          max-width: 1024%;
+          height: 280%;
+          background-color: #3E7996;
+          padding: 5% 5%;
+          text-align: center;
+        }
+        
+        .container-5{
+          max-width: 1024%;
+          height: 280%;
+          background-color: #3B5A6A;
+          padding: 5% 5%;
+          text-align: center;
+        }
+        
+        .caixa {
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          padding: 2%;
+          width: 25%;
+          margin: auto;
+          margin: 0 25px;
+          display: inline-block;
+          transition: all 0.5s ease-in-out;
+        }
+        
+        @media screen and (max-width: 1366px){
+          .caixa{
+            width: 23%;
+            margin-bottom: 4%;
+            margin-left: 2%;
+          }
+        }
+        
+        @media screen and (max-width: 999px){
+            .container-2, .container-3, .container-4, .container-5{
+                justify-items: center;
+            }
+        }
+        
+        @media screen and (max-width: 999px){
+          .caixa{
+            display: block;
+            width: 70%;
+            margin-bottom: 4%;
+            margin-left: 5%;
+          }
+        }
+        
+        .titulo {
+          display: flex;
+          align-items: center;
+        }
+        
+        .icone {
+          background-color: #C4E0E1; 
+          border-radius: 50%;
+          padding: 4%;
+          display: inline-flex;
+          margin-bottom: 4%;
+          margin-right: 2%; 
+        }
+        
+        @media screen and (max-width: 1600px){
+          .icone{
+            margin-right: 1.3%;
+          }
+        }
+        
+        @media screen and (max-width: 1280px){
+          .icone{
+            margin-right: 0%;
+          }
+        }
+        
+        .titulo h2 {
+          margin: 1%;
+          margin-bottom: 6%;
+          font-size: 1.5rem;
+        }
+        
+        @media (max-width: 1440px){
+          .titulo h2{
+            font-size: 1.3rem;
+          }
+        }
+        
+        button.botao {
+          background-color: #4BA0A3;
+          color: #fff;
+          border: none;
+          padding: 2.5% 10%;
+          border-radius: 20px;
+          position: static;
+          cursor: pointer;
+          margin-top: 15px;
+          text-align: center;
+          align-items: center;
+        }
+        
+        .barra {
+          align-items: center; 
+          text-align: center;
+          width: 80%; 
+          height: 1px; 
+          background-color: transparent; 
+          margin: 20px 0;
+        }
+        
+        .linha {
+          align-items: center;
+          height: 1px; 
+          background-color: #4BA0A3; 
+          width: 80%; 
+          margin-left: 23%;
+          top: 50%; 
+          left: 0;
+          text-align: center;
+        }
+        
+        h6, h5{
+          text-align: center;
+          display: inline-block;
+          margin: 0 15px;
+          margin-bottom: 1%;
+        }
+
+        .hidden {
+          opacity: 0;
+          transform: scale(0.8);
+          pointer-events: none;
+        }
+    </style>
 </head>
-
-<style>
-body{
-  background-color: #3E7996;
-  position: relative;
-}
-  
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: left;
-  margin-top: 1%;
-}
-
-.nav-list {
-  list-style: none;
-  padding: 30px;
-  padding-right: 30%;
-  padding-left: 30%;
-  margin: 0;
-  display: flex;
-  justify-content: space-around; 
-  position: fixed; 
-  top: 0;
-  width: 40%;
-  background-color: transparent; 
-  transition: background-color 0.3s ease; 
-  z-index: 1000; 
-}
-
-@media screen and (max-width: 1440px){
-  .nav-list{
-    padding-left: 27%;
-    padding-right: 33%;
-  }
-}
-
-@media screen and (max-width: 1280px){
-  .nav-list{
-    padding: 25px;
-    padding-left: 22%;
-    padding-right: 40%;
-  }
-}
-  
-.nav-background {
-  background-color: #4BA0A3;
-}
-  
-@media (max-width: 1044px){
-  .nav-background{
-    background-color: transparent;
-  }
-}
-  
-.logo {
-  color: #3E7996;
-  font-size: 1.4rem;
-}
-
-.nav-list ul {
-  font-size: 1.3rem;
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-    
-}
-
-.nav-list ul li {
-  margin: 0 45px;
-}
-
-.nav-list ul li a {
-  color: white;
-  text-decoration: none;
-}
-  
-  .menu-icon {
-  font-size: 24px;
-  color: #F3FFF3;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-  display: none; 
-}
-
-.sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: -250px; 
-  background-color: #F3FFF3;
-  transition: left 0.3s;
-  padding-top: 60px;
-  z-index: 999;
-}
-
-.sidebar.active {
-  left: 0;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin: 20px 0;
-  text-align: center;
-}
-
-.sidebar ul li a {
-  color: #4BA0A3;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.sidebar ul li a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 1044px) {
-  .menu-icon {
-    display: block; 
-    z-index: 1000;
-  }
-
-  .nav-list {
-    display: none; 
-  }
-}
-
-header{
-  float: left;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-h4{
-  text-align: center;
-  font-size: 3em;
-  color: #2D2E47;
-}
-
-@media screen and (max-width: 860px){
-  h4{
-    font-size: 1.3em;
-  }
-}
-
-.container-6{
-  max-width: 1920%;
-  height: 380%;
-  padding: 2% 1%;
-  background-color: #ADDFD0;
-}
-
-.footer{
-  font-size: 1.3rem;
-  list-style: none;
-  text-align: center;
-  margin-top: 2%;
-}
-
-@media screen and (max-width: 860px){
-  .footer{
-    font-size: 0.8rem;
-  }
-}
-
-.footer li{
-  display: inline;
-}
-
-.footer ul li a{
-  color: #1F99A5;
-  margin-left: 1.5%;
-  text-decoration: none;
-}
-
-.email p{
-  margin-top: 2%;
-  color: #3E7996;
-  font-size: 1.2rem;
-}
-
-@media screen and (max-width: 860px){
-  .email p{
-    font-size: 0.8rem;
-  }
-}
-
-footer{
-  background-color: #2D2F48;
-  height: 30px;
-}
-
-h1{
-  text-align:center;
-  margin-left: 15%;
-  margin-right: 15%;
-  line-height: 1.8;
-  font-size: clamp(1.3rem, 3vw + 1.3rem, 10rem);
-  color: #F0FFF0;
-  margin-top: 15%;
-  margin-bottom: 5%;
-}
-
-input{
-  width: 55%;
-  background-color: #2D2F48;
-  padding: 0.6% 2% 0.6% 2%;
-  border-radius: 50px;
-  margin-left: 22%;
-  font-size: 1.8em;
-  margin-top: 0%;
-  border: none;
-  box-sizing: border-box;
-  margin-bottom: 15%;
-}
-
-.form-control{
-  color: white;
-}
-
-::placeholder{
-  color: white;
-  font-size: 1.3rem;
-}
-
-.container-1{
-  max-width: 1024%;
-  height: 280%;
-  background-color: #ADDFD0;
-  padding: 3% 3%;
-}
-
-.button-row {
-  display: flex;          
-  flex-wrap: wrap;         
-  justify-content: center; 
-  gap: 30px; 
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 3%;              
-}
-
-.button-row button {
-  flex: 0 1 calc(430px - 50px); 
-  margin-top: 1%;
-  padding: 15px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  background-color: #F5F5F5;
-  color: #73B5B7;
-  border-radius: 30px;
-  transition: background-color 0.3s ease;
-}
-
-h2{
-  text-align: center;
-  font-size: 3rem;
-  color: #3E7996;
-}
-
-@media screen and (max-width: 999px){
-  h2{
-    font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 599px){
-  h2{
-    font-size: 1.4rem;
-  }
-}
-
-p{
-  text-align: center;
-}
-
-.container-2{
-  max-width: 1024%;
-  height: 280%;
-  background-color: #73B5B7;
-  padding: 5% 5%;
-  text-align: center;
-}
-
-.container-3{
-  max-width: 1024%;
-  height: 280%;
-  background-color: #4BA0A3;
-  padding: 5% 5%;
-  text-align: center;
-}
-
-.container-4{
-  max-width: 1024%;
-  height: 280%;
-  background-color: #3E7996;
-  padding: 5% 5%;
-  text-align: center;
-}
-
-.container-5{
-  max-width: 1024%;
-  height: 280%;
-  background-color: #3B5A6A;
-  padding: 5% 5%;
-  text-align: center;
-}
-
-.caixa {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 2%;
-  width: 25%;
-  margin: auto;
-  margin: 0 25px;
-  display: inline-block;
-}
-
-@media screen and (max-width: 1366px){
-  .caixa{
-    width: 23%;
-    margin-bottom: 4%;
-    margin-left: 2%;
-  }
-}
-
-@media screen and (max-width: 999px){
-    .container-2, .container-3, .container-4, .container-5{
-        justify-items: center;
-    }
-}
-
-@media screen and (max-width: 999px){
-  .caixa{
-    display: block;
-    width: 70%;
-    margin-bottom: 4%;
-    margin-left: 5%;
-  }
-}
-
-.titulo {
-  display: flex;
-  align-items: center;
-}
-
-.icone {
-  background-color: #C4E0E1; 
-  border-radius: 50%;
-  padding: 4%;
-  display: inline-flex;
-  margin-bottom: 4%;
-  margin-right: 2%; 
-}
-
-@media screen and (max-width: 1600px){
-  .icone{
-    margin-right: 1.3%;
-  }
-}
-
-@media screen and (max-width: 1280px){
-  .icone{
-    margin-right: 0%;
-  }
-}
-
-.titulo h2 {
-  margin: 1%;
-  margin-bottom: 6%;
-  font-size: 1.5rem;
-}
-
-@media (max-width: 1440px){
-  .titulo h2{
-    font-size: 1.3rem;
-  }
-}
-
-button.botao {
-  background-color: #4BA0A3;
-  color: #fff;
-  border: none;
-  padding: 2.5% 10%;
-  border-radius: 20px;
-  position: static;
-  cursor: pointer;
-  margin-top: 15px;
-  text-align: center;
-  align-items: center;
-}
-
-.barra {
-  align-items: center; 
-  text-align: center;
-  width: 80%; 
-  height: 1px; 
-  background-color: transparent; 
-  margin: 20px 0;
-}
-
-.linha {
-  align-items: center;
-  height: 1px; 
-  background-color: #4BA0A3; 
-  width: 80%; 
-  margin-left: 23%;
-  top: 50%; 
-  left: 0;
-  text-align: center;
-}
-
-h6, h5{
-  text-align: center;
-  display: inline-block;
-  margin: 0 15px;
-  margin-bottom: 1%;
-}
-</style>
-
 <body>
     <header>
         <nav>
@@ -479,15 +485,16 @@ h6, h5{
     <div class="container-1">
       <h2>Escolha sua área de interesse</h2>
         <div class="button-row">
-          <button>Desenvolvimento pessoal</button>
-          <button>Preparação para o Mercado de Trabalho</button>
-          <button>Tecnologia</button>
-          <button>Conhecimentos</button>
+          <button data-filter="*">Todos</button>
+          <button data-filter=".desenvolvimento">Desenvolvimento pessoal</button>
+          <button data-filter=".entrevista">Preparação para o Mercado de Trabalho</button>
+          <button data-filter=".tecnologia">Tecnologia</button>
+          <button data-filter=".conhecimento">Conhecimentos</button>
         </div>
     </div>
 
     <div class="container-2">
-      <div class="caixa">
+      <div class="caixa entrevista">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -502,7 +509,7 @@ h6, h5{
         <h5>Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/68642849"><button class="botao">Iniciar</button></a>
       </div>
-      <div class="caixa">
+      <div class="caixa desenvolvimento">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -517,7 +524,7 @@ h6, h5{
         <h5>Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/98345079"><button class="botao">Iniciar</button></a>
       </div>
-      <div class="caixa">
+      <div class="caixa desenvolvimento">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -535,7 +542,7 @@ h6, h5{
     </div>
 
     <div class="container-3">
-      <div class="caixa">
+      <div class="caixa tecnologia">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -550,7 +557,7 @@ h6, h5{
         <h5>Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/42517096"><button class="botao">Iniciar</button></a>
       </div>
-      <div class="caixa">
+      <div class="caixa conhecimento">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -565,7 +572,7 @@ h6, h5{
         <h5>Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/31593487"><button class="botao">Iniciar</button></a>
       </div>
-      <div class="caixa">
+      <div class="caixa conhecimento">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -583,7 +590,7 @@ h6, h5{
     </div>
 
     <div class="container-4">
-      <div class="caixa">
+      <div class="caixa conhecimento">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -598,7 +605,7 @@ h6, h5{
         <h5>Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/95113756"><button class="botao">Iniciar</button></a>
       </div>
-      <div class="caixa">
+      <div class="caixa entrevista">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -613,7 +620,7 @@ h6, h5{
         <h5>Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/94846121"><button class="botao">Iniciar</button></a>
       </div>
-      <div class="caixa">
+      <div class="caixa tecnologia">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -631,7 +638,7 @@ h6, h5{
     </div>
 
     <div class="container-5">
-      <div class="caixa">
+      <div class="caixa desenvolvimento">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -646,7 +653,7 @@ h6, h5{
         <h5>Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/68642849"><button class="botao">Iniciar</button></a>
       </div>
-      <div class="caixa">
+      <div class="caixa desenvolvimento">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -661,7 +668,7 @@ h6, h5{
         <h5>Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/68642849"><button class="botao">Iniciar</button></a>
       </div>
-      <div class="caixa">
+      <div class="caixa entrevista">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
@@ -693,7 +700,75 @@ h6, h5{
     </div>
 
     <footer></footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var $containers = $('.container-2, .container-3, .container-4, .container-5');
+        var $container2 = $('.container-2');
 
+        $('.button-row button').on('click', function() {
+            var filterValue = $(this).attr('data-filter');
+            
+            $('.caixa').removeClass('filtered hidden');
+            
+            if (filterValue !== '*') {
+                $containers.find('.caixa').not(filterValue).addClass('hidden');
+                var $filteredItems = $containers.find(filterValue);
+                $filteredItems.addClass('filtered');
+                
+                // Mover itens filtrados para container-2 com animação
+                $filteredItems.each(function() {
+                    var $item = $(this);
+                    var offset = $item.offset();
+                    var destOffset = $container2.offset();
+                    
+                    $item.css({
+                        'position': 'fixed',
+                        'top': offset.top,
+                        'left': offset.left,
+                        'width': $item.width(),
+                        'height': $item.height(),
+                        'z-index': 1000
+                    });
+                    
+                    $item.animate({
+                        top: destOffset.top + $container2.find('.caixa').length * ($item.outerHeight(true) + 20),
+                        left: destOffset.left
+                    }, 500, function() {
+                        $item.css({
+                            'position': '',
+                            'top': '',
+                            'left': '',
+                            'width': '',
+                            'height': '',
+                            'z-index': ''
+                        });
+                        $container2.append($item);
+                    });
+                });
+            } else {
+                // Se "Todos" for selecionado, restaure a ordem original
+                $containers.each(function() {
+                    var $container = $(this);
+                    var $items = $container.find('.caixa');
+                    $container.append($items);
+                });
+            }
+        });
+
+        // Função de pesquisa
+        $('.form-control').on('input', function() {
+            var searchValue = $(this).val().toLowerCase();
+            $('.caixa').each(function() {
+                var $item = $(this);
+                if ($item.text().toLowerCase().indexOf(searchValue) > -1) {
+                    $item.removeClass('hidden');
+                } else {
+                    $item.addClass('hidden');
+                }
+            });
+        });
+    });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
