@@ -460,30 +460,22 @@ h5{
         }
         /*Frame*/
         .frame-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            max-width: 58%;
+            width: 80%;
             height: 100%;
-            z-index: 1;
+            position: fixed;
+            overflow: hidden;
         }
         .wavy-shape {
             position: absolute;
             width: 250px;
             height: 250px;
+            background: transparent; /* Torna a forma transparente */
+            animation: rotate 10s infinite linear;
         }
-        .wavy-shape img {
-            width: 120%;
-            height: 120%;
-        }
-        .wavy-shape:nth-child(1) { top: -5%; left: -8%; }
-        .wavy-shape:nth-child(2) { top: 60%; left: -6%; }
-        .wavy-shape:nth-child(3) { top: -28%; left: 12%; }
-        .wavy-shape:nth-child(4) { top: 75%; left: 12%;  }
-        .wavy-shape:nth-child(5) { top: -10%; left: 89%; transform: rotate(130deg);}
-        .wavy-shape:nth-child(6) { top: 55%; left: 90%; transform: rotate(70deg); }
-        .wavy-shape:nth-child(7) { top: 90%; left: 70%; transform: rotate(200deg); }
-        .wavy-shape:nth-child(8) { top: -35%; left: 67%; transform: rotate(70deg); }
+
+        .wavy-shape:nth-child(1){ top: 0; left: 0;  }
+        .wavy-shape:nth-child(2){ top: 0; left: 0;  }
   </style>
 </head>
 <body>
@@ -518,15 +510,8 @@ h5{
   <main>
     <section class="hero">
       <div class="frame-container">
-        <div class="wavy-shape"><img src="img/2-removebg-preview.png" alt="wavy-shape"></div>
-        <div class="wavy-shape"><img src="img/3-removebg-preview.png" alt="wavy-shape"></div>
-        <div class="wavy-shape"><img src="img/1-removebg-preview.png" alt="wavy-shape"></div>
-        <div class="wavy-shape"><img src="img/6-removebg-preview.png" alt="wavy-shape"></div>
-
-        <div class="wavy-shape"><img src="img/3-removebg-preview.png" alt="wavy-shape"></div>
-        <div class="wavy-shape"><img src="img/6-removebg-preview.png" alt="wavy-shape"></div>
-        <div class="wavy-shape"><img src="img/1-removebg-preview.png" alt="wavy-shape"></div>
-        <div class="wavy-shape"><img src="img/2-removebg-preview.png" alt="wavy-shape"></div>
+        <div class="wavy-shape"></div>
+        <div class="wavy-shape"></div>
     </div>
       <h1>+10 VAGAS <br> DISPONIVEIS</h1>
       <div class="search-box">
@@ -535,9 +520,12 @@ h5{
       </div>
     </section>
 
-    <section class="additional-jobs">
-      <h2>Vagas Disponíveis</h2>
-      <div class="espaca"></div>
+   
+
+      <section id="vagas"> 
+        <div class="container-2">
+            <h3>Vagas disponíveis</h3>
+            <div id="vagas-lista">
 
       <div class="job-listings">
         <div class="job-card">
@@ -800,6 +788,51 @@ h5{
       </div>
     </section>
   </main>
+</div>
+</div>
+</section>
+
+<script>
+  function getParametroURL(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+  }
+
+  function exibirVagas() {
+      const filtro = getParametroURL('filtro');
+      
+      const vagas = [
+          { cargo: 'balconista', descricao: 'Vaga para balconista em loja de varejo' },
+          { cargo: 'atendente', descricao: 'Vaga para atendente de call center' },
+          { cargo: 'auxiliar', descricao: 'Vaga para auxiliar administrativo' },
+          { cargo: 'assistente', descricao: 'Vaga para assistente de marketing' },
+          { cargo: 'vendedor', descricao: 'Vaga para vendedor(a) em loja de roupas' },
+          { cargo: 'recepcionista', descricao: 'Vaga para recepcionista em hotel' },
+      ];
+
+      const vagasFiltradas = vagas.filter(vaga => vaga.cargo === filtro || !filtro);
+
+      const vagasLista = document.getElementById('vagas-lista');
+      vagasLista.innerHTML = '';
+
+      if (vagasFiltradas.length > 0) {
+          vagasFiltradas.forEach(vaga => {
+              const vagaElement = document.createElement('div');
+              vagaElement.classList.add('vaga');
+              vagaElement.innerHTML = `
+                  <h4>${vaga.cargo.charAt(0).toUpperCase() + vaga.cargo.slice(1)}</h4>
+                  <p>${vaga.descricao}</p>
+              `;
+              vagasLista.appendChild(vagaElement);
+          });
+      } else {
+          vagasLista.innerHTML = '<p>Nenhuma vaga encontrada para o filtro selecionado.</p>';
+      }
+  }
+
+
+  window.onload = exibirVagas;
+</script>
 
   <div class="cont">
     <h1 class="mission">Ainda não possuo um currículo</h1>
@@ -839,5 +872,40 @@ h5{
     });
   </script>
    <script src="script.js"></script>
+
+
+
+<script> // código da barra de pesquisa
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('.search-box input'); // campo de pesquisa
+    const jobCards = document.querySelectorAll('.job-card'); // seleciona todas as vagas
+
+    if (searchInput && jobCards) {
+      searchInput.addEventListener('input', () => {
+        const searchValue = searchInput.value.toLowerCase().trim(); // lê erros
+
+        jobCards.forEach(card => {
+          const jobTitle = card.querySelector('h3')?.textContent.toLowerCase() || ''; // pega o título da vaga
+          const jobSubtitle = card.querySelector('.subtitle')?.textContent.toLowerCase() || ''; // pega o subtítulo da vaga
+          const jobDetails = card.textContent.toLowerCase(); // pega todo o texto
+
+          if (
+            jobTitle.includes(searchValue) ||
+            jobSubtitle.includes(searchValue) ||
+            jobDetails.includes(searchValue)
+          ) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    } else {
+      console.error('Erro: Elementos de pesquisa ou vagas não encontrados.');
+    }
+  });
+</script>
+
+
 </body>
 </html>

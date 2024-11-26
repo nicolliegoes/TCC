@@ -349,94 +349,89 @@
             <div class="wavy-shape"></div>
             <div class="wavy-shape"></div>
         </div>
-        <div class="container">
-            <h1>Cadastre-se</h1>
-            <form id="cadastroForm">
-                <label class="label" for="name">Nome completo</label>
-                <input type="text" id="name" name="name" required>
-                <label class="label" for="date">Data de nascimento</label>
-                <input type="date" id="date" name="date" required>
-                <label class="label" for="deficiencia">Possui alguma deficiência?</label>
-                <select class="select" id="deficiencia" name="deficiencia">
-                    <option value="nao">Não possuo</option>
-                    <option value="cognitiva">Cognitiva</option>
-                    <option value="visual">Visual</option>
-                    <option value="motora">Motora</option>
-                    <option value="auditiva">Auditiva</option>
-                </select>
-                <label class="label" for="login-email">E-mail ou usuário</label>
-                <input type="email" id="login-email" name="login-email" required>
-                <label class="label" for="login-senha">Senha</label>
-                <input type="password" id="login-senha" name="login-senha" required>
-                <button type="submit" class="submit-button">Cadastrar</button>
-            </form>
-            <p id="message"></p>
-            <h3>Ou entre com:</h3>
-            <div class="login-options">
-                <img class="imagem" type="submit" src="img/icons8-google-logo-50.png">
-                <img class="imagem" type="submit" src="img/icons8-linkedin-50.png" >
+        <body>
+            <div class="">
+                <img class="logo" src="img/logo2.png" alt="logo">
+                <div class="container">
+                    <h1>Cadastre-se</h1>
+        
+                    <form id="cadastroForm">
+                        <label class="label" for="name">Nome completo</label>
+                        <input type="text" id="name" name="name" required>
+                    
+                        <label class="label" for="date">Data de nascimento</label>
+                        <input type="date" id="date" name="date" required>
+                    
+                        <label class="label" for="deficiencia">Possui alguma deficiência?</label>
+                        <select class="select" id="deficiencia" name="deficiencia">
+                            <option value="nao">Não possuo</option>
+                            <option value="cognitiva">Cognitiva</option>
+                            <option value="visual">Visual</option>
+                            <option value="motora">Motora</option>
+                            <option value="auditiva">Auditiva</option>
+                        </select>
+                    
+                        <label class="label" for="login-email">E-mail ou usuário</label>
+                        <input type="email" id="login-email" name="login-email" required>
+                    
+                        <label class="label" for="login-senha">Senha</label>
+                        <input type="password" id="login-senha" name="login-senha" required>
+                    
+                        <label class="label" for="photo">Foto de perfil</label>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                    
+                        <button type="submit" class="submit-button">Cadastrar</button>
+                    </form>
+        
+                    <p id="message"></p>
+                </div>
+            </div>
+        
+            <script>
+                function saveUser(user) {
+                    const users = JSON.parse(localStorage.getItem('users')) || [];
+                    users.push(user);
+                    localStorage.setItem('users', JSON.stringify(users));
+                }
+                    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+            
+                    const name = document.getElementById('name').value;
+                    const date = document.getElementById('date').value;
+                    const deficiencia = document.getElementById('deficiencia').value;
+                    const emailOrUser = document.getElementById('login-email').value;
+                    const password = document.getElementById('login-senha').value;
+                    const photoInput = document.getElementById('photo');
 
-          </div>
-        </div>
-    </div>
+                    const reader = new FileReader();
+                    const user = { 
+                        name, 
+                        date, 
+                        deficiencia, 
+                        email: emailOrUser, 
+                        username: emailOrUser, 
+                        password, 
+                        photo: ''
+                    };
+            
+                    if (photoInput.files[0]) {
 
-<script>
-     // usuário no localStorage
-    function saveUser(user) {
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        users.push(user);
-        localStorage.setItem('users', JSON.stringify(users));
-    }
-
-    // ver se o usuário já está cadastrado (pelo email ou nome de usúario)
-    function isUserAlreadyRegistered(emailOrUser) {
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        return users.some(user => user.email === emailOrUser || user.username === emailOrUser);
-    }
-
-    // ver se o usuário existe (login)
-    function checkUser(emailOrUser, password) {
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        return users.find(user => 
-            (user.username === emailOrUser || user.email === emailOrUser) && user.password === password
-        );
-    }
-
-    // formulário de cadastro
-    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // não envia o padrão do formulário
-
-        const name = document.getElementById('name').value;
-        const date = document.getElementById('date').value;
-        const deficiencia = document.getElementById('deficiencia').value;
-        const emailOrUser = document.getElementById('login-email').value;
-        const password = document.getElementById('login-senha').value;
-
-        // ver se o usuário já está registrado
-        if (isUserAlreadyRegistered(emailOrUser)) {
-            alert('Usuário já cadastrado! Redirecionando para a página de login...');
-            window.location.href = 'login.html'; // leva para a página de login
-            return; // interrompe o cadastro
-        }
-
-        // continua com o cadastro se o usuário não estiver registrado
-        const user = {
-            name,
-            date,
-            deficiencia,
-            email: emailOrUser,
-            username: emailOrUser,
-            password
-        };
-
-        saveUser(user); // salva o usuário
-        document.getElementById('message').innerText = 'Cadastro realizado com sucesso!';
-
-        // loga automaticamente após o cadastro
-        setTimeout(() => {
-            window.location.href = 'index.html'; // segundinhos
-        }, 2000);
-    });
-    </script>
-</body>
+                        reader.onload = function() {
+                            user.photo = reader.result;
+                            saveUser(user);
+                            alert('Cadastro realizado com sucesso!');
+                            window.location.href = 'perfil.html';
+                        };
+                        reader.readAsDataURL(photoInput.files[0]);
+                    } else {
+                        
+                        user.photo = 'img/default-photo.png'; 
+                        saveUser(user); 
+                        alert('Cadastro realizado com sucesso!');
+                        window.location.href = 'index.html'; 
+                    }
+                });
+            </script>
+        </body>
+        
 </html>

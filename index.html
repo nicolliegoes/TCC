@@ -114,22 +114,22 @@
         <div class="container-2">
             <h3>Encontre uma vaga na área desejada</h3>
             <div class="button-row-1">
-                <button>
+                <button onclick="filtrarVaga('balconista')">
                     <i class="fas fa-user"></i>Balconista
                 </button>
-                <button>
+                <button onclick="filtrarVaga('atendente')">
                     <i class="fas fa-headset"></i>Atendente
                 </button>
-                <button>
+                <button onclick="filtrarVaga('auxiliar')">
                     <i class="fas fa-user-tie"></i>Auxiliar
                 </button>
-                <button>
+                <button onclick="filtrarVaga('assistente')">
                     <i class="fas fa-user-cog"></i>Assistente
                 </button>
-                <button>
+                <button onclick="filtrarVaga('vendedor')">
                     <i class="fas fa-shopping-cart"></i>Vendedor(a)
                 </button>
-                <button>
+                <button onclick="filtrarVaga('recepcionista')">
                     <i class="fas fa-user-circle"></i>Recepcionista
                 </button>
             </div>
@@ -138,7 +138,15 @@
             </div>
         </div>
     </section>
-        
+    
+    <script>
+        // Função que redireciona para a página de vagas com o filtro como parâmetro na URL
+        function filtrarVaga(cargo) {
+            // Redireciona para a página de vagas com o parâmetro 'filtro'
+            window.location.href = 'vagas.html?filtro=' + cargo;
+        }
+    </script>    
+
     <section id="duvidas">
         <div class="container-3">
             <h3>Tire algumas dúvidas...</h3>

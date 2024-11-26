@@ -573,6 +573,27 @@ h6{
     <div>
       <div class="button"><a href="#">Enviar</a></div>
     </div>
+
+    <script>
+      document.getElementById('curriculo-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+
+          const curriculoData = {
+              nome: document.getElementById('nome').value,
+              sobrenome: document.getElementById('sobrenome').value,
+              cpf: document.getElementById('cpf').value,
+              celular: document.getElementById('celular').value,
+              email: document.getElementById('email').value,
+              endereco: document.getElementById('endereco').value,
+              estado: document.getElementById('estado').value,
+          };
+
+          localStorage.setItem('curriculo', JSON.stringify(curriculoData));
+
+          alert('Currículo salvo com sucesso!');
+      });
+  </script>
+
     <div class="container-6">
       <h6>IncluWork</h6>
       <div class="footer">
