@@ -68,7 +68,7 @@
         }
         
         .nav-list ul {
-          font-size: 1.3rem;
+          font-size: 1.5rem;
           display: flex;
           list-style: none;
           padding: 0;
@@ -220,7 +220,7 @@
           margin-bottom: 5%;
         }
         
-        input{
+        input {
           width: 55%;
           background-color: #2D2F48;
           padding: 0.6% 2% 0.6% 2%;
@@ -239,7 +239,7 @@
         
         ::placeholder{
           color: white;
-          font-size: 1.3rem;
+          font-size: 1.5rem;
         }
         
         .container-1{
@@ -390,7 +390,7 @@
         .titulo h2 {
           margin: 1%;
           margin-bottom: 6%;
-          font-size: 1.5rem;
+          font-size: 2rem;
         }
         
         @media (max-width: 1440px){
@@ -444,6 +444,222 @@
           transform: scale(0.8);
           pointer-events: none;
         }
+
+        .hidden {
+  display: none;
+}
+
+.reader-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.speed-control {
+  margin-top: 10px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; 
+  appearance: none; 
+  width: 80%;  
+  background: #F3FFF3; 
+  border-radius: 100px; 
+  outline: none; 
+  border: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  border: none;
+  -webkit-appearance: none; 
+  appearance: none; 
+  width: 15px; 
+  height: 15px; 
+  border-radius: 50%;
+  background: #2D3748; 
+  cursor: pointer; 
+}
+input[type="range"]::-moz-range-thumb {
+  border: none;
+  width: 15px; 
+  height: 8px; 
+  border-radius: 50%; 
+  background: #2D3748; 
+  cursor: pointer; 
+}
+
+#accessibility-menu {
+  position: fixed;
+  top: 275px;
+  left: 20px;
+  background-color: #ADDFD0;
+  padding: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000; 
+  border: none;
+}
+
+.accessibility-button {
+  position: fixed; 
+  right: 10px; 
+  top: 378px; 
+  z-index: 1000; 
+}
+
+.accessibility-button button {
+  background-color: #3185F0; 
+  color: white;
+  border: none; 
+  padding: 5.5px; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  font-size: 1.8rem;
+}
+
+.botao button {
+  background-color: #F3FFF3; 
+  color: #2d3748; 
+  border: none; 
+  width: 290px;
+  padding: 10px;
+  border-radius: 10px; 
+  cursor: pointer;
+  font-size: 1.2rem; 
+  margin-top: 5px; 
+  transition: background-color 0.3s, transform 0.2s; 
+}
+
+select{
+  color: #2D3748; 
+  border: none; 
+  background-color: #F3FFF3; 
+  width: 290px;
+  padding: 10px;
+  border-radius: 10px; 
+  cursor: pointer;
+  font-size: 1.2rem; 
+  margin-top: 5px; 
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+body.high-contrast select {
+  background-color: #444;
+  color: #fff;
+}
+
+body.high-contrast #accessibility-menu {
+  background-color: #1a202c;
+  color: #fff;
+}
+
+body.high-contrast {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Estilos para alto contraste */
+body.high-contrast {
+  background-color: #000;
+  color: #fff;
+}
+
+body.high-contrast ul li a {
+  color: #0ff; 
+  text-decoration: underline; 
+}
+
+body.high-contrast nav,
+body.high-contrast .nav-background,
+body.high-contrast header,
+body.high-contrast footer {
+  background-color: #222; /* Cor de fundo para barras de navegação e rodapé */
+  color: #fff;
+}
+
+body.high-contrast .container,
+body.high-contrast .container-1,
+body.high-contrast .container-3,
+body.high-contrast .container-5{
+  background-color: #222;
+  color: #fff;
+}
+
+body.high-contrast .container-2,
+body.high-contrast .container-4,
+body.high-contrast .container-6 {
+  background-color: #333;
+  color: #fff;
+}
+
+body.high-contrast button {
+  background-color: #444;
+  color: #fff;
+  border-color: #fff;
+}
+
+body.high-contrast button:hover {
+  background-color: #555;
+}
+
+body.high-contrast textarea {
+  background-color: #222;
+  color: #fff;
+  border-color: #fff;
+}
+
+body.high-contrast .accordion-button {
+  background-color: #444;
+  color: #fff;
+}
+
+body.high-contrast .accordion-content {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Dots no carrossel */
+body.high-contrast .dot {
+  background-color: #fff;
+}
+
+body.high-contrast .dot.active {
+  background-color: #0ff;
+}
+
+/* Footer e texto */
+body.high-contrast p {
+  color: #1a202c;
+}
+
+body.high-contrast h1{
+  color: fff;
+}
+
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast h4,
+body.high-contrast h5,
+body.high-contrast h6{
+  color: #000;
+}
+
+nav.high-contrast {
+  background-color: #000;
+  color: #fff;
+}
+
+body.spaced-letters * {
+  letter-spacing: 1.5px;
+}
+
+body.underline-links a {
+  text-decoration: underline;
+}
+
+body.colorblind-mode img {
+  filter: grayscale(100%);
+}
     </style>
 </head>
 <body>
@@ -475,38 +691,69 @@
         </nav>
     </header>
 
+    <div class="accessibility-button">
+      <button id="accessibility-toggle">
+          <i class="fas fa-universal-access"></i>
+      </button>
+  </div>
+  <div id="accessibility-menu" class="hidden">
+      <div class="font-size-slider">
+          <span class="font-size-label small">A</span>
+          <span class="font-size-label large">A</span>
+          <input type="range" id="font-size-range" min="0" max="3" step="1" value="1" onchange="changeFontSize(this.value)" style="margin: 0;">
+      </div> <br>
+      <div class="botao">
+          <button id="high-contrast-btn">Alto Contraste</button> <br>
+          <button onclick="toggleLetterSpacing()">Espaçamento de Letras</button> <br>
+          <button onclick="toggleUnderline()">Sublinhar Links</button> <br>
+          <select id="colorblind-type" onchange="changeColorblindType()">
+              <option value="normal">Adaptações para daltonismo</option>
+              <optgroup label="Formas Leves">
+                  <option value="protanomaly">Protanomalia (Vermelho fraco)</option>
+                  <option value="deuteranomaly">Deuteranomalia (Verde fraco)</option>
+                  <option value="tritanomaly">Tritanomalia (Azul fraco)</option>
+              </optgroup>
+              <optgroup label="Formas Severas">
+                  <option value="protanopia">Protanopia (Sem vermelho)</option>
+                  <option value="deuteranopia">Deuteranopia (Sem verde)</option>
+                  <option value="tritanopia">Tritanopia (Sem azul)</option>
+              </optgroup>
+              <optgroup label="Monocromacia">
+                  <option value="achromatomaly">Acromatomalia (Quase sem cores)</option>
+                  <option value="achromatopsia">Acromatopsia (Sem cores)</option>
+              </optgroup>
+          </select> <br>
+          <button onclick="startReading()">Iniciar Leitura</button> <br>
+          <button onclick="stopReading()">Parar Leitura</button> <br>
+          <div class="speed-control">
+              <label for="speed">Velocidade:</label> <br> <br>
+              <input type="range" id="speed" min="0.5" max="2" step="0.1" value="1" style="margin: 0;">
+          </div>
+      </div>
+  </div>
+
     <div class="container-7">
-        <h1>Conheça alguns dos<br> nossos cursos</h1>
+        <h1 class="text-to-read">Conheça alguns dos<br> nossos cursos</h1>
               <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Pesquisar curso de interesse" aria-label="Search">
               </form>
     </div>
 
-    <div class="container-1">
-      <h2>Escolha sua área de interesse</h2>
-        <div class="button-row">
-          <button data-filter="*">Todos</button>
-          <button data-filter=".desenvolvimento">Desenvolvimento pessoal</button>
-          <button data-filter=".entrevista">Preparação para o Mercado de Trabalho</button>
-          <button data-filter=".tecnologia">Tecnologia</button>
-          <button data-filter=".conhecimento">Conhecimentos</button>
-        </div>
-    </div>
-
+   
     <div class="container-2">
       <div class="caixa entrevista">
         <div class="titulo">
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Currículo: por onde começar?</h2>
+            <h2 class="text-to-read">Currículo: por onde começar?</h2>
         </div>
-        <p>Está entrando agora no mercado de trabalho e não faz a menor ideia de como organizar um currículo?</p>
+        <p class="text-to-read">Está entrando agora no mercado de trabalho e não faz a menor ideia de como organizar um currículo?</p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br> 1h</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br> 1h</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/68642849"><button class="botao">Iniciar</button></a>
       </div>
       <div class="caixa desenvolvimento">
@@ -514,14 +761,14 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Gestão de tempo</h2>
+            <h2 class="text-to-read">Gestão de tempo</h2>
         </div>
-        <p>Você também sente dificuldades em organizar suas atividades? Sente que está o tempo todo correndo...</p>
+        <p class="text-to-read">Você também sente dificuldades em organizar suas atividades? Sente que está o tempo todo correndo...</p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br> 50m</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br> 50m</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/98345079"><button class="botao">Iniciar</button></a>
       </div>
       <div class="caixa desenvolvimento">
@@ -529,14 +776,14 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Autoconhecimento</h2>
+            <h2 class="text-to-read">Autoconhecimento</h2>
         </div>
-        <p>Você sabia que muitas vezes a gente acha que sabe quem somos, mas na verdade não sabemos?</p>
+        <p class="text-to-read">Você sabia que muitas vezes a gente acha que sabe quem somos, mas na verdade não sabemos?</p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br> 1h</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br> 1h</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/88279630"><button class="botao">Iniciar</button></a>
       </div>
     </div>
@@ -547,14 +794,14 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Pitch: o que é e como fazer</h2>
+            <h2 class="text-to-read">Pitch: o que é e como fazer</h2>
         </div>
-        <p>Uma apresentação rápida e objetiva que te dá a chance de mostrar quem você é. </p>
+        <p class="text-to-read">Uma apresentação rápida e objetiva que te dá a chance de mostrar quem você é. </p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br> 3h</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br> 3h</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/42517096"><button class="botao">Iniciar</button></a>
       </div>
       <div class="caixa conhecimento">
@@ -562,14 +809,14 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Marcha no futuro</h2>
+            <h2 class="text-to-read">Marcha no futuro</h2>
         </div>
-        <p>Acompanhar a evolução do mercado para construir uma carreira de sucesso é um dos principais pontos.</p>
+        <p class="text-to-read">Acompanhar a evolução do mercado para construir uma carreira de sucesso é um dos principais pontos.</p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br> 1h</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br> 1h</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/31593487"><button class="botao">Iniciar</button></a>
       </div>
       <div class="caixa conhecimento">
@@ -577,14 +824,14 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Seja uma grande líder</h2>
+            <h2 class="text-to-read">Seja uma grande líder</h2>
         </div>
-        <p>Iremos te ajudar a reconhecer que você pode sim ser uma grande líder e ser a inspiração da sua história. </p>
+        <p class="text-to-read">Iremos te ajudar a reconhecer que você pode sim ser uma grande líder e ser a inspiração da sua história. </p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br> 3h</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br> 3h</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/70907180"><button class="botao">Iniciar</button></a>
       </div>
     </div>
@@ -595,14 +842,14 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>O que a escola não te ensinou</h2>
+            <h2 class="text-to-read">O que a escola não te ensinou</h2>
         </div>
-        <p>O mercado de trabalho está passando por grandes mudanças, é necessário entede-las para se adaptar.</p>
+        <p class="text-to-read">O mercado de trabalho está passando por grandes mudanças, é necessário entede-las para se adaptar.</p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br>2h 25m</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br>2h 25m</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/95113756"><button class="botao">Iniciar</button></a>
       </div>
       <div class="caixa entrevista">
@@ -610,14 +857,14 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Como construir um futuro</h2>
+            <h2 class="text-to-read">Como construir um futuro</h2>
         </div>
-        <p>Aquele momento que o caminho parece estar perdido, precisamos dar uma pausa e alinhar o nosso propósito.</p>
+        <p class="text-to-read">Aquele momento que o caminho parece estar perdido, precisamos dar uma pausa e alinhar o nosso propósito.</p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br> 1h</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br> 1h</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/94846121"><button class="botao">Iniciar</button></a>
       </div>
       <div class="caixa tecnologia">
@@ -625,14 +872,14 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Steam</h2>
+            <h2 class="text-to-read">Steam</h2>
         </div>
-        <p>Veja os fundamentos e as oportunidades tanto na área de ciência e tecnologia quanto na área de arte e design.</p>
+        <p class="text-to-read">Veja os fundamentos e as oportunidades tanto na área de ciência e tecnologia quanto na área de arte e design.</p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br>1h 30m</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br>1h 30m</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/44915062"><button class="botao">Iniciar</button></a>
       </div>
     </div>
@@ -643,14 +890,14 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Como falar em público</h2>
+            <h2 class="text-to-read">Como falar em público</h2>
         </div>
-        <p>Aprenda a dominar a arte de falar em público e transforme sua insegurança em confiança com técnicas.</p>
+        <p class="text-to-read">Aprenda a dominar a arte de falar em público e transforme sua insegurança em confiança com técnicas.</p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br> 1h</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br> 1h</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/68642849"><button class="botao">Iniciar</button></a>
       </div>
       <div class="caixa desenvolvimento">
@@ -658,14 +905,14 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Inteligência Emocional</h2>
+            <h2 class="text-to-read">Inteligência Emocional</h2>
         </div>
-        <p>Desenvolva sua inteligência emocional para melhorar relacionamentos e lidar com desafios com equilíbrio.</p>
+        <p class="text-to-read">Desenvolva sua inteligência emocional para melhorar relacionamentos e lidar com desafios com equilíbrio.</p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br>2h 45m</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br>2h 45m</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/68642849"><button class="botao">Iniciar</button></a>
       </div>
       <div class="caixa entrevista">
@@ -673,20 +920,20 @@
             <div class="icone">
                 <i class="fas fa-comment-dots" style="color: white;"></i> 
             </div>
-            <h2>Como conseguir um emprego</h2>
+            <h2 class="text-to-read">Como conseguir um emprego</h2>
         </div>
-        <p>Descubra estratégias eficazes para se destacar no mercado de trabalho e a preparação para entrevistas.</p>
+        <p class="text-to-read">Descubra estratégias eficazes para se destacar no mercado de trabalho e a preparação para entrevistas.</p>
         <div class="barra">
           <div class="linha"></div>
         </div>
-        <h6>Duração <br>2h 05m</h6>
-        <h5>Nível <br> Iniciante</h5> <br>
+        <h6 class="text-to-read">Duração <br>2h 05m</h6>
+        <h5 class="text-to-read">Nível <br> Iniciante</h5> <br>
         <a target="_blank" href="https://inspiraja.org.br/play/curso/68642849"><button class="botao">Iniciar</button></a>
       </div>
     </div>
 
     <div class="container-6">
-        <h4>IncluWork</h4>
+        <h4 >IncluWork</h4>
         <div class="footer">
             <ul >
                 <li><a href="">Home</a></li>
@@ -700,74 +947,261 @@
     </div>
 
     <footer></footer>
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+  </div>
+
+  <script>
+
+let speech = new SpeechSynthesisUtterance();
+  const textElements = document.querySelectorAll('.text-to-read');
+  
+  function startReading() {
+      let fullText = Array.from(textElements).map(element => element.innerText).join(' ');
+      speech.text = fullText;
+      speech.rate = document.getElementById('speed').value;
+      window.speechSynthesis.speak(speech);
+  }
+
+  function stopReading() {
+      window.speechSynthesis.cancel();
+  }
+
+  document.getElementById('speed').addEventListener('input', function() {
+      speech.rate = this.value;
+  });
+
+function applyFontSize() {
+  const sizes = ['14px', '16px', '18px', '20px'];
+  const elements = document.querySelectorAll(
+      'a, button, h2, h3, h1, .accordion-button, .accordion-content'
+  );
+
+  elements.forEach((element) => {
+      element.style.fontSize = sizes[fontSize];
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const fontSizeRange = document.getElementById('font-size-range');
+  fontSizeRange.addEventListener('input', (e) => {
+      fontSize = parseInt(e.target.value);
+      applyFontSize();
+  });
+
+  // Aplicar configurações ao carregar a página
+  loadSettings();
+});
+
+
+function toggleLetterSpacing() {
+  document.body.style.letterSpacing = document.body.style.letterSpacing === '2px' ? 'normal' : '2px';
+}
+
+function toggleHighContrast() {
+  document.body.classList.toggle('high-contrast');
+}
+
+function toggleAccessibilityMenu() {
+  const menu = document.getElementById('accessibility-menu');
+  menu.classList.toggle('hidden');
+}
+
+function handleSearch() {
+  const query = document.getElementById('search-input').value.toLowerCase();
+  console.log('Consulta:', query); 
+  // lógica de pesquisa...
+}
+
+function toggleUnderline() {
+  const links = document.querySelectorAll('a');
+  links.forEach(link => {
+      link.style.textDecoration = link.style.textDecoration === 'underline' ? 'none' : 'underline';
+  });
+}
+  
+       // accessibility.js
+  document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.getElementById('accessibility-toggle');
+      const accessibilityMenu = document.getElementById('accessibility-menu');
+
+      toggleButton.addEventListener('click', function() {
+          // Alterna a classe 'hidden' para exibir ou ocultar o menu
+          accessibilityMenu.classList.toggle('hidden');
+      });
+  });
+
+// Selecionar o botão de alto contraste
+const highContrastToggle = document.getElementById('high-contrast-btn');
+
+// Alternar o modo de alto contraste
+highContrastToggle.addEventListener('click', () => {
+document.body.classList.toggle('high-contrast');
+});
+
+let colorblindMode = false;
+let highContrastMode = false;
+let fontSize = 1; // 0 = pequeno, 1 = médio, 2 = grande
+let colorblindType = 'normal';
+
+function toggleColorblindMode() {
+  colorblindMode = !colorblindMode;
+  localStorage.setItem('colorblindMode', colorblindMode);
+  applyColorblindMode();
+}
+
+function toggleHighContrastMode() {
+  highContrastMode = !highContrastMode;
+  localStorage.setItem('highContrastMode', highContrastMode);
+  applyHighContrastMode();
+}
+
+function changeFontSize(size) {
+  fontSize = size;
+  localStorage.setItem('fontSize', fontSize);
+  applyFontSize();
+  updateFontSizeSlider();
+}
+
+function changeColorblindType() {
+  const select = document.getElementById('colorblind-type');
+  colorblindType = select.value;
+  localStorage.setItem('colorblindType', colorblindType);
+  applyColorblindMode();
+}
+
+function applyColorblindMode() {
+  const filters = {
+      normal: 'none',
+      protanomaly: 'url("#protanomaly-filter")',
+      deuteranomaly: 'url("#deuteranomaly-filter")',
+      tritanomaly: 'url("#tritanomaly-filter")',
+      protanopia: 'url("#protanopia-filter")',
+      deuteranopia: 'url("#deuteranopia-filter")',
+      tritanopia: 'url("#tritanopia-filter")',
+      achromatopsia: 'url("#achromatopsia-filter")',
+      achromatomaly: 'url("#achromatomaly-filter")'
+  };
+
+  document.body.style.filter = filters[colorblindType];
+}
+
+function applyHighContrastMode() {
+  if (highContrastMode) {
+      document.body.classList.add('high-contrast');
+  } else {
+      document.body.classList.remove('high-contrast');
+  }
+}
+
+function applyFontSize() {
+  const sizes = ['14px', '16px', '18px'];
+  document.body.style.fontSize = sizes[fontSize];
+}
+
+function updateFontSizeSlider() {
+  const fontSizeRange = document.getElementById('font-size-range');
+  if (fontSizeRange) {
+      fontSizeRange.value = fontSize;
+  }
+}
+
+function loadSettings() {
+  colorblindMode = localStorage.getItem('colorblindMode') === 'true';
+  highContrastMode = localStorage.getItem('highContrastMode') === 'true';
+  fontSize = parseInt(localStorage.getItem('fontSize'));
+  colorblindType = localStorage.getItem('colorblindType') || 'normal';
+  
+  if (isNaN(fontSize) || fontSize < 0 || fontSize > 2) {
+      fontSize = 1;
+  }
+
+  applyColorblindMode();
+  applyHighContrastMode();
+  applyFontSize();
+  updateFontSizeSlider();
+
+  const colorblindTypeSelect = document.getElementById('colorblind-type');
+  if (colorblindTypeSelect) {
+      colorblindTypeSelect.value = colorblindType;
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const fontSizeRange = document.getElementById('font-size-range');
+  if (fontSizeRange) {
+      fontSizeRange.addEventListener('input', (e) => {
+          changeFontSize(parseInt(e.target.value));
+      });
+  }
+});
+
+window.onload = loadSettings;
+
+// Adicione os filtros SVG ao final do body
+document.body.insertAdjacentHTML('beforeend', `
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <defs>
+          <filter id="protanomaly-filter">
+              <feColorMatrix type="matrix" values="0.817,0.183,0,0,0 0.333,0.667,0,0,0 0,0.125,0.875,0,0 0,0,0,1,0"/>
+          </filter>
+          <filter id="deuteranomaly-filter">
+              <feColorMatrix type="matrix" values="0.8,0.2,0,0,0 0.258,0.742,0,0,0 0,0.142,0.858,0,0 0,0,0,1,0"/>
+          </filter>
+          <filter id="tritanomaly-filter">
+              <feColorMatrix type="matrix" values="0.967,0.033,0,0,0 0,0.733,0.267,0,0 0,0.183,0.817,0,0 0,0,0,1,0"/>
+          </filter>
+          <filter id="protanopia-filter">
+              <feColorMatrix type="matrix" values="0.567,0.433,0,0,0 0.558,0.442,0,0,0 0,0.242,0.758,0,0 0,0,0,1,0"/>
+          </filter>
+          <filter id="deuteranopia-filter">
+              <feColorMatrix type="matrix" values="0.625,0.375,0,0,0 0.7,0.3,0,0,0 0,0.3,0.7,0,0 0,0,0,1,0"/>
+          </filter>
+          <filter id="tritanopia-filter">
+              <feColorMatrix type="matrix" values="0.95,0.05,0,0,0 0,0.433,0.567,0,0 0,0.475,0.525,0,0 0,0,0,1,0"/>
+          </filter>
+          <filter id="achromatopsia-filter">
+              <feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0 0.299,0.587,0.114,0,0 0.299,0.587,0.114,0,0 0,0,0,1,0"/>
+          </filter>
+          <filter id="achromatomaly-filter">
+              <feColorMatrix type="matrix" values="0.618,0.320,0.062,0,0 0.163,0.775,0.062,0,0 0.163,0.320,0.516,0,0 0,0,0,1,0"/>
+          </filter>
+      </defs>
+  </svg>
+`);
+  </script>
+  
+  <script>
+      const buttons = document.querySelectorAll('.accordion-button');
+  
+  buttons.forEach(button => {
+      button.addEventListener('click', function() {
+          const content = this.nextElementSibling;
+  
+          // Fecha todos os outros conteúdos
+          document.querySelectorAll('.accordion-content').forEach(item => {
+              if (item !== content) {
+                  item.style.display = 'none';
+              }
+          });
+  
+          // Alterna a exibição do conteúdo atual
+          content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+  });
+  </script>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var $containers = $('.container-2, .container-3, .container-4, .container-5');
-        var $container2 = $('.container-2');
-
-        $('.button-row button').on('click', function() {
-            var filterValue = $(this).attr('data-filter');
-            
-            $('.caixa').removeClass('filtered hidden');
-            
-            if (filterValue !== '*') {
-                $containers.find('.caixa').not(filterValue).addClass('hidden');
-                var $filteredItems = $containers.find(filterValue);
-                $filteredItems.addClass('filtered');
-                
-                // Mover itens filtrados para container-2 com animação
-                $filteredItems.each(function() {
-                    var $item = $(this);
-                    var offset = $item.offset();
-                    var destOffset = $container2.offset();
-                    
-                    $item.css({
-                        'position': 'fixed',
-                        'top': offset.top,
-                        'left': offset.left,
-                        'width': $item.width(),
-                        'height': $item.height(),
-                        'z-index': 1000
-                    });
-                    
-                    $item.animate({
-                        top: destOffset.top + $container2.find('.caixa').length * ($item.outerHeight(true) + 20),
-                        left: destOffset.left
-                    }, 500, function() {
-                        $item.css({
-                            'position': '',
-                            'top': '',
-                            'left': '',
-                            'width': '',
-                            'height': '',
-                            'z-index': ''
-                        });
-                        $container2.append($item);
-                    });
-                });
-            } else {
-                // Se "Todos" for selecionado, restaure a ordem original
-                $containers.each(function() {
-                    var $container = $(this);
-                    var $items = $container.find('.caixa');
-                    $container.append($items);
-                });
-            }
-        });
-
-        // Função de pesquisa
-        $('.form-control').on('input', function() {
-            var searchValue = $(this).val().toLowerCase();
-            $('.caixa').each(function() {
-                var $item = $(this);
-                if ($item.text().toLowerCase().indexOf(searchValue) > -1) {
-                    $item.removeClass('hidden');
-                } else {
-                    $item.addClass('hidden');
-                }
-            });
-        });
-    });
+    
     </script>
     <script src="script.js"></script>
 </body>
