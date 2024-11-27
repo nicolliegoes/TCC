@@ -386,52 +386,40 @@
                     <p id="message"></p>
                 </div>
             </div>
-        
             <script>
+                // Função para salvar os dados do usuário no localStorage
                 function saveUser(user) {
                     const users = JSON.parse(localStorage.getItem('users')) || [];
                     users.push(user);
                     localStorage.setItem('users', JSON.stringify(users));
                 }
-                    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
-                    event.preventDefault();
             
+                // Lida com o evento de cadastro
+                document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Impede o comportamento padrão do formulário
+            
+                    // Coleta os dados do formulário
                     const name = document.getElementById('name').value;
                     const date = document.getElementById('date').value;
                     const deficiencia = document.getElementById('deficiencia').value;
-                    const emailOrUser = document.getElementById('login-email').value;
+                    const email = document.getElementById('login-email').value;
                     const password = document.getElementById('login-senha').value;
-                    const photoInput = document.getElementById('photo');
-
-                    const reader = new FileReader();
+            
+                    // Cria um objeto com os dados do usuário
                     const user = { 
                         name, 
                         date, 
                         deficiencia, 
-                        email: emailOrUser, 
-                        username: emailOrUser, 
-                        password, 
-                        photo: ''
+                        email, 
+                        password
                     };
             
-                    if (photoInput.files[0]) {
-
-                        reader.onload = function() {
-                            user.photo = reader.result;
-                            saveUser(user);
-                            alert('Cadastro realizado com sucesso!');
-                            window.location.href = 'perfil.html';
-                        };
-                        reader.readAsDataURL(photoInput.files[0]);
-                    } else {
-                        
-                        user.photo = 'img/default-photo.png'; 
-                        saveUser(user); 
-                        alert('Cadastro realizado com sucesso!');
-                        window.location.href = 'index.html'; 
-                    }
+                    // Salva os dados do usuário e redireciona para a página index.html
+                    saveUser(user);
+                    alert('Cadastro realizado com sucesso!');
+                    window.location.href = 'index.html'; // Redireciona para a página inicial
                 });
             </script>
-        </body>
+            
         
 </html>

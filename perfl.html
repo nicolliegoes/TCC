@@ -195,85 +195,29 @@
         <a href="curriculo.html">Fazer currículo</a>
     </div>
 
-    <script>
-        document.getElementById('edit-profile').addEventListener('click', function(e) {
-            e.preventDefault();
-            const fields = ['full-name', 'phone', 'birth-date', 'city', 'state', 'disability', 'state2'];
-            const isEditing = this.textContent === 'Editar perfil';
 
-            if (isEditing) {
-                fields.forEach(field => {
-                    const element = document.getElementById(field);
-                    if (field === 'disability') {
-                        const options = ['Nenhuma', 'Física', 'Visual', 'Auditiva', 'Cognitiva'];
-                        const dropdown = document.createElement('div');
-                        dropdown.className = 'dropdown';
-                        options.forEach(option => {
-                            const optionElement = document.createElement('div');
-                            optionElement.textContent = option;
-                            optionElement.onclick = function() {
-                                element.textContent = option;
-                                dropdown.style.display = 'none';
-                            };
-                            dropdown.appendChild(optionElement);
-                        });
-                        element.parentNode.appendChild(dropdown);
-                        element.onclick = function(event) {
-                            event.stopPropagation();
-                            dropdown.style.display = 'block';
-                        };
-                        document.addEventListener('click', function() {
-                            dropdown.style.display = 'none';
-                        });
-                    } else {
-                        element.contentEditable = true;
-                        element.focus();
-                    }
-                });
 
-                // Adiciona um event listener para atualizar o name-header em tempo real
-                document.getElementById('full-name').addEventListener('input', function() {
-                    document.getElementById('name-header').textContent = this.textContent;
-                });
-
-                this.textContent = 'Salvar';
-            } else {
-                let hasError = false;
-                fields.forEach(field => {
-                    const element = document.getElementById(field);
-                    const newValue = element.textContent.trim();
-                    if (newValue === '') {
-                        hasError = true;
-                        if (!element.parentNode.querySelector('.error')) {
-                            const errorMsg = document.createElement('div');
-                            errorMsg.className = 'error';
-                            errorMsg.textContent = 'Este campo não pode ficar vazio.';
-                            element.parentNode.appendChild(errorMsg);
-                        }
-                    } else {
-                        const errorMsg = element.parentNode.querySelector('.error');
-                        if (errorMsg) {
-                            errorMsg.remove();
-                        }
-                    }
-                    if (field !== 'disability') {
-                        element.contentEditable = false;
-                    }
-                });
-
-                if (!hasError) {
-                    document.getElementById('name-header').textContent = document.getElementById('full-name').textContent;
-                    this.textContent = 'Editar perfil';
-                    const dropdowns = document.querySelectorAll('.dropdown');
-                    dropdowns.forEach(dropdown => dropdown.remove());
-
-                    // Remove o event listener do full-name
-                    document.getElementById('full-name').removeEventListener('input', null);
-                } else {
-                    alert('Por favor, preencha todos os campos antes de salvar.');
-                }
-            }
-        });
-    </script>
 </body>
-</html>
+</html><script>
+    // Função para carregar os dados do usuário
+    function loadUserProfile() {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const currentUser = users[users.length - 1]; // Último usuário cadastrado
+
+        if (currentUser) {
+            document.getElementById('profile-photo').src = currentUser.photo || 'img/default-photo.png';
+            document.getElementById('name-header').textContent = currentUser.name;
+            document.getElementById('email-header').textContent = currentUser.email;
+            document.getElementById('full-name').textContent = currentUser.name;
+            document.getElementById('birth-date').textContent = currentUser.date;
+            document.getElementById('disability').textContent = currentUser.deficiencia || 'Nenhuma';
+        } else {
+            alert('Nenhum usuário logado!');
+            window.location.href = 'cadastro.html'; // Redireciona para a página de cadastro
+        }
+    }
+
+    // Chamar a função ao carregar a página
+    loadUserProfile();
+</script>
+</body>
