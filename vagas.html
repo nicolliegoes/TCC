@@ -520,12 +520,9 @@ h5{
       </div>
     </section>
 
-   
-
-      <section id="vagas"> 
-        <div class="container-2">
-            <h3>Vagas disponíveis</h3>
-            <div id="vagas-lista">
+    <section class="additional-jobs">
+      <h2>Vagas Disponíveis</h2>
+      <div class="espaca"></div>
 
       <div class="job-listings">
         <div class="job-card">
@@ -788,51 +785,6 @@ h5{
       </div>
     </section>
   </main>
-</div>
-</div>
-</section>
-
-<script>
-  function getParametroURL(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-  }
-
-  function exibirVagas() {
-      const filtro = getParametroURL('filtro');
-      
-      const vagas = [
-          { cargo: 'balconista', descricao: 'Vaga para balconista em loja de varejo' },
-          { cargo: 'atendente', descricao: 'Vaga para atendente de call center' },
-          { cargo: 'auxiliar', descricao: 'Vaga para auxiliar administrativo' },
-          { cargo: 'assistente', descricao: 'Vaga para assistente de marketing' },
-          { cargo: 'vendedor', descricao: 'Vaga para vendedor(a) em loja de roupas' },
-          { cargo: 'recepcionista', descricao: 'Vaga para recepcionista em hotel' },
-      ];
-
-      const vagasFiltradas = vagas.filter(vaga => vaga.cargo === filtro || !filtro);
-
-      const vagasLista = document.getElementById('vagas-lista');
-      vagasLista.innerHTML = '';
-
-      if (vagasFiltradas.length > 0) {
-          vagasFiltradas.forEach(vaga => {
-              const vagaElement = document.createElement('div');
-              vagaElement.classList.add('vaga');
-              vagaElement.innerHTML = `
-                  <h4>${vaga.cargo.charAt(0).toUpperCase() + vaga.cargo.slice(1)}</h4>
-                  <p>${vaga.descricao}</p>
-              `;
-              vagasLista.appendChild(vagaElement);
-          });
-      } else {
-          vagasLista.innerHTML = '<p>Nenhuma vaga encontrada para o filtro selecionado.</p>';
-      }
-  }
-
-
-  window.onload = exibirVagas;
-</script>
 
   <div class="cont">
     <h1 class="mission">Ainda não possuo um currículo</h1>
@@ -872,40 +824,5 @@ h5{
     });
   </script>
    <script src="script.js"></script>
-
-
-
-<script> // código da barra de pesquisa
-  document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.querySelector('.search-box input'); // campo de pesquisa
-    const jobCards = document.querySelectorAll('.job-card'); // seleciona todas as vagas
-
-    if (searchInput && jobCards) {
-      searchInput.addEventListener('input', () => {
-        const searchValue = searchInput.value.toLowerCase().trim(); // lê erros
-
-        jobCards.forEach(card => {
-          const jobTitle = card.querySelector('h3')?.textContent.toLowerCase() || ''; // pega o título da vaga
-          const jobSubtitle = card.querySelector('.subtitle')?.textContent.toLowerCase() || ''; // pega o subtítulo da vaga
-          const jobDetails = card.textContent.toLowerCase(); // pega todo o texto
-
-          if (
-            jobTitle.includes(searchValue) ||
-            jobSubtitle.includes(searchValue) ||
-            jobDetails.includes(searchValue)
-          ) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    } else {
-      console.error('Erro: Elementos de pesquisa ou vagas não encontrados.');
-    }
-  });
-</script>
-
-
 </body>
 </html>
