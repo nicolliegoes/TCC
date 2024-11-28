@@ -1,6 +1,7 @@
 body{
     background-color: #F3FFF3;
     position: relative;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .img_logo{
@@ -425,6 +426,7 @@ body.colorblind-mode img {
   font-size: 3.4em;
   color: #3E7996;
   margin-top: -21%;
+  font-family:'Times New Roman', Times, serif;
 }
 
 @media screen and (max-width: 1600px){
@@ -843,6 +845,8 @@ p{
 
 blockquote {
   margin-bottom: 20px;
+  font-size: 1.4em;
+  line-height: 1.4;
 }
 
 .profile {
@@ -906,7 +910,7 @@ blockquote {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #cbd5e0;
+  background-color: white;
   margin: 0 5px;
   cursor: pointer;
 }
@@ -987,4 +991,8 @@ footer{
 
 .btn-search:hover {
   background-color: rgba(0, 0, 0, 0.1); /* Efeito hover opcional */
+}
+
+.espaca{
+  margin-bottom: 7%;
 }
