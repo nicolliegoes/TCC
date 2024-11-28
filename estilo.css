@@ -84,7 +84,7 @@ body{
   }
 
   .nav-list ul {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     display: flex;
     list-style: none;
     padding: 0;
@@ -422,7 +422,7 @@ body.colorblind-mode img {
   margin-left: 32%;
   margin-right: 24%;
   line-height: 1.8;
-  font-size: clamp(1.2rem, 2vw + 1.2rem, 10rem);
+  font-size: 3.4em;
   color: #3E7996;
   margin-top: -21%;
 }
@@ -550,7 +550,7 @@ h1{
   margin-top: 1%;
   padding: 15px;
   width: 150%;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   cursor: pointer;
   border: none;
   background-color: #3E7996;
@@ -586,7 +586,7 @@ h1{
 .button-row-1 button { 
   flex: 1 1 calc(140% - 110%);            
   height: 130px;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   cursor: pointer;
   border: none;
   background-color: #FFFFFF;
@@ -626,7 +626,7 @@ h1{
 }
 
 .saiba button{
-  font-size: 1.5rem;
+  font-size: 1.5em;
   color: white;
   padding: 15px;
   border: none;
@@ -724,7 +724,7 @@ h1{
   border: none;
   text-align: left;
   outline: none;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   transition: background-color 0.3s ease;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -801,7 +801,7 @@ h1{
 p{
   color: white;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.8em;
   margin-left: 7%;
   margin-right: 7%;
   line-height: 1.8;
@@ -924,7 +924,7 @@ blockquote {
 }
 
 .footer{
-  font-size: 1.3rem;
+  font-size: 1.3em;
   list-style: none;
   text-align: center;
   margin-top: 2%;
@@ -949,7 +949,7 @@ blockquote {
 .email p{
   margin-top: 2%;
   color: #3E7996;
-  font-size: 1.3rem;
+  font-size: 1.3em;
 }
 
 @media screen and (max-width: 860px){
