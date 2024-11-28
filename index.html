@@ -152,16 +152,16 @@
         <div class="container-2">
             <h3 class="text-to-read">Encontre uma vaga na área desejada</h3>
             <div class="button-row-1">
-                <button onclick="filtrarVaga('balconista')">
+                <button onclick="window.location.href='balconista.html'">
                     <i class="fas fa-user"></i><p2 class="text-to-read">Balconista</p>
                 </button>
-                <button onclick="filtrarVaga('atendente')">
+                <button onclick="window.location.href='atendente.html'">
                     <i class="fas fa-headset"></i><p2 class="text-to-read">Atendente</p>
                 </button>
-                <button onclick="filtrarVaga('auxiliar')">
+                <button onclick="window.location.href='auxiliar.html'">
                     <i class="fas fa-user-tie"></i><p2 class="text-to-read">Auxiliar</p>
                 </button>
-                <button onclick="filtrarVaga('assistente')">
+                <button onclick="window.location.href='assistente.html'">
                     <i class="fas fa-user-cog"></i><p2 class="text-to-read">Assistente</p>
                 </button>
                 <button onclick="filtrarVaga('vendedor')">
@@ -216,32 +216,26 @@
             <h1 class="text-to-read">Feedback</h1>
             <div class="carousel">
                 <div class="feedback active">
-                    <blockquote><p2 class="text-to-read">Quis nostrum aliquam iste quam fugam fere sunt amet morem atque aliqua veniam tempur noster menses sunt aliquam fugit.</p2></blockquote>
+                    <blockquote><p2 class="text-to-read">Gostei muito da proposta do site, ainda mais por ter acessibilidade, o que é muito importante pros dias atuais. Design limpo, e interface super fácil e interativa, nota 10.</p2></blockquote>
                     <div class="profile">
-                        <img src="https://via.placeholder.com/60" alt="John Larson">
                         <div class="profile-info">
-                            <p class="name"><p2 class="text-to-read">John Larson</p2></p>
-                            <p class="role"><p2 class="text-to-read">Entrepreneur</p2></p>
+                            <p class="name"><p2 class="text-to-read">Laysa Pacheco</p2></p>
                         </div>
                     </div>
                 </div>
                 <div class="feedback">
-                    <blockquote><p2 class="text-to-read">Phasit dusciis justo consequat sunt sore digni espam denim porttitur enism tempur feugins. Accussamus enism sunt ut. Offiica qut.</p2></blockquote>
+                    <blockquote><p2 class="text-to-read">O desing do site e as cores são bem leves, transmitindo tranquilidade. Além de que o tema escolhido foi bem abordado no site, contendo acessibilidade para todas as deficiencias.</p2></blockquote>
                     <div class="profile">
-                        <img src="https://via.placeholder.com/60" alt="Saul Rosa Ruacan">
                         <div class="profile-info">
-                            <p class="name"><p2 class="text-to-read">Saul Rosa Ruacan</p2></p>
-                            <p class="role"><p2 class="text-to-read">UX Designer</p2></p>
+                            <p class="name"><p2 class="text-to-read">Lucas Kaue</p2></p>
                         </div>
                     </div>
                 </div>
                 <div class="feedback">
-                    <blockquote><p2 class="text-to-read">Eaperi minsor rium littem nesti malis erum quam sint esse labore quam ullam quat malis quaerat nulla nisi erum ullam erum.</p2></blockquote>
+                    <blockquote><p2 class="text-to-read">Eu amei a maneira como o site inclui pessoas deficentes de todas as maneiras, deixando-a confortável e acolhida, pois são poucos os sites que tem esse carinho e delicadeza.</p2></blockquote>
                     <div class="profile">
-                        <img src="https://via.placeholder.com/60" alt="Sara Wilson">
                         <div class="profile-info">
-                            <p class="name"><p2 class="text-to-read">Sara Wilson</p2></p>
-                            <p class="role"><p2 class="text-to-read">Designer</p2></p>
+                            <p class="name"><p2 class="text-to-read">Vitória Santos</p2></p>
                         </div>
                     </div>
                 </div>
@@ -534,6 +528,48 @@ document.body.insertAdjacentHTML('beforeend', `
     </script>
     
     <script>
+        const feedbacks = document.querySelectorAll('.feedback');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const dotsContainer = document.querySelector('.dots');
+        let currentIndex = 0;
+
+        function showFeedback(index) {
+            feedbacks.forEach((feedback, i) => {
+                feedback.classList.toggle('active', i === index);
+            });
+            updateDots();
+        }
+
+        function createDots() {
+            feedbacks.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.addEventListener('click', () => showFeedback(i));
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + feedbacks.length) % feedbacks.length;
+            showFeedback(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % feedbacks.length;
+            showFeedback(currentIndex);
+        });
+
+        createDots();
+        updateDots();
+
         const buttons = document.querySelectorAll('.accordion-button');
     
     buttons.forEach(button => {
